@@ -10,12 +10,35 @@ import YouTube from 'react-youtube';
 
 function NftPreview() {
 
-    const opts = {
+    const opts1 = {
         height: '300',
         width: '350',
         playerVars: {
             autoplay: 1,
             loop: 1,
+            playlist: "2e1g9vKifmk",
+        },
+    };
+
+    
+    const opts2 = {
+        height: '300',
+        width: '350',
+        playerVars: {
+            autoplay: 1,
+            loop: 1,
+            playlist: "NMl5Nr7nz8M",
+        },
+    };
+
+    
+    const opts3 = {
+        height: '300',
+        width: '350',
+        playerVars: {
+            autoplay: 1,
+            loop: 1,
+            playlist: "ccWKYzox1qc",
         },
     };
 
@@ -34,15 +57,15 @@ function NftPreview() {
                 </Row>
                 <Row className="pb-5 px-md-5">
                     <Col xs={12} md={4} className='text-center g-0'>
-                        <YouTube className="founderVideo" videoId="2e1g9vKifmk" opts={opts} />
+                        <YouTube className="founderVideo" opts={opts1} />
                         <p id='launch'>Paintbrush Bronze</p>
                     </Col>
                     <Col xs={12} md={4} className='text-center g-0'>
-                        <YouTube className="founderVideo" videoId="NMl5Nr7nz8M" opts={opts} />
+                        <YouTube className="founderVideo" opts={opts2} />
                         <p id='launch'>Paintbrush Silver</p>
                     </Col>
                     <Col xs={12} md={4} className='text-center g-0'>
-                        <YouTube className="founderVideo" videoId="ccWKYzox1qc" opts={opts} />
+                        <YouTube className="founderVideo" opts={opts3} />
                         <p id='launch'>Paintbrush Gold</p>
                     </Col>
                 </Row>

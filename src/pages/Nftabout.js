@@ -13,7 +13,7 @@ function Nftabout() {
             </Row>
             <Row className="d-flex justify-content-center">
                 <Col md={10} className="text-center mx-1 text-lg-start">
-                    <h5>The collection includes a series of NFT’s representing the tools used in a labor market. Every image is categorized into a series of Bronze, silver and gold representing the rarity of the image.</h5>
+                    <h5>The collection includes a series of NFT’s representing the tools used in a labor market. Every image is categorized into a series of Bronze, Silver and Gold representing the rarity of the image.</h5>
                 </Col>
                 <Col md={10} className="text-center">
                     <img src={badge} alt="desktop preview" width="1000" />
