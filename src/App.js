@@ -6,6 +6,9 @@ import Footer from './components/Footer';
 import AboutPage from './pages/AboutPage';
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import StorePage from './pages/StorePage';
+import Coin from './pages/Coin';
+import Wurklo from './pages/Wurkloapp';
+import Nft from './pages/Nftabout';
 import { useEffect } from 'react';
 import { useStateValue } from './redux/StateProvider';
 import { auth } from './firebase';
@@ -46,6 +49,9 @@ function App() {
         <Routes>
           <Route path="/" element={<LandingPage />} />
           <Route path="about" element={<AboutPage />} />
+          <Route path="coin" element={<Coin />} />
+          <Route path="wurklo" element={<Wurklo />} />
+          <Route path="nft" element={<Nft />} />
           <Route path="storePage" element={
             <Elements stripe={promise}>
               <StorePage />

@@ -43,28 +43,6 @@ function NftPage() {
                         <Button className="button__connect mt-3">Buy</Button>
                     </Col>
                 </Row>
-                {/* make this a modal */}
-                {/* <Row className="p-5">
-                    <Col>
-                        <h2>Total to be Released: 10,000</h2>
-                        <p className="p-0 m-0">Planned Series:</p>
-                        <p className="p-0 m-0 ms-3">Laborer 2000/10000</p>
-                        <p className="p-0 m-0 ms-3">Operatives 1750/10000</p>
-                        <p className="p-0 m-0 ms-3">Service Workers 1750/10000</p>
-                        <p className="p-0 m-0 ms-3">Craft & Trade 1500/10000</p>
-                        <p className="p-0 m-0 ms-3">Professionals 1400/10000</p>
-                        <p className="p-0 m-0 ms-3">Aggregators 900/10000</p>
-                        <p className="p-0 m-0 ms-3">Special Editions 500/10000</p>
-                        <p className="p-0 m-0 ms-3">One-of-a-kinds 200/10000</p>
-                    </Col>
-                    <Col>
-                        <h2>Series Variations: 3</h2>
-                        <p className="p-0 m-0">Planned Series:</p>
-                        <p className="p-0 m-0 ms-3">Bronze</p>
-                        <p className="p-0 m-0 ms-3">Silver</p>
-                        <p className="p-0 m-0 ms-3">Gold</p>
-                    </Col>
-                </Row> */}
             </Container>
         </div>
     );

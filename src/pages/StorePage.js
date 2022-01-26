@@ -2,11 +2,6 @@ import { Container, Row, Col, Button, ModalHeader, Modal, ModalBody, ModalFooter
 import '../App.css';
 import Product from '../components/Product';
 import physicalCoinImage from "../images/physical_coin.jpg"
-// import ginagawaShirtImage from "../images/draft_ginagawa_shirt.png"
-// import ginagawaShortsImage from "../images/draft_ginagawa_shorts.png"
-// import ginagawaShirtWurkloImage from "../images/draft_ginagawa_shirt_wurklo.png"
-// import ginagawaShortsWurkloImage from "../images/draft_ginagawa_shorts_wurklo.png"
-// import coffeeMugImage from "../images/coffee_mug.jpg"
 import ShoppingBasketIcon from '@mui/icons-material/ShoppingBasket';
 import { useStateValue } from '../redux/StateProvider';
 import { getBasketTotal } from '../redux/reducer';
@@ -278,54 +273,7 @@ function StorePage() {
                             buttonText="Add to basket"
                         />
                     </Col>
-                    {/* <Col md={4} className='cards mb-5 p-3 bg-primary rounded'>
-                        <Product
-                            id="000002"
-                            title="Ginagawa Shirt"
-                            price={40}
-                            image={ginagawaShirtImage}
-                            buttonText="Add to basket"
-                        />
-                    </Col>
-                    <Col md={4} className='cards mb-5 p-3 bg-primary rounded'>
-                        <Product
-                            id="000003"
-                            title="Ginagawa Shorts"
-                            price={50}
-                            image={ginagawaShortsImage}
-                            buttonText="Add to basket"
-                        />
-                    </Col> */}
                 </Row>
-                {/* <Row className="pb-5 d-flex justify-content-around">
-                    <Col md={4} className='cards2 mb-5 p-3 bg-primary rounded'>
-                        <Product
-                            id="000004"
-                            title="Ginagawa/Wurklo Shirt"
-                            price={50}
-                            image={ginagawaShirtWurkloImage}
-                            buttonText="Add to basket"
-                        />
-                    </Col>
-                    <Col md={4} className='cards2 mb-5 p-3 bg-primary rounded'>
-                        <Product
-                            id="000005"
-                            title="Ginagawa/Wurklo Shorts"
-                            price={60}
-                            image={ginagawaShortsWurkloImage}
-                            buttonText="Add to basket"
-                        />
-                    </Col>
-                    <Col md={4} className='cards2 mb-5 p-3 bg-primary rounded'>
-                        <Product
-                            id="000006"
-                            title="Wurklo Coffee Mug"
-                            price={10}
-                            image={coffeeMugImage}
-                            buttonText="Add to basket"
-                        />
-                    </Col>
-                </Row> */}
 
                 {/* This modal for checkout */}
                 <div className='d-flex'>

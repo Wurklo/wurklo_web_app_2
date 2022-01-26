@@ -1,5 +1,6 @@
 import { Container, Row, Col, Button } from 'reactstrap';
 import mobile from '../images/new_app_mobile_design.png';
+import { Link } from 'react-router-dom';
 
 function Preview() {
 
@@ -14,7 +15,7 @@ function Preview() {
                         <h1 id="app-preview">Wurklo App</h1>
                         <p id="app-content">Wurklo allows you to create projects that you are interested in. You can hire people or get hired. You can collaborate with a team or create your own passion project. It’s your call.
                         </p>
-                        <a href='https://xd.adobe.com/view/8bbf5175-56cc-4203-8cd4-acc29b27a285-deec/'><Button className='button mx-auto' id="testAppButton">Test App</Button></a>
+                        <Link to="/Wurklo"><Button className='ms-4 ms-md-0' id="whitepaper-button">Learn more</Button></Link>
                     </Col>
                 </Row>
             </Container>

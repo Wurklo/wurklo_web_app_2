@@ -7,9 +7,7 @@ function Nex() {
             <Container className="py-5 p-lg-5 text-center text-lg-start">
                 <Row className="pb-5 py-lg-5 ps-lg-5">
                     <Col lg={8}>
-                        {/* <h1>WURK</h1>
-                        <h2>Token utility</h2>
-                        <p id="launch">The WURK token will be used for payment processing, and protecting users by holding funds in an account until the wurk is done</p> */}
+                        {/* This component just gives the slant look in background. There is a better way with CSS but this works for now */}
                     </Col>
                     <Col></Col>
                 </Row>

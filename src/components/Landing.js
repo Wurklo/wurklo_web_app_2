@@ -1,6 +1,7 @@
 import { Container, Row, Col, Button } from 'reactstrap';
 import '../App.css';
 import coin from '../images/wurklo-coin';
+import { Link } from 'react-router-dom';
 
 function Landing() {
 
@@ -15,9 +16,7 @@ function Landing() {
                         <h1>WURK</h1>
                         <h2>A Coin for Wurkers</h2>
                         <p id="launch">Token Launch:<br />Late 2022</p>
-                        <a className='mx-auto ms-3 pe-3 ms-md-auto' href='https://www.reddit.com/user/Wurklo/comments/ri14n4/what_is_wurklo/?utm_source=share&utm_medium=web2x&context=3' target="_blank" rel="noreferrer"><Button id="whitepaper-button">Learn more</Button></a>{' '}
-                        <a className='mx-auto' href='#timeline'><Button id="roadmap-button">Roadmap</Button></a>
-                        {/* <a className='ps-2' href='https://confident-brattain-44395e.netlify.app/'><Button className="p-1 px-md-5 button__testApp">Start</Button></a> */}
+                        <Link to="/coin"><Button className='ms-4 ms-md-0' id="whitepaper-button">Learn more</Button></Link>
                     </Col>
                 </Row>
             </Container>

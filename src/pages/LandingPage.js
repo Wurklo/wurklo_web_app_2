@@ -12,7 +12,6 @@ function LandingPage() {
     return (
         <>
             <Landing />
-            {/* <About /> */}
             <Preview />
             <NftPreview />
             <Nex />
