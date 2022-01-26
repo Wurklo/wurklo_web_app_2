@@ -1,16 +1,23 @@
 import { Container, Row, Col, Button } from 'reactstrap';
-import paintbrushGold from '../images/brush_gold.mp4';
-import paintbrushBronze from '../images/brush_bronze.mp4';
-import paintbrushSilver from '../images/brush_silver.mp4';
 import solseaLogo from '../images/SolSea_Logo.svg';
 import magicedenLogo from '../images/ME.png';
 import raydiumLogo from '../images/raydiumLogo.svg';
 import digitaleyesLogo from '../images/digitaleyesLogo.svg';
 import React from 'react';
 import { Link } from 'react-router-dom';
+import YouTube from 'react-youtube';
 
 
 function NftPreview() {
+
+    const opts = {
+        height: '300',
+        width: '350',
+        playerVars: {
+            autoplay: 1,
+            loop: 1,
+        },
+    };
 
     return (
         <div className="nftPreview">
@@ -26,25 +33,16 @@ function NftPreview() {
                     </Col>
                 </Row>
                 <Row className="pb-5 px-md-5">
-                    <Col className='text-center g-0'>
-                        <video className="nft" controls loop>
-                            <source src={paintbrushBronze} type="video/mp4"></source>
-                        </video>
+                    <Col xs={12} md={4} className='text-center g-0'>
+                        <YouTube className="founderVideo" videoId="2e1g9vKifmk" opts={opts} />
                         <p id='launch'>Paintbrush Bronze</p>
                     </Col>
-                    <Col className='text-center g-0'>
-                        {/* <img  src={paintbrushSilver} alt=''></img> */}
-                        <video class="nft" controls loop>
-                            <source src={paintbrushSilver} type="video/mp4"></source>
-                        </video>
+                    <Col xs={12} md={4} className='text-center g-0'>
+                        <YouTube className="founderVideo" videoId="NMl5Nr7nz8M" opts={opts} />
                         <p id='launch'>Paintbrush Silver</p>
-                        {/* <Button className="button__connect mt-3 d-none d-xl-inline" id="ToolTipComingSoon">View more</Button> */}
                     </Col>
-                    <Col className='text-center g-0'>
-                        {/* <img className='nft' src={paintbrushGold} alt=''></img> */}
-                        <video class="nft" controls loop>
-                            <source src={paintbrushGold} type="video/mp4"></source>
-                        </video>
+                    <Col xs={12} md={4} className='text-center g-0'>
+                        <YouTube className="founderVideo" videoId="ccWKYzox1qc" opts={opts} />
                         <p id='launch'>Paintbrush Gold</p>
                     </Col>
                 </Row>
@@ -67,7 +65,7 @@ function NftPreview() {
                 <Row className='mt-5'>
                     <Col className='text-center'>
                         {/* <Button className="button__connect mt-3 d-xl-none" id="ToolTipComingSoon">View more</Button> */}
-                        <Link to="/Nft"><Button className='button__connect mt-3 ms-4 ms-md-0' id="whitepaper-button">Learn more</Button></Link>
+                        <Link to="/Nft"><Button className='button__connect mt-3 ms-4' id="whitepaper-button">Learn more</Button></Link>
                     </Col>
                 </Row>
             </Container>
