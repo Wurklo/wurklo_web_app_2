@@ -1,0 +1,25 @@
+import { Container, Row, Col, Button } from 'reactstrap';
+import mobile from '../images/new_app_mobile_design.png';
+
+function Preview() {
+
+    return (
+        <div className="preview" id="preview-bg">
+            <Container className="py-5 px-4 p-lg-5 text-center text-lg-start" id='app-preview'>
+                <Row className="py-lg-5 px-lg-5">
+                    <Col className='pt-lg-4 ps-lg-5 order-lg-2'>
+                        <center><img src={mobile} alt="desktop preview" id="mobile" /></center>
+                    </Col>
+                    <Col lg={8} className="pt-5 pb-5 order-lg-1">
+                        <h1 id="app-preview">Wurklo App</h1>
+                        <p id="app-content">Wurklo allows you to create projects that you are interested in. You can hire people or get hired. You can collaborate with a team or create your own passion project. It’s your call.
+                        </p>
+                        <a href='https://xd.adobe.com/view/8bbf5175-56cc-4203-8cd4-acc29b27a285-deec/'><Button className='button mx-auto' id="testAppButton">Test App</Button></a>
+                    </Col>
+                </Row>
+            </Container>
+        </div>
+    );
+};
+
+export default Preview;

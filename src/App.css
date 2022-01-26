@@ -1,0 +1,443 @@
+@import url('https://fonts.googleapis.com/css?family=ABeeZee:400,700');
+
+* {
+  margin: 0;
+  padding: 0;
+  font-family: 'ABeeZee', sans-serif;
+  box-sizing: border-box;
+}
+
+h1 {
+  font-size: 5.4rem;
+
+}
+h2 {
+  font-size: 2.4rem;
+}
+h1, h2, p, li.nav-item, a:link, a:visited, a:active {
+  color: #e0e1dd;
+  font-weight: 700;
+}
+p {
+  font-size: 1.6rem;
+  line-height: 2rem;
+  padding: 1rem 0;
+}
+a:hover {
+  color: #ffffff;
+  cursor: pointer;
+}
+a:link {
+  font-size: 1.2rem;
+  text-decoration: none;
+  margin-right: 20px;
+}
+
+/* note: styles target reactstrap elements */
+
+/* navbar */
+nav {
+  background-color: #3f4548;
+}
+
+.navbar {
+  display: flex;
+  z-index: 1;
+}
+.navbar-dark .navbar-nav .nav-link {
+  font-size: 1.2rem;
+  padding-right: 15px;
+  letter-spacing: 1.2px;
+}
+.navbar-brand {
+  display: flex;
+  align-items: center;
+  font-weight: 700;
+}
+img.navbar-coin {
+  width: 3rem;
+  margin-right: 1rem;
+}
+.divider {
+  border-left: 1px solid #e0e1dd;
+  height: 30px;
+  margin-left: 2rem;
+  display: inline-flex;
+}
+  
+  /* landing component background-image: linear-gradient(to left, #1b5baf, #3f4548);*/
+.landing {
+  background-image: linear-gradient(to bottom right, #3f4548 30%, #1b5baf 50%);
+  /* background-image: linear-gradient(to right, #3f4548 20%, #1b5baf 70%); after adding founder story video can delete above line and uncomment this line */
+  padding-top: 5rem;
+  width: 100%;
+  height:100vh;
+}
+
+/* About Page */
+.founderVideo {
+  border-radius: 1rem;
+  width: 61%;
+}
+
+/* about component with cards */
+.about__landing {
+  background-image: linear-gradient(to bottom right, #3f4548 10%, #1b5baf 35%);
+  color: #e0e1dd;
+  /* background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='540' height='450' viewBox='0 0 1080 900'%3E%3Cg fill-opacity='0.05'%3E%3Cpolygon fill='%23444' points='90 150 0 300 180 300'/%3E%3Cpolygon points='90 150 180 0 0 0'/%3E%3Cpolygon fill='%23AAA' points='270 150 360 0 180 0'/%3E%3Cpolygon fill='%23DDD' points='450 150 360 300 540 300'/%3E%3Cpolygon fill='%23999' points='450 150 540 0 360 0'/%3E%3Cpolygon points='630 150 540 300 720 300'/%3E%3Cpolygon fill='%23DDD' points='630 150 720 0 540 0'/%3E%3Cpolygon fill='%23444' points='810 150 720 300 900 300'/%3E%3Cpolygon fill='%23e0e1dd' points='810 150 900 0 720 0'/%3E%3Cpolygon fill='%23DDD' points='990 150 900 300 1080 300'/%3E%3Cpolygon fill='%23444' points='990 150 1080 0 900 0'/%3E%3Cpolygon fill='%23DDD' points='90 450 0 600 180 600'/%3E%3Cpolygon points='90 450 180 300 0 300'/%3E%3Cpolygon fill='%23666' points='270 450 180 600 360 600'/%3E%3Cpolygon fill='%23AAA' points='270 450 360 300 180 300'/%3E%3Cpolygon fill='%23DDD' points='450 450 360 600 540 600'/%3E%3Cpolygon fill='%23999' points='450 450 540 300 360 300'/%3E%3Cpolygon fill='%23999' points='630 450 540 600 720 600'/%3E%3Cpolygon fill='%23e0e1dd' points='630 450 720 300 540 300'/%3E%3Cpolygon points='810 450 720 600 900 600'/%3E%3Cpolygon fill='%23DDD' points='810 450 900 300 720 300'/%3E%3Cpolygon fill='%23AAA' points='990 450 900 600 1080 600'/%3E%3Cpolygon fill='%23444' points='990 450 1080 300 900 300'/%3E%3Cpolygon fill='%23222' points='90 750 0 900 180 900'/%3E%3Cpolygon points='270 750 180 900 360 900'/%3E%3Cpolygon fill='%23DDD' points='270 750 360 600 180 600'/%3E%3Cpolygon points='450 750 540 600 360 600'/%3E%3Cpolygon points='630 750 540 900 720 900'/%3E%3Cpolygon fill='%23444' points='630 750 720 600 540 600'/%3E%3Cpolygon fill='%23AAA' points='810 750 720 900 900 900'/%3E%3Cpolygon fill='%23666' points='810 750 900 600 720 600'/%3E%3Cpolygon fill='%23999' points='990 750 900 900 1080 900'/%3E%3Cpolygon fill='%23999' points='180 0 90 150 270 150'/%3E%3Cpolygon fill='%23444' points='360 0 270 150 450 150'/%3E%3Cpolygon fill='%23e0e1dd' points='540 0 450 150 630 150'/%3E%3Cpolygon points='900 0 810 150 990 150'/%3E%3Cpolygon fill='%23222' points='0 300 -90 450 90 450'/%3E%3Cpolygon fill='%23e0e1dd' points='0 300 90 150 -90 150'/%3E%3Cpolygon fill='%23e0e1dd' points='180 300 90 450 270 450'/%3E%3Cpolygon fill='%23666' points='180 300 270 150 90 150'/%3E%3Cpolygon fill='%23222' points='360 300 270 450 450 450'/%3E%3Cpolygon fill='%23e0e1dd' points='360 300 450 150 270 150'/%3E%3Cpolygon fill='%23444' points='540 300 450 450 630 450'/%3E%3Cpolygon fill='%23222' points='540 300 630 150 450 150'/%3E%3Cpolygon fill='%23AAA' points='720 300 630 450 810 450'/%3E%3Cpolygon fill='%23666' points='720 300 810 150 630 150'/%3E%3Cpolygon fill='%23e0e1dd' points='900 300 810 450 990 450'/%3E%3Cpolygon fill='%23999' points='900 300 990 150 810 150'/%3E%3Cpolygon points='0 600 -90 750 90 750'/%3E%3Cpolygon fill='%23666' points='0 600 90 450 -90 450'/%3E%3Cpolygon fill='%23AAA' points='180 600 90 750 270 750'/%3E%3Cpolygon fill='%23444' points='180 600 270 450 90 450'/%3E%3Cpolygon fill='%23444' points='360 600 270 750 450 750'/%3E%3Cpolygon fill='%23999' points='360 600 450 450 270 450'/%3E%3Cpolygon fill='%23666' points='540 600 630 450 450 450'/%3E%3Cpolygon fill='%23222' points='720 600 630 750 810 750'/%3E%3Cpolygon fill='%23e0e1dd' points='900 600 810 750 990 750'/%3E%3Cpolygon fill='%23222' points='900 600 990 450 810 450'/%3E%3Cpolygon fill='%23DDD' points='0 900 90 750 -90 750'/%3E%3Cpolygon fill='%23444' points='180 900 270 750 90 750'/%3E%3Cpolygon fill='%23e0e1dd' points='360 900 450 750 270 750'/%3E%3Cpolygon fill='%23AAA' points='540 900 630 750 450 750'/%3E%3Cpolygon fill='%23e0e1dd' points='720 900 810 750 630 750'/%3E%3Cpolygon fill='%23222' points='900 900 990 750 810 750'/%3E%3Cpolygon fill='%23222' points='1080 300 990 450 1170 450'/%3E%3Cpolygon fill='%23e0e1dd' points='1080 300 1170 150 990 150'/%3E%3Cpolygon points='1080 600 990 750 1170 750'/%3E%3Cpolygon fill='%23666' points='1080 600 1170 450 990 450'/%3E%3Cpolygon fill='%23DDD' points='1080 900 1170 750 990 750'/%3E%3C/g%3E%3C/svg%3E"); */
+}
+.about {
+  background-image: linear-gradient(to top, #3f4548 35%, #1b5baf 95%);
+  color: #e0e1dd;
+  text-align: center;
+}
+#about {
+  color: #e0e1dd;
+}
+.card { 
+  border: 0px;
+}
+.card-title {
+  font-weight: 700;
+  font-size: 1.5rem;
+  color: #3f4548;
+}
+.card-text {
+  color: #3f4548;
+}
+
+.nft {
+  width: 19.5rem;
+  border-radius: 1rem;
+}
+
+/* preview of app component */
+.preview-bg {
+  background: #B1DDF1;
+}
+#preview-bg {
+  background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' version='1.1' xmlns:xlink='http://www.w3.org/1999/xlink' xmlns:svgjs='http://svgjs.com/svgjs' width='2000' height='900' preserveAspectRatio='none' viewBox='0 0 1440 600'%3e%3cg mask='url(%26quot%3b%23SvgjsMask1257%26quot%3b)' fill='none'%3e%3crect width='1440' height='600' x='0' y='0' fill='rgba(27%2c 91%2c 175%2c 1)'%3e%3c/rect%3e%3cpath d='M 0%2c519 C 288%2c468.2 1152%2c315.8 1440%2c265L1440 600L0 600z' fill='rgba(63%2c 69%2c 72%2c 1)'%3e%3c/path%3e%3c/g%3e%3cdefs%3e%3cmask id='SvgjsMask1257'%3e%3crect width='1440' height='600' fill='white'%3e%3c/rect%3e%3c/mask%3e%3c/defs%3e%3c/svg%3e");  
+  background-repeat: no-repeat;
+}
+
+/* nftpreview component*/
+.nftPreview {
+  background-image: linear-gradient(to bottom right, #3f4548 50%, #1b5baf 50%);
+}
+
+.magiceden__img {
+  width: 5rem;
+  height: auto;
+}
+
+.solseaRaydium__logos {
+  width: 10rem;
+  height: auto;
+}
+
+/* nex program component */
+.nex {
+  background-image: linear-gradient(to top right, #3f4548 50%, #1b5baf 50%);
+
+}
+.nex-img {
+
+}
+
+/* Tokenomics component */
+.tokenomics {
+  background-image: linear-gradient(to bottom, #3f4548 85%, #1b5baf 99%);
+}
+
+.anychart-credits {
+ display: none;
+}
+
+/* ending component */
+#app-content, #creator-content {
+  color:#e0e1dd;
+}
+#app-preview {
+  color: #e0e1dd;
+  font-weight: 700;
+  padding-bottom: 1rem;
+}
+.contact {
+  background: #1b5baf;
+  padding-left: 7rem;
+}
+#creator, #contact, #roadmap {
+  color: #e0e1dd;
+  padding-bottom: 2rem;
+}
+
+/* store */
+.store {
+  background-image: linear-gradient(to top, #3f4548 55%, #1b5baf 59%);
+}
+.cards {
+  width: 20rem;
+  background-image: linear-gradient(to bottom, #3f4548 85%, #1b5baf 99%);
+}
+.cards2 {
+  width: 20rem;
+  background: #1b5baf;
+}
+.basket:hover {
+  cursor: pointer;
+  color: #ff0000 !important;
+  transition: 300ms transform ease-in;
+  transform: scale(1.03);
+}
+.basket:hover > .MuiSvgIcon-root {
+  color: #ff0000 !important;
+}
+.basket:hover > .basketQuantity {
+  color: #ff0000 !important;
+}
+.actionItem:hover {
+  cursor: pointer;
+  color: #ff0000 !important;
+}
+.product-img {
+  height: 5rem;
+}
+.coinWurk {
+  color: #ff0000;
+  text-decoration: line-through;
+}
+.stripePayment__modalFooter {
+  flex: none;
+}
+.formgroup {
+  margin-bottom: 0.6rem !important;
+}
+.paymentOption__button:hover {
+  cursor: pointer;
+}
+
+/* footer component */
+footer {
+  background-image: linear-gradient(to top, #3f4548 85%, #1b5baf 99%);
+}
+.fa-fw {
+  color: #e0e1dd;
+}
+
+.facebook:hover {
+  color: #4267B2;
+  transition: 300ms transform ease-in;
+  transform: scale(1.10);
+  cursor: pointer;
+}
+
+.twitter:hover {
+  color: #1DA1F2;
+  transition: 300ms transform ease-in;
+  transform: scale(1.10);
+  cursor: pointer;
+}
+
+.telegram:hover {
+  color: #0088CC;
+  transition: 300ms transform ease-in;
+  transform: scale(1.10);
+  cursor: pointer;
+}
+
+.reddit:hover {
+  color: #FF4500;
+  transition: 300ms transform ease-in;
+  transform: scale(1.10);
+  cursor: pointer;
+}
+
+.instagram:hover {
+  color: #F77737;
+  transition: 300ms transform ease-in;
+  transform: scale(1.10);
+  cursor: pointer;
+}
+
+.discord:hover {
+  color: #5865F2;
+  transition: 300ms transform ease-in;
+  transform: scale(1.10);
+  cursor: pointer;
+}
+
+.youtube:hover {
+  color: #FF0000;
+  transition: 300ms transform ease-in;
+  transform: scale(1.10);
+  cursor: pointer;
+}
+
+.tiktok:hover {
+  color: #EE1D52;
+  transition: 300ms transform ease-in;
+  transform: scale(1.10);
+  cursor: pointer;
+}
+.medium:hover {
+  color: #000000;
+  transition: 300ms transform ease-in;
+  transform: scale(1.10);
+  cursor: pointer;
+}
+
+/* button styles for all buttons on page */
+#connect-button:hover, #roadmap-button:hover, #timeline-button:hover, #whitepaper-button:hover {
+  background: #ffffff;
+  transition: 300ms transform ease-in;
+  transform: scale(1.03);
+  color: #000000;
+}
+/* ******change all buttons to this class******* */
+.button {
+  font-size: 1.2rem;
+  padding: 1rem;
+  border: 0px;
+  margin-right: 15px;
+  color: #3f4548;
+  background: #e0e1dd;
+}
+.button:hover {
+  background: #ffffff;
+  transition: 300ms transform ease-in;
+  transform: scale(1.03);
+  color: #000000;
+}
+.button__connect {
+  color: #3f4548;
+  background: #e0e1dd;
+  padding: .25rem;
+  width: 150px;
+}
+.button__connect:hover {
+  background: #ffffff;
+  transition: 300ms transform ease-in;
+  transform: scale(1.03);
+  color: #000000;
+}
+#launch {
+  color: #B1DDF1;
+}
+.timeline-button {
+  color: #3f4548;
+  background: #e0e1dd;
+}
+.timeline-button:hover {
+  background: #ffffff;
+  transition: 300ms transform ease-in;
+  transform: scale(1.03);
+  color: #000000;
+}
+#whitepaper-button, #roadmap-button {
+  font-size: 1.2rem;
+  padding: 1rem;
+  border: 0px;
+  margin-right: 15px;
+  color: #3f4548;
+  background: #e0e1dd;
+}
+#card-button {
+  background: #e0e1dd;
+  color: #3f4548;
+  letter-spacing: .8px;
+}
+#card-button:hover {
+  background: #ff0000 !important;
+  color: #e0e1dd;
+  border: none;
+  transition: 300ms transform ease-in;
+  transform: scale(1.02);
+}
+.btn-secondary {
+  font-weight: 700;
+  border: none;
+}
+
+/* image styling */
+img {
+  max-width: 100%;
+  height: auto;
+  object-fit: contain;
+}
+#mobile {
+  height: 600px;
+  max-width:100%;
+}
+.cardImg {
+  width: 100%;
+}
+
+/* media queries */
+@media screen and (prefers-reduced-motion: no-preference) {
+  html {
+    scroll-behavior: smooth;
+  }
+}
+
+@media screen and (max-width: 1000px) {
+  .founderVideo {
+    border-radius: 1rem;
+    width: 100%;
+  }
+  .cards {
+    width: 20rem;
+    background: #3f4548 !important;
+  }
+  .cards2 {
+    width: 20rem;
+    background: #1b5baf;
+  }
+  h1 {
+    font-size: 2.6rem;
+  }
+  h2, #launch {
+    font-size: 1.6rem;
+    line-height: 1.8em;
+    margin-top: 20px;
+  }
+  .landing {
+    height: auto;
+    padding-top: 0;
+  }
+  #whitepaper-button, #roadmap-button {
+    margin-bottom: 1rem;
+  }
+  #about {
+    font-size: 1.7rem;
+    line-height: 1.8em;
+  }
+  .card {
+    width: auto;
+    height: auto;
+    margin-bottom: 50px;
+  }
+  .card-text, #app-content {
+    font-size: 1.2rem;
+  }
+  #timeline-button {
+    display: none;
+  }
+  #preview-bg {
+    background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' version='1.1' xmlns:xlink='http://www.w3.org/1999/xlink' xmlns:svgjs='http://svgjs.com/svgjs' width='2000' height='1800' preserveAspectRatio='none' viewBox='0 0 1440 600'%3e%3cg mask='url(%26quot%3b%23SvgjsMask1257%26quot%3b)' fill='none'%3e%3crect width='1440' height='600' x='0' y='0' fill='rgba(27%2c 91%2c 175%2c 1)'%3e%3c/rect%3e%3cpath d='M 0%2c519 C 288%2c468.2 1152%2c315.8 1440%2c265L1440 600L0 600z' fill='rgba(63%2c 69%2c 72%2c 1)'%3e%3c/path%3e%3c/g%3e%3cdefs%3e%3cmask id='SvgjsMask1257'%3e%3crect width='1440' height='600' fill='white'%3e%3c/rect%3e%3c/mask%3e%3c/defs%3e%3c/svg%3e");  
+    background-repeat: no-repeat;
+  }
+}
+
+@media screen and (min-width: 771px) and (max-width: 1200px) {
+
+}
+
+@media screen and (min-width: 577px) and (max-width: 770px) {
+
+}
+
+@media screen and (min-width: 660px) and (max-width: 800px) {
+  ul.timeline {
+    right: 6rem;
+  }
+}
