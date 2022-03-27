@@ -13,7 +13,7 @@ function Tokenomics() {
                             height={500}
                             title="Tokenomics"
                             type='pie'
-                            data={[['Public Sales', 10], ['Exchanges', 60], ['Team', 20], ['Reserve', 5], ['Community Rewards', 5]]}
+                            data={[['Public Sales', 10], ['Team', 20], ['Reserve', 15], ['Community Rewards', 5], ['Raydium', 5], ['Kucoin', 5], ['Binance', 5], ['Coinbase', 5], ['Development', 20], ['Marketing', 10]]}
                             background='none'
                         />
                     </Col>

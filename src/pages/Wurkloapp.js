@@ -1,5 +1,5 @@
 import React from "react";
-import mobile from '../images/new_app_mobile_design.png';
+import mobile from '../images/new_mobile_march.png';
 import { Container, Row, Col, Button } from 'reactstrap';
 
 function Wurkloapp() {
@@ -21,7 +21,7 @@ function Wurkloapp() {
                 <h5 className="mb-4">The app will assign wurkers with the ability to choose the work they want. The community will decide whether the project is worth the amount of WURK tokens, ensuring a fair market reimbursement.</h5>
                 <h5 className="mb-4">You can hire a plumber, create your passion project or rent your parking space, the possibilities are endless. You will decide the work and the amount.</h5>
                 <h5 className="mb-4">The wurklo app is a workspace that promotes local participation to create interaction between people of close proximity. Wurklo will also accommodate remote users for digital work.</h5>
-                <a href='https://xd.adobe.com/view/8bbf5175-56cc-4203-8cd4-acc29b27a285-deec/' target="_blank"><Button className="p-3 ms-4">Test App</Button></a>
+                <a href='https://xd.adobe.com/view/8bbf5175-56cc-4203-8cd4-acc29b27a285-deec/' target="_blank"><Button className="p-3 ms-4 ms-md-0">Test App</Button></a>
             </Col>
         </Row>
     </Container>

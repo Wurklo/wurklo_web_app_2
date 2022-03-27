@@ -1,5 +1,5 @@
 import { Container, Row, Col, Button } from 'reactstrap';
-import mobile from '../images/new_app_mobile_design.png';
+import mobile from '../images/new_mobile_march.png';
 import { Link } from 'react-router-dom';
 
 function Preview() {
