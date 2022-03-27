@@ -6,6 +6,7 @@ import Preview from '../components/Preview';
 import NftPreview from '../components/NftPreview';
 import Nex from '../components/Nex';
 import Tokenomics from '../components/Tokenomics';
+import Team from '../components/Team';
 
 function LandingPage() {
 
@@ -17,6 +18,7 @@ function LandingPage() {
             <Nex />
             <Tokenomics />
             <Roadmap />
+            <Team />
         </>
     );
 };
