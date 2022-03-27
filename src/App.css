@@ -84,10 +84,24 @@ img.navbar-coin {
   background-color: #1DA1F2;
 }
 
+.solscan-link {
+  color: #6ae7ad;
+}
+
+.solscan-link:hover {
+  transition: 300ms transform ease-in !important;
+  transform: scale(1.03) !important;
+}
+
 /* Coin Learn more page */
 .viewport100 {
   min-height: 70vh;
 }
+
+.font-small {
+  font-size: 0.8rem;
+}
+
 /* About Page */
 .founderVideo {
   border-radius: 1rem;

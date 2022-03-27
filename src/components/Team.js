@@ -1,10 +1,6 @@
-import { Container, Row, Col, Button } from 'reactstrap';
-import '../App.css';
-import { Link } from 'react-router-dom';
-import ContentCopyIcon from '@mui/icons-material/ContentCopy';
-import solscanLogo from "../images/solscanLogo.svg"
+import React from 'react'
 
-function Landing() {
+function Team() {
     return (
         <div className="landing">
             <Container className="pt-5 px-md-5 text-center text-md-start">
@@ -27,7 +23,7 @@ function Landing() {
                 </Row>
             </Container>
         </div>
-    );
-};
+    )
+}
 
-export default Landing;
+export default Team

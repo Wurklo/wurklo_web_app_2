@@ -1,5 +1,4 @@
 import { Container, Row, Col, Button } from 'reactstrap';
-import mobile from '../images/new_mobile_march.png';
 import { Link } from 'react-router-dom';
 
 function Preview() {
@@ -9,7 +8,7 @@ function Preview() {
             <Container className="py-5 px-4 p-lg-5 text-center text-lg-start" id='app-preview'>
                 <Row className="py-lg-5 px-lg-5">
                     <Col className='pt-lg-4 ps-lg-5 order-lg-2'>
-                        <center><img src={mobile} alt="desktop preview" id="mobile" /></center>
+                        <center><img src="https://firebasestorage.googleapis.com/v0/b/wurklo.appspot.com/o/new_mobile_march.png?alt=media&token=bc6dd2f3-3845-4cbb-b5dd-7b0ead096bdb" alt="desktop preview" id="mobile" /></center>
                     </Col>
                     <Col lg={8} className="pt-5 pb-5 order-lg-1">
                         <h1 id="app-preview">Wurklo App</h1>

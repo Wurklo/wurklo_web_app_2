@@ -1,7 +1,6 @@
 import React, { useState } from 'react';
 import { Nav, Navbar, NavbarBrand, NavbarToggler, NavItem, Collapse, NavbarText, Button } from 'reactstrap';
 import { NavLink } from 'react-router-dom';
-import coin from '../images/wurklo-coin';
 import '../styles/header.css';
 
 function Header() {
@@ -11,7 +10,7 @@ function Header() {
         <nav>
             <Navbar isOpen={isOpen} expand="xl" full dark className='container gx-md-5 px-md-5'>
                 <NavbarBrand href="/">
-                    <img src={coin} className="navbar-coin" alt="Wurklo logo" />
+                    <img src="https://firebasestorage.googleapis.com/v0/b/wurklo.appspot.com/o/wurklo-coin.png?alt=media&token=7d7b0ec0-18fb-4495-85cf-61655fa5edf4" className="navbar-coin" alt="Wurklo logo" />
                     Wurklo
                     <div className="divider d-none d-lg-block"></div>
                     <a className='ps-2' href='https://xd.adobe.com/view/8bbf5175-56cc-4203-8cd4-acc29b27a285-deec/'><NavbarText className="d-lg-inline d-lg-none"><Button className="p-1 px-lg-5 button__testApp">                            

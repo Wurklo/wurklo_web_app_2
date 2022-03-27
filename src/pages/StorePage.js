@@ -7,7 +7,6 @@ import { useStateValue } from '../redux/StateProvider';
 import { getBasketTotal } from '../redux/reducer';
 import { useState } from 'react';
 import CheckoutProduct from '../components/CheckoutProduct';
-import coin from '../images/wurklo-coin';
 import { auth, db } from '../firebase';
 import { CardElement, useStripe, useElements } from '@stripe/react-stripe-js';
 import { useEffect } from 'react';
@@ -466,7 +465,7 @@ function StorePage() {
                         toggle={() => setIsOpenSignin(isOpenSignin ? false : "isOpenSignin")}
                     >
                         <ModalHeader className='bg-primary' toggle={() => setIsOpenSignin(false)}>
-                            <img src={coin} alt="product item" className="product-img" /><span className='fs-3 ms-3 text-white'>Wurklo Store</span>
+                            <img src="https://firebasestorage.googleapis.com/v0/b/wurklo.appspot.com/o/wurklo-coin.png?alt=media&token=7d7b0ec0-18fb-4495-85cf-61655fa5edf4" alt="product item" className="product-img" /><span className='fs-3 ms-3 text-white'>Wurklo Store</span>
                         </ModalHeader>
                         <Form>
                             <ModalBody>
