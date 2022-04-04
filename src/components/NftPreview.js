@@ -88,7 +88,7 @@ function NftPreview() {
                 <Row className='mt-5'>
                     <Col className='text-center'>
                         {/* <Button className="button__connect mt-3 d-xl-none" id="ToolTipComingSoon">View more</Button> */}
-                        <Link to="/Nft"><Button className='button__connect mt-3 ms-4' id="whitepaper-button">Learn more</Button></Link>
+                        <Link to="/Nft"><Button className='button__connect mt-3 ms-4 shadow' id="whitepaper-button">Learn more</Button></Link>
                     </Col>
                 </Row>
             </Container>

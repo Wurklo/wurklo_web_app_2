@@ -14,7 +14,7 @@ function Preview() {
                         <h1 id="app-preview">Wurklo App</h1>
                         <p id="app-content">Wurklo allows you to create projects that you are interested in. You can hire people or get hired. You can collaborate with a team or create your own passion project. It’s your call.
                         </p>
-                        <Link to="/Wurklo"><Button className='ms-4 ms-md-0' id="whitepaper-button">Learn more</Button></Link>
+                        <Link to="/Wurklo"><Button className='ms-4 ms-md-0 shadow' id="whitepaper-button">Learn more</Button></Link>
                     </Col>
                 </Row>
             </Container>
