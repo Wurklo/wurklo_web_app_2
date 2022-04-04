@@ -1,7 +1,13 @@
-import React from "react";
-import { Container, Row, Col, Button } from 'reactstrap';
+import React, { useState } from "react";
+import { useEffect } from "react";
+import { Container, Row, Col, Button, Modal, ModalHeader, ModalBody, ModalFooter } from 'reactstrap';
 
 function BuyNow() {
+    const [modal, toggleModal] = useState(false);
+
+    useEffect(() => {
+        toggleModal(!modal);
+    }, [])
 
     return (
         <Container className="viewport100">
@@ -50,6 +56,26 @@ function BuyNow() {
                     <a href="https://form.jotform.com/220934667804159" target="_blank" rel="noreferrer"><Button className='ms-4 ms-md-0 bg-primary text-white shadow' id="whitepaper-button">Buy Tier 4</Button></a>
                 </Col>
             </Row>
+            <div>
+                <Modal
+                    fullscreen="md"
+                    size="lg"
+                    isOpen={modal}
+                >
+                    <ModalHeader className="align-self-center">
+                        <h5 className="text-primary">Terms, Conditions, Risk</h5>
+                    </ModalHeader>
+                    <ModalBody>
+                        By purchasing the WURK token you are agreeing to the terms, conditions, and risks associated with this action. See terms & conditions <a href="https://app.gitbook.com/s/LY9HmOSYr92cf33JmybV/tokenomics/vesting" className="p-0 m-0 text-primary" target="_blank" rel="noreferrer">here</a>. Additionally, there are risk involved with purchasing tokens. Tokens have no value except the value placed on them by people who buy them. WURK tokens value will come from the use of the token within our app for payment processing. However, there is the risk that we will not be successfull, and the token value could be zero. Therefore, any money you use to purchase the WURK token could be gone forever. You should only buy an amount you can handle losing as this is a very real possibility. Finally, in the event that we are unsuccessfull, remaining funds will be divided among current holders of WURK tokens, and we will send the divided portions in USDT to those holders. The exception is tier 1 presale group which have a 50% guarantee for 1 year. Terms, conditions, and risks can be updated at anytime and will notify community of changes. 
+                    </ModalBody>
+                    <ModalFooter>
+                        {' '}
+                        <Button onClick={() => toggleModal(!modal)}>
+                            I Agree
+                        </Button>
+                    </ModalFooter>
+                </Modal>
+            </div>
         </Container>
     );
 };
