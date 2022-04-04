@@ -14,7 +14,7 @@ import { useStateValue } from './redux/StateProvider';
 import { auth } from './firebase';
 import { loadStripe } from '@stripe/stripe-js'
 import { Elements } from '@stripe/react-stripe-js';
-
+import BuyNow from './pages/BuyNow'
 const promise = loadStripe('pk_live_51JYEXdBXcG2jvy6vyRVjj3OAvZy9GZ1Hpa87EX34I5Gq0QFyaKcUdBLLfFlYYExdCNB1HBowg87ztJHcdsSjjjFB00nj9IRUQc');
 
 function App() {
@@ -48,6 +48,7 @@ function App() {
         <Header />
         <Routes>
           <Route path="/" element={<LandingPage />} />
+          <Route path="buynow" element={<BuyNow />} />
           <Route path="about" element={<AboutPage />} />
           <Route path="coin" element={<Coin />} />
           <Route path="wurklo" element={<Wurklo />} />

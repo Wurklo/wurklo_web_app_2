@@ -22,6 +22,7 @@ function Landing() {
                         <br />
                         <a href='https://solscan.io/token/GYyL45cnhDWEcr2iEs5sxWND5SLXa7VMFUmwp1uM92YV' target="_blank" rel="noreferrer"><img className='solseaRaydium__logos mt-lg-2 mb-3 ms-4 ms-md-0' src={solscanLogo} alt=''></img></a>
                         <p id="launch">Token Launch:<br />Late 2022</p>
+                        <Link to="/buynow"><Button className='ms-4 ms-md-0' id="whitepaper-button">Buy Now</Button></Link>
                         <Link to="/coin"><Button className='ms-4 ms-md-0' id="whitepaper-button">Learn more</Button></Link>
                     </Col>
                 </Row>
