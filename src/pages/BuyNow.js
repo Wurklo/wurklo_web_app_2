@@ -1,14 +1,15 @@
 import React from "react";
 import { Container, Row, Col, Button } from 'reactstrap';
-import { Link } from 'react-router-dom';
 
 function BuyNow() {
 
     return (
         <Container className="viewport100">
             <Row className="my-4">
-                <Col>
-                    <h1 className="text-primary text-center mt-4">Presale</h1>
+                <Col className="text-center mt-4">
+                    <h1 className="text-primary">Presale</h1>
+                    <p className="text-primary pb-0">Start Date: April 4, 2022</p>
+                    <p className="text-primary pt-0">End Date: Token Launch</p>
                 </Col>
             </Row>
             <Row className="d-flex justify-content-center ms-md-5 ps-md-5">
