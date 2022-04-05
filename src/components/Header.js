@@ -1,6 +1,5 @@
 import React, { useState } from 'react';
 import { Nav, Navbar, NavbarBrand, NavbarToggler, NavItem, Collapse, NavbarText, Button } from 'reactstrap';
-import { NavLink } from 'react-router-dom';
 import '../styles/header.css';
 
 function Header() {
@@ -24,8 +23,8 @@ function Header() {
                     <Nav navbar className="justify-content-start" style={{ width: "100%" }}>
                         <NavItem className='pt-1 pt-lg-0'><a onClick={() => setIsOpen(false)} href='/#tokenomics'>Tokenomics</a></NavItem>
                         <NavItem className='pt-1 pt-lg-0'><a onClick={() => setIsOpen(false)} href='/#timeline'>Roadmap</a></NavItem>
-                        <NavItem className='pt-1 pt-lg-0'><a onClick={() => setIsOpen(false)} href='https://wurklo.gitbook.io/wurklo/' target="_blank" rel="noreferrer">Whitepaper</a></NavItem>
-                        <NavItem className='pt-1 pt-lg-0'><NavLink onClick={() => setIsOpen(false)} to="/about">Founder's Story</NavLink></NavItem>
+                        <NavItem className='pt-1 pt-lg-0'><a onClick={() => setIsOpen(false)} href='https://wurklo.gitbook.io/wurklo/' target="_blank" rel="noreferrer">Whitepaper/GitBook</a></NavItem>
+                        {/* <NavItem className='pt-1 pt-lg-0'><NavLink onClick={() => setIsOpen(false)} to="/about">Founder's Story</NavLink></NavItem> */}
                         {/* <NavItem className='mb-2 py-1 mb-lg-0 py-lg-0'><NavLink onClick={() => setIsOpen(false)} to="/storePage">Store</NavLink></NavItem> */}
                         {/* <NavItem><NavLink onClick={() => setIsOpen(false)} to="/nex">NEx</NavLink></NavItem> */}
                         {/* <NavItem><NavLink onClick={() => setIsOpen(false)} to="#">Download</NavLink></NavItem> */}
