@@ -56,6 +56,8 @@ function BuyNow() {
                     <a href="https://form.jotform.com/220934667804159" target="_blank" rel="noreferrer"><Button className='ms-4 ms-md-0 bg-primary text-white shadow' id="whitepaper-button">Buy Tier 4</Button></a>
                 </Col>
             </Row>
+
+            {/* risk modal */}
             <div>
                 <Modal
                     fullscreen="md"
