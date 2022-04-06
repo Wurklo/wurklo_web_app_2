@@ -9,7 +9,7 @@ function closeNav() {
 }
 
 function Header() {
-    const [user, setUser] = useState("Bobby");
+    const [user] = useState("Bobby");
     
     return (
         <div className='header' id="header">
@@ -21,10 +21,10 @@ function Header() {
                 {user ? <img src="https://lh3.googleusercontent.com/a-/AOh14GgdkLuhZwHKkewS9UZN-0fI4DD1LdywsKJiig-LMw=s288-p-rw-no" className="shadow" alt="Profile Pic" /> : <img src="https://www.mtsolar.us/wp-content/uploads/2020/04/avatar-placeholder.png" className="shadow" alt="Profile Pic" /> }
             </div>
             <div id="mySidebar" className="sidebar shadow">
-                <a className="closebtn" onClick={() => closeNav()}>×</a>
+                <button className="closebtn" onClick={() => closeNav()}>×</button>
                 <a href="/">My Account</a>
                 <a href="/">Messages</a>
-                <a href="/">Favorites</a>
+                <a href="/">Contacts</a>
                 {user ? <a href="/">Sign out</a> : <a href="/">Sign in</a>}
             </div>
         </div>

@@ -24,7 +24,7 @@ function Profile() {
             <Row className='text-start'>
                 <Col>
                     <Input
-                        className='mt-3 shadow'
+                        className='mt-3 p-3 shadow'
                         placeholder='Send a message ...'
                         value={message}
                         onChange={e => setMessage(e.target.value)}

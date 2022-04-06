@@ -1,4 +1,4 @@
-import { Button, Input, Form } from 'reactstrap';
+import { Input } from 'reactstrap';
 import SearchIcon from '@mui/icons-material/Search';
 import { useState } from 'react';
 import { useNavigate } from "react-router-dom";
@@ -28,7 +28,7 @@ function Search() {
                     <button
                         type='submit'
                         onClick={handleSearch}
-                        className='search__button p-2'
+                        className='search__button p-1 pe-2'
                     >
                         <ArrowForwardRoundedIcon />
                     </button>
