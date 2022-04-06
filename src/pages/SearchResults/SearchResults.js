@@ -11,6 +11,11 @@ function SearchResults() {
                     <Search />
                 </Col>
             </Row>
+            <Row>
+                <Col className='searchResults__searchInput mt-3'>
+                    <a href='#'>1 2 3 4 5 6 7 8 9 ... 3,000,234 pages</a>
+                </Col>
+            </Row>
             <Row className='mx-5 mb-5'>
                 <WurkerCard />
                 <WurkerCard />

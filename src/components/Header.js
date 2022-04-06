@@ -20,7 +20,7 @@ function Header() {
             <div className='header__right' onClick={() => openNav()}>
                 {user ? <img src="https://lh3.googleusercontent.com/a-/AOh14GgdkLuhZwHKkewS9UZN-0fI4DD1LdywsKJiig-LMw=s288-p-rw-no" className="shadow" alt="Profile Pic" /> : <img src="https://www.mtsolar.us/wp-content/uploads/2020/04/avatar-placeholder.png" className="shadow" alt="Profile Pic" /> }
             </div>
-            <div id="mySidebar" className="sidebar">
+            <div id="mySidebar" className="sidebar shadow">
                 <a className="closebtn" onClick={() => closeNav()}>×</a>
                 <a href="/">My Account</a>
                 <a href="/">Messages</a>

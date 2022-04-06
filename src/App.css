@@ -8,7 +8,7 @@
 }
 
 a:hover {
-  color: #ffffff;
+  color: #43cce4;
   cursor: pointer !important;
 }
 a:link {
@@ -100,21 +100,28 @@ img.navbar-coin {
   justify-content: center;
   align-items: center;
 }
-
 .search__input {
   border-radius: 10rem;
   padding: .8rem;
 }
-
 .search__inputContainer {
   position: relative;
   width: 35rem;
 }
-
 .search__searchIcon {
   position: absolute;
   top: .8rem;
   left: 1rem;
+}
+.search__button {
+  position: absolute;
+  background-color: rgb(255, 255, 255);
+  border: none;
+  border-top-right-radius: 2rem;
+  border-bottom-right-radius: 2rem;
+  color: gray;
+  top: .3rem;
+  right: .1rem;
 }
 
 /* Search Results */
@@ -234,6 +241,13 @@ footer {
   .search__inputContainer {
     position: relative;
     width: 20rem;
+  }
+  .search {
+    height: 60vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
   }
 }
 
