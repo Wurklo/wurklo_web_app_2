@@ -1,13 +1,11 @@
 import React from 'react';
 import './App.css';
 import Header from './components/Header';
-import LandingPage from './pages/LandingPage';
+import LandingPage from './pages/Home/LandingPage';
 import Footer from './components/Footer';
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
-import Coin from './pages/Coin';
-import Wurklo from './pages/Wurkloapp';
-import Nft from './pages/Nftabout';
-import BuyNow from './pages/BuyNow'
+import SearchResults from './pages/SearchResults/SearchResults';
+import Profile from './pages/Profile/Profile';
 
 function App() {
   return (
@@ -16,12 +14,10 @@ function App() {
         <Header />
         <Routes>
           <Route path="/" element={<LandingPage />} />
-          <Route path="buynow" element={<BuyNow />} />
-          <Route path="coin" element={<Coin />} />
-          <Route path="wurklo" element={<Wurklo />} />
-          <Route path="nft" element={<Nft />} />
+          <Route path="/search-results" element={<SearchResults />} />
+          <Route path="/profile/:id" element={<Profile />} />
         </Routes>
-        <Footer />
+        {/* <Footer /> */}
       </BrowserRouter>
     </div>
   );
