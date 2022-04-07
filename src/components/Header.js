@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { Link } from 'react-router-dom';
 
 function openNav() {
     document.getElementById("mySidebar").style.width = "250px";
@@ -18,13 +19,13 @@ function Header() {
                 <p className='header__logoText pt-3 fs-3 text-secondary'>Wurklo</p>
             </div>
             <div className='header__right' onClick={() => openNav()}>
-                {user ? <img src="https://lh3.googleusercontent.com/a-/AOh14GgdkLuhZwHKkewS9UZN-0fI4DD1LdywsKJiig-LMw=s288-p-rw-no" className="shadow" alt="Profile Pic" /> : <img src="https://www.mtsolar.us/wp-content/uploads/2020/04/avatar-placeholder.png" className="shadow" alt="Profile Pic" /> }
+                {user ? <img src="https://firebasestorage.googleapis.com/v0/b/wurklo.appspot.com/o/profilePic.webp?alt=media&token=f0f6e321-e5b7-4825-8c34-c90d39ad800d" className="shadow" alt="Profile Pic" /> : <img src="https://www.mtsolar.us/wp-content/uploads/2020/04/avatar-placeholder.png" className="shadow" alt="Profile Pic" /> }
             </div>
             <div id="mySidebar" className="sidebar shadow">
                 <button className="closebtn" onClick={() => closeNav()}>×</button>
-                <a href="/">My Account</a>
-                <a href="/">Messages</a>
-                <a href="/">Contacts</a>
+                <Link to="/my-account/">My Account</Link>
+                <Link to="/messages">Messages</Link>
+                <Link to="/contacts">Contacts</Link>
                 {user ? <a href="/">Sign out</a> : <a href="/">Sign in</a>}
             </div>
         </div>

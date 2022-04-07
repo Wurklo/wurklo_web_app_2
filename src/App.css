@@ -36,6 +36,7 @@ a:link {
 }
 .header__right > img {
   width: 3rem;
+  height: 3rem;
   border-radius: 10rem;
   border: 2px solid #3f4548;
   cursor: pointer;
@@ -133,7 +134,15 @@ img.navbar-coin {
   border-radius: 1rem;
   cursor: pointer;
 }
+.wurkerCard:hover {
+  transition: 3ms transform ease-in;
+  transform: scale(1.05);
+}
 .wurkerCard > img {
+  width: 18rem;
+  height: 18rem;
+  object-fit: cover;
+  overflow: hidden;  
   border-radius: 1rem;
 }
 .wurkerCard__wurkerInfo {
@@ -159,7 +168,34 @@ img.navbar-coin {
   margin-top: -3px;
 }
 .profile__image > img {
+  width: 18rem;
+  height: 18rem;
+  object-fit: cover;
+  overflow: hidden;
   border-radius: 2rem;
+}
+
+/* Messages */
+.messageCard {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 1rem;
+  cursor: pointer;
+}
+.messageCard:hover {
+  transition: 3ms transform ease-in;
+  transform: scale(1.05);
+}
+.messageCard > img {
+  width: 8rem;
+  height: 8rem;
+  object-fit: cover;
+  overflow: hidden;  
+  border-radius: 1rem;
+}
+.messageCard__info {
+  width: 80%;
 }
 
 /* footer component */
@@ -251,6 +287,24 @@ footer {
     justify-content: center;
     align-items: center;
   }
+  .messageCard__info {
+    width: 70%;
+  }
+  .wurkerCard > img {
+    width: 22rem;
+    height: 22rem;
+    object-fit: cover;
+    overflow: hidden;  
+    border-radius: 1rem;
+  }
+  .wurkerCard:hover {
+    transition: none;
+    transform: none;
+  }
+  .messageCard:hover {
+    transition: none;
+    transform: none;
+  }
 }
 
 @media screen and (min-width: 771px) and (max-width: 1200px) {
@@ -271,5 +325,12 @@ footer {
   .search__inputContainer {
     position: relative;
     width: 15rem;
+  }
+  .wurkerCard > img {
+    width: 15rem;
+    height: 15rem;
+    object-fit: cover;
+    overflow: hidden;  
+    border-radius: 1rem;
   }
 }
