@@ -5,7 +5,7 @@ function LandingPage() {
 
     return (
         <div className='search'>
-            <Search />
+            <Search placeholderValue="Search wurkers ... ex. full stack developer, react"/>
         </div>
     );
 };

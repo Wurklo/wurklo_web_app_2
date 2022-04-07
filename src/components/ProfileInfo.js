@@ -14,7 +14,7 @@ function ProfileInfo() {
                 <p>Available 24/7</p>
                 <p>P# 555-555-5555</p>
                 <p>E# bobbykeel@gmail.com</p>
-                <p>Reviews</p>
+                <p>Performance Evaluation</p>
             </Col>
         </>
     )
