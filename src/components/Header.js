@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
-import logo from '../images/VectorEPS_ByTailorBrands1.svg'
+import logo from '../images/VectorEPS_ByTailorBrands2.svg'
 function openNav() {
     document.getElementById("mySidebar").style.width = "250px";
 }
