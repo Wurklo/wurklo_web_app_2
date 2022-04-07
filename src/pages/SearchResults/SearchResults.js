@@ -1,14 +1,24 @@
-import React from 'react'
+import React, { useEffect, useState } from 'react'
 import { Col, Container, Row } from 'reactstrap'
 import Search from '../../components/Search'
 import WurkerCard from '../../components/WurkerCard'
+import {db} from '../../firebase';
 
 function SearchResults() {
+    const [wurkers, setWurkers] = useState([]);
+
+    useEffect(() => {
+        db.collection('wurkers').onSnapshot(snapshot => {
+            setWurkers(snapshot.docs.map(doc => doc.data()))
+        })
+    }, [])
+    console.log(wurkers)
+    
     return (
         <Container fluid>
             <Row>
                 <Col className='searchResults__searchInput'>
-                    <Search placeholderValue="Search wurkers ... ex. full stack developer, react"/>
+                    <Search placeholderValue="Search wurkers ... ex. full stack developer, react" />
                 </Col>
             </Row>
             <Row>
@@ -17,26 +27,17 @@ function SearchResults() {
                 </Col>
             </Row>
             <Row className='mx-5 mb-5'>
-                <WurkerCard />
-                <WurkerCard />
-                <WurkerCard />
-                <WurkerCard />
-                <WurkerCard />
-                <WurkerCard />
-                <WurkerCard />
-                <WurkerCard />
-                <WurkerCard />
-                <WurkerCard />
-                <WurkerCard />
-                <WurkerCard />
-                <WurkerCard />
-                <WurkerCard />
-                <WurkerCard />
-                <WurkerCard />
-                <WurkerCard />
-                <WurkerCard />
-                <WurkerCard />
-                <WurkerCard />
+                {
+                    wurkers.map(wurker => (
+                        <WurkerCard
+                            uid={wurker.uid}
+                            name={wurker.name}
+                            skill={wurker.skill}
+                            imageUrl={wurker.imageUrl}
+                        />
+                    ))
+                }
+
             </Row>
         </Container>
     )

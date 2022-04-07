@@ -52,7 +52,8 @@ img.navbar-coin {
 }
 .header__logoText {
   text-shadow: 5px 5px 10px rgba(0, 0, 0, 0.3);
-  color: #6c757d;
+  color: #727374;
+  font-weight: 600;
 }
 
 .sidebar {
@@ -133,8 +134,9 @@ img.navbar-coin {
 
 /* Search Results */
 .wurkerCard {
+  width: 18rem;
+  height: 18rem;
   position: relative;
-  width: fit-content;
   border-radius: 1rem;
   cursor: pointer;
 }
@@ -294,6 +296,13 @@ footer {
   .messageCard__info {
     width: 70%;
   }
+  .wurkerCard {
+    width: 22rem;
+    height: 22rem;
+    position: relative;
+    border-radius: 1rem;
+    cursor: pointer;
+  }
   .wurkerCard > img {
     width: 22rem;
     height: 22rem;
@@ -336,5 +345,12 @@ footer {
     object-fit: cover;
     overflow: hidden;  
     border-radius: 1rem;
+  }
+  .wurkerCard {
+    width: 15rem;
+    height: 15rem;
+    position: relative;
+    border-radius: 1rem;
+    cursor: pointer;
   }
 }

@@ -1,5 +1,6 @@
 import React from 'react'
 import { Container, Row } from 'reactstrap'
+import CreateWurker from '../../components/CreateWurker'
 import ProfileInfo from '../../components/ProfileInfo'
 
 function MyAccount() {
@@ -7,6 +8,7 @@ function MyAccount() {
         <Container className='mt-3 text-center text-md-start'>
             <Row>
                 <ProfileInfo />
+                <CreateWurker />
             </Row>
         </Container>
     )

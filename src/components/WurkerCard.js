@@ -1,21 +1,20 @@
-import React, { useState } from 'react'
+import React from 'react'
 import { Col } from 'reactstrap'
 import { useNavigate } from "react-router-dom";
 
-function WurkerCard() {
+function WurkerCard({ uid, name, skill, imageUrl }) {
     const navigate = useNavigate();
-    const [user] = useState("Bobby");
 
-    const openProfile = () =>{
-        navigate(`/profile/${user}`)
+    const openProfile = () => {
+        navigate(`/profile/${uid}`)
     }
     return (
         <Col className='mb-4 d-flex justify-content-center'>
             <div className='wurkerCard shadow' onClick={openProfile}>
-                <img src="https://firebasestorage.googleapis.com/v0/b/wurklo.appspot.com/o/profilePic.webp?alt=media&token=f0f6e321-e5b7-4825-8c34-c90d39ad800d" className="shadow" alt="Profile Pic" />
+                <img src={imageUrl} className="shadow" alt="Profile Pic" />
                 <div className='wurkerCard__wurkerInfo'>
-                    <h5 className='wurkerCard__text text-white'>Bobby Keel</h5>
-                    <p className='wurkerCard__text text-white'>Full Stack Developer</p>
+                    <h5 className='wurkerCard__text text-white'>{name}</h5>
+                    <p className='wurkerCard__text text-white'>{skill}</p>
                 </div>
             </div>
         </Col>
