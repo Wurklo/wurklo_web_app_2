@@ -9,7 +9,7 @@ function ProfileInfo() {
             </Col>
             <Col className='mt-4 mt-md-2'>
                 <h3>Bobby Keel</h3>
-                <p>Plumber</p>
+                <p>Full Stack Developer</p>
                 <p>$25/hr</p>
                 <p>Available 24/7</p>
                 <p>P# 555-555-5555</p>

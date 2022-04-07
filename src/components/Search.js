@@ -4,7 +4,7 @@ import { useState } from 'react';
 import { useNavigate } from "react-router-dom";
 import ArrowForwardRoundedIcon from '@mui/icons-material/ArrowForwardRounded';
 
-function Search() {
+function Search({placeholderValue}) {
     const [search, setSearch] = useState('');
     const navigate = useNavigate();
 
@@ -20,7 +20,7 @@ function Search() {
                 <form>
                     <Input
                         className='search__input shadow ps-5'
-                        placeholder='Search wurkers ... ex. plumber, leaking roof'
+                        placeholder={placeholderValue}
                         value={search}
                         onChange={e => setSearch(e.target.value)}
                     />

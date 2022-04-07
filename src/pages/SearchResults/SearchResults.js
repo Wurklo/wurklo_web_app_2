@@ -8,12 +8,12 @@ function SearchResults() {
         <Container fluid>
             <Row>
                 <Col className='searchResults__searchInput'>
-                    <Search />
+                    <Search placeholderValue="Search wurkers ... ex. full stack developer, react"/>
                 </Col>
             </Row>
             <Row>
                 <Col className='searchResults__searchInput mt-3'>
-                    <p className='text-center'>1 2 3 4 5 6 7 8 9 ... 3,000,234 pages for plumbers</p>
+                    <p className='text-center'>1 2 3 4 5 6 7 8 9 ... 3,000,234 pages for full stack developer</p>
                 </Col>
             </Row>
             <Row className='mx-5 mb-5'>
