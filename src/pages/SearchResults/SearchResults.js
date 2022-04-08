@@ -9,7 +9,10 @@ function SearchResults() {
 
     useEffect(() => {
         db.collection('wurkers').onSnapshot(snapshot => {
-            setWurkers(snapshot.docs.map(doc => doc.data()))
+            setWurkers(snapshot.docs.map(doc => ({
+                id: doc.id,
+                wurker: doc.data()
+            })));
         })
     }, [])
     console.log(wurkers)
@@ -28,9 +31,10 @@ function SearchResults() {
             </Row>
             <Row className='mx-5 mb-5'>
                 {
-                    wurkers.map(wurker => (
+                    wurkers.map(({id, wurker}) => (
                         <WurkerCard
-                            uid={wurker.uid}
+                            key={id}
+                            id={id}
                             name={wurker.name}
                             skill={wurker.skill}
                             imageUrl={wurker.imageUrl}

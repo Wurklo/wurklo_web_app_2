@@ -2,11 +2,11 @@ import React from 'react'
 import { Col } from 'reactstrap'
 import { useNavigate } from "react-router-dom";
 
-function WurkerCard({ uid, name, skill, imageUrl }) {
+function WurkerCard({ id, name, skill, imageUrl }) {
     const navigate = useNavigate();
 
     const openProfile = () => {
-        navigate(`/profile/${uid}`)
+        navigate(`/profile/${id}`)
     }
     return (
         <Col className='mb-4 d-flex justify-content-center'>

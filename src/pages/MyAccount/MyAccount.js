@@ -8,6 +8,8 @@ function MyAccount() {
         <Container className='mt-3 text-center text-md-start'>
             <Row>
                 <ProfileInfo />
+            </Row>
+            <Row>
                 <CreateWurker />
             </Row>
         </Container>

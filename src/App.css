@@ -173,7 +173,7 @@ img.navbar-coin {
   border-top: 0;
   margin-top: -3px;
 }
-.profile__image > img {
+.profileInfo__image > img {
   width: 18rem;
   height: 18rem;
   object-fit: cover;
@@ -202,6 +202,11 @@ img.navbar-coin {
 }
 .messageCard__info {
   width: 80%;
+}
+
+/* My Account */
+.createWurker {
+  
 }
 
 /* footer component */
@@ -318,6 +323,13 @@ footer {
     transition: none;
     transform: none;
   }
+  .profileInfo__image > img {
+    width: 22rem;
+    height: 22rem;
+    object-fit: cover;
+    overflow: hidden;
+    border-radius: 2rem;
+  }
 }
 
 @media screen and (min-width: 771px) and (max-width: 1200px) {
@@ -352,5 +364,12 @@ footer {
     position: relative;
     border-radius: 1rem;
     cursor: pointer;
+  }
+  .profileInfo__image > img {
+    width: 15rem;
+    height: 15rem;
+    object-fit: cover;
+    overflow: hidden;
+    border-radius: 2rem;
   }
 }
