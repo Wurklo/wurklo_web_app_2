@@ -90,6 +90,7 @@ function CreateWurker() {
                 Create Wurker Profile
             </Button>
             <Modal
+                className='createWurker__modal'
                 fullscreen="md"
                 scrollable
                 size="lg"
@@ -97,7 +98,7 @@ function CreateWurker() {
                 toggle={() => setIsModalOpen(isModalOpen ? false : "isOpenCheckout")}
             >
                 <ModalHeader className='p-2 ms-2 ms-lg-0 p-lg-3' toggle={() => setIsModalOpen(false)}>
-                    <h3 className='text-primary m-0'><strong>Create a wurker</strong></h3>
+                    <h3 className='text-secondary m-0'><strong>Create Wurker Profile</strong></h3>
                 </ModalHeader>
                 <ModalBody className=' pt-0'>
                     <Col className="createWurker text-center mt-0 mx-auto">

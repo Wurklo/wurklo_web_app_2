@@ -20,6 +20,12 @@ a:link {
   filter: drop-shadow( 3px 5px 4px rgba(0, 0, 0, .3));
   /* Similar syntax to box-shadow */
 }
+.modal-content {
+  border-radius: 2rem;
+}
+.make-round {
+  border-radius: 2rem !important;
+}
 /* note: styles target reactstrap elements */
 
 /* header */
@@ -166,12 +172,19 @@ img.navbar-coin {
 }
 
 /* profile */
+.profile__messageInput {
+  border-top-left-radius: 2rem;
+  border-top-right-radius: 2rem;
+  border: 0;
+}
 .profile__messageBox {
   max-height: 45rem;
   min-height: 20rem;
   border: 1px solid lightgray;
-  border-top: 0;
+  border: 0;
   margin-top: -3px;
+  border-bottom-left-radius: 2rem !important;
+  border-bottom-right-radius: 2rem !important;
 }
 .profileInfo__image > img {
   width: 18rem;
