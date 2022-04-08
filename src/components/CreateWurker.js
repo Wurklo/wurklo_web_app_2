@@ -7,6 +7,10 @@ function CreateWurker() {
     const [name, setName] = useState('');
     const [email, setEmail] = useState('');
     const [skill, setSkill] = useState('');
+    const [yearsOfExp, setYearsOfExp] = useState('');
+    const [highestEdu, setHighestEdu] = useState('');
+    const [certsLicenses, setCertsLicenses] = useState('');
+    const [references, setReferences] = useState('');
     const [availability, setAvailability] = useState('');
     const [phone, setPhone] = useState('');
     const [portfolioLink, setPortfolioLink] = useState('');
@@ -47,18 +51,27 @@ function CreateWurker() {
                             name: name,
                             email: email,
                             skill: skill,
+                            yearsOfExp: yearsOfExp,
+                            highestEdu: highestEdu,
+                            certsLicenses: certsLicenses,
                             availability: availability,
                             phone: phone,
                             portfolioLink: portfolioLink,
+                            references: references,
                             imageUrl: url
                         });
                         setProgress(0);
                         setName('')
+                        setEmail('')
                         setSkill('')
+                        setYearsOfExp('')
+                        setHighestEdu('')
+                        setCertsLicenses('')
                         setAvailability('')
                         setPhone('')
                         setPortfolioLink('')
-                        setImageFile(null)
+                        setReferences('')
+                        setImageFile('')
                     })
             }
         )
@@ -87,6 +100,24 @@ function CreateWurker() {
             />
             <Input
                 className='search__input shadow mt-4'
+                placeholder="Years of experience ..."
+                value={yearsOfExp}
+                onChange={e => setYearsOfExp(e.target.value)}
+            />
+            <Input
+                className='search__input shadow mt-4'
+                placeholder="Highest education ..."
+                value={highestEdu}
+                onChange={e => setHighestEdu(e.target.value)}
+            />
+            <Input
+                className='search__input shadow mt-4'
+                placeholder="Certifications/Licenses ..."
+                value={certsLicenses}
+                onChange={e => setCertsLicenses(e.target.value)}
+            />
+            <Input
+                className='search__input shadow mt-4'
                 placeholder="Availability ex. 24/7, 8-5pm M-F, etc ..."
                 value={availability}
                 onChange={e => setAvailability(e.target.value)}
@@ -105,6 +136,12 @@ function CreateWurker() {
             />
             <Input
                 className='search__input shadow mt-4'
+                placeholder="References ..."
+                value={references}
+                onChange={e => setReferences(e.target.value)}
+            />
+            <Input
+                className='search__input shadow mt-4'
                 placeholder="Portfolio Link ..."
                 onChange={handleChange}
                 type="file"
@@ -116,11 +153,6 @@ function CreateWurker() {
             >
                 Create Wurker
             </Button>
-
-            {/* years expr input */}
-            {/* highest education input */}
-            {/* references 3 input */}
-            {/* certifications input */}
         </Col>
     )
 }
