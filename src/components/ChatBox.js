@@ -7,7 +7,7 @@ function ChatBox() {
 
     return (
         <>
-            <Col>
+            <Col className='mt-4'>
                 <Input
                     className='mt-3 p-3 shadow'
                     placeholder='Send a message ...'
