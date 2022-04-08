@@ -214,9 +214,12 @@ img.navbar-coin {
   width: 80%;
 }
 
-/* My Account */
+/* create wurker */
 .createWurker {
   
+}
+.createWurker__button {
+  border-radius: 2rem;
 }
 
 /* footer component */
@@ -302,7 +305,7 @@ footer {
     width: 20rem;
   }
   .search {
-    height: 60vh;
+    height: 80vh;
     display: flex;
     flex-direction: column;
     justify-content: center;

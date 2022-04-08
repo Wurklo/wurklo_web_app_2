@@ -1,5 +1,5 @@
 import React from 'react'
-import { Container, Row } from 'reactstrap'
+import { Col, Container, Row } from 'reactstrap'
 import CreateWurker from '../../components/CreateWurker'
 import ProfileInfo from '../../components/ProfileInfo'
 
@@ -28,7 +28,9 @@ function MyAccount() {
                 />
             </Row>
             <Row>
-                <CreateWurker />
+                <Col md={6} className='mt-4 ms-0 ms-lg-5 mb-4'>
+                    <CreateWurker />
+                </Col>
             </Row>
         </Container>
     )
