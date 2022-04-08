@@ -14,8 +14,7 @@ function SearchResults() {
                 wurker: doc.data()
             })));
         })
-    }, [])
-    console.log(wurkers)
+    }, []);
     
     return (
         <Container fluid>

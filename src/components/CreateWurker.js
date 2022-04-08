@@ -5,6 +5,7 @@ import firebase from 'firebase';
 
 function CreateWurker() {
     const [name, setName] = useState('');
+    const [email, setEmail] = useState('');
     const [skill, setSkill] = useState('');
     const [availability, setAvailability] = useState('');
     const [phone, setPhone] = useState('');
@@ -44,6 +45,7 @@ function CreateWurker() {
                         db.collection("wurkers").add({
                             timestamp: firebase.firestore.FieldValue.serverTimestamp(),
                             name: name,
+                            email: email,
                             skill: skill,
                             availability: availability,
                             phone: phone,
@@ -70,6 +72,12 @@ function CreateWurker() {
                 placeholder="Name ..."
                 value={name}
                 onChange={e => setName(e.target.value)}
+            />
+            <Input
+                className='search__input shadow mt-4'
+                placeholder="Email ..."
+                value={email}
+                onChange={e => setEmail(e.target.value)}
             />
             <Input
                 className='search__input shadow mt-4'
@@ -101,7 +109,7 @@ function CreateWurker() {
                 onChange={handleChange}
                 type="file"
             />
-            <progress value={progress} max="100" className='mt-4 mx-auto'/><br/>
+            <progress value={progress} max="100" className='mt-4 mx-auto' /><br />
             <Button
                 onClick={handleCreateWurker}
                 className='my-4'

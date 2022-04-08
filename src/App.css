@@ -157,7 +157,7 @@ img.navbar-coin {
   left: 1rem;
 }
 .wurkerCard__text {
-  text-shadow: 5px 5px 10px rgba(0, 0, 0, 0.3);
+  text-shadow: 0px 1px 3px rgba(0, 0, 0, 1);
 }
 .searchResults__searchInput {
   display: flex;
