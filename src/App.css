@@ -180,6 +180,16 @@ img.navbar-coin {
   overflow: hidden;
   border-radius: 2rem;
 }
+.profileInfo__info {
+  border-radius: 2rem;
+  width: 22rem;
+}
+.profileInfo__info p {
+  margin: 3px;
+}
+.profileInfo__performanceEval {
+  border-radius: 2rem;
+}
 
 /* Messages */
 .messageCard {
@@ -330,6 +340,10 @@ footer {
     overflow: hidden;
     border-radius: 2rem;
   }
+  .profileInfo__performanceEval {
+    border-radius: 2rem;
+    width: 22rem;
+  }
 }
 
 @media screen and (min-width: 771px) and (max-width: 1200px) {
@@ -371,5 +385,13 @@ footer {
     object-fit: cover;
     overflow: hidden;
     border-radius: 2rem;
+  }
+  .profileInfo__info {
+    border-radius: 2rem;
+    width: 15rem;
+  }
+  .profileInfo__performanceEval {
+    border-radius: 2rem;
+    width: 15rem;
   }
 }
