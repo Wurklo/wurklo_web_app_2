@@ -244,6 +244,13 @@ img.navbar-coin {
   border-radius: 2rem;
 }
 
+/* filter search results  */
+.filterSearchResults__searchFilterIcon:hover {
+  color: #f1f1f1 !important;
+  transition: 0.3s;  
+  cursor: pointer;
+}
+
 /* footer component */
 footer {
   background-image: linear-gradient(to top, #3f4548 85%, #1b5baf 99%);

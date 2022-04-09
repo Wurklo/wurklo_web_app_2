@@ -1,43 +1,79 @@
 import React, { useState } from 'react';
-import { Button, Col, Input, Modal, ModalBody, ModalFooter, ModalHeader } from 'reactstrap';
+import { Button, Col, FormGroup, Input, Label, Modal, ModalBody, ModalFooter, ModalHeader } from 'reactstrap';
+import FilterListIcon from '@mui/icons-material/FilterList';
 
-function FilterSearchResults({nameFilter, setNameFilter}) {
+
+function FilterSearchResults({ setNameFilter, setRateFilter }) {
     const [isModalOpen, setIsModalOpen] = useState(false);
     const [tempNameFilter, setTempNameFilter] = useState('');
+    const [tempRateFilter, setTempRateFilter] = useState('');
 
 
     const handleApplyFilter = () => {
         setNameFilter(tempNameFilter)
+        setRateFilter(tempRateFilter)
         setIsModalOpen(false)
     }
     return (
         <>
-            <Button
-                className='createWurker__button ms-2 shadow'
-                outline
-                onClick={() => setIsModalOpen(isModalOpen ? false : "isOpenCheckout")}
-            >
-                Filter Results
-            </Button>
+            <FilterListIcon
+                className='filterSearchResults__searchFilterIcon text-secondary'
+                onClick={() => setIsModalOpen(isModalOpen ? false : true)}
+            />
+
             <Modal
                 className='createWurker__modal'
                 fullscreen="md"
                 scrollable
                 size="lg"
                 isOpen={isModalOpen}
-                toggle={() => setIsModalOpen(isModalOpen ? false : "isOpenCheckout")}
+                toggle={() => setIsModalOpen(isModalOpen ? false : true)}
             >
                 <ModalHeader className='p-2 ms-2 ms-lg-0 p-lg-3' toggle={() => setIsModalOpen(false)}>
                     <h3 className='text-secondary m-0'><strong>Filter Results</strong></h3>
                 </ModalHeader>
                 <ModalBody className=' pt-0'>
                     <Col className="createWurker text-center mt-0 mx-auto">
-                        <Input
-                            className='search__input shadow mt-4'
-                            placeholder="Name ..."
-                            value={tempNameFilter}
-                            onChange={e => setTempNameFilter(e.target.value)}
-                        />
+                        {/* <FormGroup>
+                            <Input
+                                className='search__input shadow mt-4'
+                                id="nameSelect"
+                                name="name"
+                                type="select"
+                                value={tempNameFilter}
+                                onChange={e => setTempNameFilter(e.target.value)}
+                            >
+                                <option disabled>
+                                    Name
+                                </option>
+                                <option>
+                                    asc
+                                </option>
+                                <option>
+                                    desc
+                                </option>
+                            </Input>
+                        </FormGroup> */}
+                        <FormGroup>
+                            <Input
+                                className='search__input shadow mt-4'
+                                id="rateSelect"
+                                name="rate"
+                                type="select"
+                                value={tempRateFilter}
+                                onChange={e => setTempRateFilter(e.target.value)}
+                            >
+                                <option disabled>
+                                    Rate
+                                </option>
+                                <option>
+                                    asc
+                                </option>
+                                <option>
+                                    desc
+                                </option>
+                            </Input>
+                        </FormGroup>
                     </Col>
                 </ModalBody>
                 <ModalFooter className='d-inline py-1 text-center'>

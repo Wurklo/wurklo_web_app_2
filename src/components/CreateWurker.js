@@ -88,7 +88,7 @@ function CreateWurker() {
             <Button
                 className='createWurker__button shadow'
                 outline
-                onClick={() => setIsModalOpen(isModalOpen ? false : "isOpenCheckout")}
+                onClick={() => setIsModalOpen(isModalOpen ? false : true)}
             >
                 Create Wurker Profile
             </Button>
@@ -98,7 +98,7 @@ function CreateWurker() {
                 scrollable
                 size="lg"
                 isOpen={isModalOpen}
-                toggle={() => setIsModalOpen(isModalOpen ? false : "isOpenCheckout")}
+                toggle={() => setIsModalOpen(isModalOpen ? false : true)}
             >
                 <ModalHeader className='p-2 ms-2 ms-lg-0 p-lg-3' toggle={() => setIsModalOpen(false)}>
                     <h3 className='text-secondary m-0'><strong>Create Wurker Profile</strong></h3>
