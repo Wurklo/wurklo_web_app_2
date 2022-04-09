@@ -11,7 +11,7 @@ function FilterSearchResults({ setNameFilter, setRateFilter }) {
 
     const handleApplyFilter = () => {
         setNameFilter(tempNameFilter)
-        setRateFilter(tempRateFilter)
+        setRateFilter(tempRateFilter === 'Lowest Rate' ? 'asc' : 'desc')
         setIsModalOpen(false)
     }
     return (
@@ -67,10 +67,10 @@ function FilterSearchResults({ setNameFilter, setRateFilter }) {
                                     Rate
                                 </option>
                                 <option>
-                                    asc
+                                    Lowest Rate
                                 </option>
                                 <option>
-                                    desc
+                                    Highest Rate
                                 </option>
                             </Input>
                         </FormGroup>
