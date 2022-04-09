@@ -2,20 +2,23 @@ import React, { useEffect, useState } from 'react'
 import { Col, Container, Row } from 'reactstrap'
 import Search from '../../components/Search'
 import WurkerCard from '../../components/WurkerCard'
-import {db} from '../../firebase';
+import { db } from '../../firebase';
+import { useParams } from 'react-router-dom';
 
 function SearchResults() {
     const [wurkers, setWurkers] = useState([]);
+    let {searchParams} = useParams();
+    console.log(searchParams)
 
     useEffect(() => {
-        db.collection('wurkers').onSnapshot(snapshot => {
+        db.collection('wurkers').where('skill', '>=', `${searchParams}`).onSnapshot(snapshot => {
             setWurkers(snapshot.docs.map(doc => ({
                 id: doc.id,
                 wurker: doc.data()
             })));
         })
-    }, []);
-    
+    }, [searchParams]);
+
     return (
         <Container fluid>
             <Row>
@@ -30,7 +33,7 @@ function SearchResults() {
             </Row>
             <Row className='mx-5 mb-5'>
                 {
-                    wurkers.map(({id, wurker}) => (
+                    wurkers.map(({ id, wurker }) => (
                         <WurkerCard
                             key={id}
                             id={id}

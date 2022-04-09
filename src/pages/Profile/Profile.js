@@ -2,15 +2,14 @@ import React, { useEffect, useState } from 'react'
 import { Container, Row } from 'reactstrap'
 import ChatBox from '../../components/ChatBox';
 import ProfileInfo from '../../components/ProfileInfo';
-import { useParams, useNavigate } from 'react-router-dom';
+import { useParams } from 'react-router-dom';
 import { db } from '../../firebase';
 import ArrowBackIcon from '@mui/icons-material/ArrowBack';
 
 function Profile() {
     let { id } = useParams();
     const [wurkerProfile, setWurkerProfile] = useState({});
-    const navigate = useNavigate();
-
+    
     useEffect(() => {
         db.collection('wurkers').doc(id).onSnapshot(doc => {
             setWurkerProfile(

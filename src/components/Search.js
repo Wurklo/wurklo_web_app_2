@@ -10,7 +10,7 @@ function Search({placeholderValue}) {
 
     const handleSearch = (e) => {
         e.preventDefault();
-        navigate(`/search-results/?=${search}`)
+        navigate(`/search-results/${search ? search : "full stack developer"}`)
         setSearch('')
     }
 

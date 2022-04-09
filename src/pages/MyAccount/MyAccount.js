@@ -20,6 +20,7 @@ function MyAccount() {
                 <ProfileInfo
                     name={userProfile.name}
                     skill={userProfile.skill}
+                    rate={userProfile.rate}
                     imageUrl={userProfile.imageUrl}
                     availability={userProfile.availability}
                     phone={userProfile.phone}

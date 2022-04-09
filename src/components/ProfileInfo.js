@@ -1,7 +1,7 @@
 import React from 'react'
 import { Col } from 'reactstrap'
 
-function ProfileInfo({name, skill, imageUrl, availability, phone, email, portfolioLink}) {
+function ProfileInfo({name, skill, rate, imageUrl, availability, phone, email, portfolioLink}) {
 
     return (
         <>
@@ -11,7 +11,7 @@ function ProfileInfo({name, skill, imageUrl, availability, phone, email, portfol
             <Col md={3} className='profileInfo__info mx-auto m-0 ms-md-3 mt-4 mt-md-0 py-3 p-md-3 shadow'>
                 <h3>{name}</h3>
                 <p>{skill}</p>
-                <p>Rate: $25/hr</p>
+                <p>Rate: ${rate}/hr</p>
                 <p>Available {availability}</p>
                 <p>P# {phone}</p>
                 <p>E# {email}</p>

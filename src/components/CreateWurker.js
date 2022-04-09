@@ -9,13 +9,14 @@ function CreateWurker() {
     const [name, setName] = useState('');
     const [email, setEmail] = useState('');
     const [skill, setSkill] = useState('');
+    const [rate, setRate] = useState('');
     const [yearsOfExp, setYearsOfExp] = useState('');
     const [highestEdu, setHighestEdu] = useState('');
     const [certsLicenses, setCertsLicenses] = useState('');
-    const [references, setReferences] = useState('');
     const [availability, setAvailability] = useState('');
     const [phone, setPhone] = useState('');
     const [portfolioLink, setPortfolioLink] = useState('');
+    const [references, setReferences] = useState('');
     const [imageFile, setImageFile] = useState(null);
     const [progress, setProgress] = useState(0);
 
@@ -53,6 +54,7 @@ function CreateWurker() {
                             name: name,
                             email: email,
                             skill: skill,
+                            rate: rate,
                             yearsOfExp: yearsOfExp,
                             highestEdu: highestEdu,
                             certsLicenses: certsLicenses,
@@ -66,6 +68,7 @@ function CreateWurker() {
                         setName('')
                         setEmail('')
                         setSkill('')
+                        setRate('')
                         setYearsOfExp('')
                         setHighestEdu('')
                         setCertsLicenses('')
@@ -83,7 +86,7 @@ function CreateWurker() {
     return (
         <>
             <Button
-            className='createWurker__button shadow'
+                className='createWurker__button shadow'
                 outline
                 onClick={() => setIsModalOpen(isModalOpen ? false : "isOpenCheckout")}
             >
@@ -119,6 +122,12 @@ function CreateWurker() {
                             placeholder="Skill or service ..."
                             value={skill}
                             onChange={e => setSkill(e.target.value)}
+                        />
+                        <Input
+                            className='search__input shadow mt-4'
+                            placeholder="Rate ..."
+                            value={rate}
+                            onChange={e => setRate(e.target.value)}
                         />
                         <Input
                             className='search__input shadow mt-4'
