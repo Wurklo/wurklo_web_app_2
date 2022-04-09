@@ -27,6 +27,7 @@ function Profile() {
                 <ProfileInfo
                     name={wurkerProfile.name}
                     skill={wurkerProfile.skill}
+                    rate={wurkerProfile.rate}
                     imageUrl={wurkerProfile.imageUrl}
                     availability={wurkerProfile.availability}
                     phone={wurkerProfile.phone}

@@ -7,11 +7,11 @@ import { useParams } from 'react-router-dom';
 
 function SearchResults() {
     const [wurkers, setWurkers] = useState([]);
-    let {searchParams} = useParams();
+    let { searchParams } = useParams();
     console.log(searchParams)
 
     useEffect(() => {
-        db.collection('wurkers').where('skill', '>=', `${searchParams}`).onSnapshot(snapshot => {
+        db.collection('wurkers').where('skill', '>=', `${searchParams.toLowerCase()}`).onSnapshot(snapshot => {
             setWurkers(snapshot.docs.map(doc => ({
                 id: doc.id,
                 wurker: doc.data()
@@ -28,7 +28,7 @@ function SearchResults() {
             </Row>
             <Row>
                 <Col className='searchResults__searchInput mt-3'>
-                    <p className='text-center'>1 2 3 4 5 6 7 8 9 ... 3,000,234 pages for full stack developer | filter results</p>
+                    <p className='text-center'>1 2 3 4 5 6 7 8 9 ... 3,000,234 pages for {searchParams} | filter results</p>
                 </Col>
             </Row>
             <Row className='mx-5 mb-5'>

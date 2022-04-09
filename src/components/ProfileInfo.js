@@ -9,10 +9,10 @@ function ProfileInfo({name, skill, rate, imageUrl, availability, phone, email, p
                 <img src={imageUrl} className="shadow" alt={name} />
             </Col>
             <Col md={3} className='profileInfo__info mx-auto m-0 ms-md-3 mt-4 mt-md-0 py-3 p-md-3 shadow'>
-                <h3>{name}</h3>
-                <p>{skill}</p>
+                <h3>{name?.replace(/\w\S*/g, (w) => (w.replace(/^\w/, (c) => c.toUpperCase())))}</h3>
+                <p>{skill?.replace(/\w\S*/g, (w) => (w.replace(/^\w/, (c) => c.toUpperCase())))}</p>
                 <p>Rate: ${rate}/hr</p>
-                <p>Available {availability}</p>
+                <p>Available {availability?.toUpperCase()}</p>
                 <p>P# {phone}</p>
                 <p>E# {email}</p>
                 <p>Portfolio {portfolioLink}</p>
