@@ -51,17 +51,17 @@ function CreateWurker() {
                         // post image in db
                         db.collection("wurkers").add({
                             timestamp: firebase.firestore.FieldValue.serverTimestamp(),
-                            name: name,
-                            email: email,
-                            skill: skill,
-                            rate: rate,
-                            yearsOfExp: yearsOfExp,
-                            highestEdu: highestEdu,
-                            certsLicenses: certsLicenses,
-                            availability: availability,
-                            phone: phone,
-                            portfolioLink: portfolioLink,
-                            references: references,
+                            name: name.toLowerCase(),
+                            email: email.toLowerCase(),
+                            skill: skill.toLowerCase(),
+                            rate: rate.toLowerCase(),
+                            yearsOfExp: yearsOfExp.toLowerCase(),
+                            highestEdu: highestEdu.toLowerCase(),
+                            certsLicenses: certsLicenses.toLowerCase(),
+                            availability: availability.toLowerCase(),
+                            phone: phone.toLowerCase(),
+                            portfolioLink: portfolioLink.toLowerCase(),
+                            references: references.toLowerCase(),
                             imageUrl: url
                         });
                         setProgress(0);

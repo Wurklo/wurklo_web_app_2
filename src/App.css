@@ -186,6 +186,15 @@ img.navbar-coin {
   border-bottom-left-radius: 2rem !important;
   border-bottom-right-radius: 2rem !important;
 }
+.profile__backButton {
+  cursor: pointer;
+  width: 2.5rem;
+  height: 2.5rem;
+}
+.profile__backButton .MuiSvgIcon-root:hover {
+  color: #f1f1f1 !important;
+  transition: 0.3s;
+}
 .profileInfo__image > img {
   width: 18rem;
   height: 18rem;
