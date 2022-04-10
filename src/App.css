@@ -245,6 +245,11 @@ img.navbar-coin {
 }
 
 /* filter search results  */
+.filterSearchResults__searchFilterIcon {
+  position: absolute;
+  top: 1.3rem;
+  right: 5rem;
+}
 .filterSearchResults__searchFilterIcon:hover {
   color: #f1f1f1 !important;
   transition: 0.3s;  

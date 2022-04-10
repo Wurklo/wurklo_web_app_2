@@ -14,7 +14,7 @@ function SearchResults() {
     const [nameFilter, setNameFilter] = useState('asc');
     const [rateFilter, setRateFilter] = useState('asc');
     let { searchParams } = useParams();
-    const navigate = useNavigate();
+
     useEffect(() => {
         db
             .collection('wurkers')
@@ -23,7 +23,11 @@ function SearchResults() {
             .limit(20)
             .get()
             .then((collections) => {
-                updateState(collections);
+                setWurkers(collections.docs.map(doc => ({
+                    id: doc.id,
+                    wurker: doc.data()
+                })));
+                setLastDoc(collections.docs[collections.docs.length - 1]);
             })
     }, [searchParams, rateFilter]);
 
@@ -37,7 +41,7 @@ function SearchResults() {
             setWurkers([...wurkers, ...newWurkers])
             setLastDoc(collections.docs[collections.docs.length - 1]);
         } else {
-            
+
         }
     }
 
@@ -54,10 +58,9 @@ function SearchResults() {
             })
     }
 
-    window.onscroll = function(ev) {
+    window.onscroll = function (ev) {
         if ((window.innerHeight + window.scrollY) >= document.body.scrollHeight) {
             // you're at the bottom of the page
-            console.log("at the bottom")
             getNextPage();
         }
     };
@@ -65,23 +68,15 @@ function SearchResults() {
     return (
         <Container fluid>
             <Row>
-                <Col id="top" className='searchResults__searchInput'>
+                <Col id="top" className='searchResults__searchInput mb-4'>
                     <Search
                         placeholderDefault="Search wurkers ... ex. full stack developer, react"
                         placeholderSearchedValue={searchParams}
                     />
-                </Col>
-            </Row>
-            <Row>
-                <Col className='searchResults__searchInput my-3'>
                     <FilterSearchResults
                         setNameFilter={setNameFilter}
                         setRateFilter={setRateFilter}
                     />
-                    {/* <ArrowForwardIcon
-                        className='filterSearchResults__searchFilterIcon ms-5 text-secondary'
-                        onClick={getNextPage}
-                    /> */}
                 </Col>
             </Row>
             <Row className='mx-5'>
