@@ -4,14 +4,13 @@ import Search from '../../components/Search'
 import WurkerCard from '../../components/WurkerCard'
 import { db } from '../../firebase';
 import { useParams } from 'react-router-dom';
-import { Filter } from '@mui/icons-material';
 import FilterSearchResults from '../../components/FilterSearchResults';
-import SearchPaginate from '../../components/SearchPaginate';
+import ArrowForwardIcon from '@mui/icons-material/ArrowForward';
+import ArrowBackIcon from '@mui/icons-material/ArrowBack';
 
 function SearchResults() {
     const [wurkers, setWurkers] = useState([]);
     const [lastDoc, setLastDoc] = useState();
-    const [isEmpty, setIsEmpty] = useState(false);
     const [nameFilter, setNameFilter] = useState('asc');
     const [rateFilter, setRateFilter] = useState('asc');
     let { searchParams } = useParams();
@@ -21,7 +20,7 @@ function SearchResults() {
             .collection('wurkers')
             .where('skill', '==', `${searchParams.toLowerCase()}`)
             .orderBy('rate', `${rateFilter}`)
-            .limit(20)
+            .limit(10)
             .get()
             .then((collections) => {
                 updateState(collections);
@@ -47,7 +46,7 @@ function SearchResults() {
             .where('skill', '==', `${searchParams.toLowerCase()}`)
             .orderBy('rate', `${rateFilter}`)
             .startAfter(lastDoc)
-            .limit(20)
+            .limit(10)
             .get()
             .then((collections) => {
                 updateState(collections);
@@ -63,19 +62,24 @@ function SearchResults() {
                         placeholderDefault="Search wurkers ... ex. full stack developer, react"
                         placeholderSearchedValue={searchParams}
                     />
+                </Col>
+            </Row>
+            <Row>
+                <Col className='searchResults__searchInput my-3'>
+                    <ArrowBackIcon
+                        className='filterSearchResults__searchFilterIcon me-5 text-secondary'
+                    />
                     <FilterSearchResults
                         setNameFilter={setNameFilter}
                         setRateFilter={setRateFilter}
                     />
+                    <ArrowForwardIcon
+                        className='filterSearchResults__searchFilterIcon ms-5 text-secondary'
+                        onClick={getNextPage}
+                    />
                 </Col>
             </Row>
-            <Row>
-                <Col className='searchResults__searchInput mx-auto mt-3'>
-                    {/* <SearchPaginate /> */}
-                    <Button onClick={getNextPage}>Next Page</Button>
-                </Col>
-            </Row>
-            <Row className='mx-5 mb-5'>
+            <Row className='mx-5'>
                 {
                     wurkers.map(({ id, wurker }) => (
                         <WurkerCard
@@ -88,6 +92,21 @@ function SearchResults() {
                     ))
                 }
 
+            </Row>
+            <Row>
+                <Col className='searchResults__searchInput mb-5 mt-3'>
+                    <ArrowBackIcon
+                        className='filterSearchResults__searchFilterIcon me-5 text-secondary'
+                    />
+                    <FilterSearchResults
+                        setNameFilter={setNameFilter}
+                        setRateFilter={setRateFilter}
+                    />
+                    <ArrowForwardIcon
+                        className='filterSearchResults__searchFilterIcon ms-5 text-secondary'
+                        onClick={getNextPage}
+                    />
+                </Col>
             </Row>
         </Container>
     )
