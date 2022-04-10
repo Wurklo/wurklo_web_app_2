@@ -31,7 +31,10 @@ function SearchResults() {
         <Container fluid>
             <Row>
                 <Col className='searchResults__searchInput'>
-                    <Search placeholderValue="Search wurkers ... ex. full stack developer, react" />
+                    <Search
+                        placeholderValue="Search wurkers ... ex. full stack developer, react"
+                        searchedValue={searchParams}
+                    />
                     <FilterSearchResults
                         setNameFilter={setNameFilter}
                         setRateFilter={setRateFilter}
@@ -40,7 +43,7 @@ function SearchResults() {
             </Row>
             <Row>
                 <Col className='searchResults__searchInput mx-auto mt-3'>
-                    <SearchPaginate /> 
+                    <SearchPaginate />
                 </Col>
             </Row>
             <Row className='mx-5 mb-5'>
