@@ -30,7 +30,7 @@ function FilterSearchResults({ setNameFilter, setRateFilter }) {
                 toggle={() => setIsModalOpen(isModalOpen ? false : true)}
             >
                 <ModalHeader className='p-2 ms-2 ms-lg-0 p-lg-3' toggle={() => setIsModalOpen(false)}>
-                    <h3 className='text-secondary m-0'><strong>Filter Results</strong></h3>
+                    <p className='text-secondary m-0'><strong>Filter Results</strong></p>
                 </ModalHeader>
                 <ModalBody className=' pt-0'>
                     <Col className="createWurker text-center mt-0 mx-auto">
