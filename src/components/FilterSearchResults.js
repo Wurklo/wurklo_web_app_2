@@ -23,7 +23,6 @@ function FilterSearchResults({ setNameFilter, setRateFilter }) {
 
             <Modal
                 className='createWurker__modal'
-                fullscreen="md"
                 scrollable
                 size="lg"
                 isOpen={isModalOpen}
