@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react'
-import { Container, Row } from 'reactstrap'
+import { Button, Container, Row } from 'reactstrap'
 import ChatBox from '../../components/ChatBox';
 import ProfileInfo from '../../components/ProfileInfo';
 import { useParams, useNavigate } from 'react-router-dom';
@@ -9,6 +9,7 @@ import ArrowBackIcon from '@mui/icons-material/ArrowBack';
 function Profile() {
     let { id } = useParams();
     const [wurkerProfile, setWurkerProfile] = useState({});
+    const [hire, setHire] = useState(false);
     const navigate = useNavigate();
 
     useEffect(() => {
@@ -17,6 +18,7 @@ function Profile() {
                 doc.data()
             );
         })
+        window.scrollTo(0,0)
     }, []);
 
     return (
@@ -39,6 +41,11 @@ function Profile() {
             <Row className='text-start'>
                 <ChatBox />
             </Row>
+            {hire ?
+                <Button outline className='' onClick={() => setHire(false)}>Complete</Button>
+                :
+                <Button outline className='' onClick={() => setHire(true)}>Hire</Button>
+            }
         </Container>
     )
 }

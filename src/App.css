@@ -27,6 +27,16 @@ a:link {
   border-radius: 2rem !important;
 }
 /* note: styles target reactstrap elements */
+/* Landing page */
+.landingPage__logo {
+  width: 12rem;
+}
+.landingPage__logoText {
+  text-shadow: 5px 5px 10px rgba(0, 0, 0, 0.3);
+  color: #727374;
+  font-weight: 600;
+  font-size: 6rem !important;
+}
 
 /* header */
 .header {
@@ -108,7 +118,7 @@ img.navbar-coin {
 
 /* search wurkers page */
 .search {
-  height: 80vh;
+  height: 65vh;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -334,12 +344,21 @@ footer {
 }
 
 @media screen and (max-width: 1000px) {
+  .landingPage__logo {
+    width: 8rem;
+  }
+  .landingPage__logoText {
+    text-shadow: 5px 5px 10px rgba(0, 0, 0, 0.3);
+    color: #727374;
+    font-weight: 600;
+    font-size: 4rem !important;
+  }
   .search__inputContainer {
     position: relative;
     width: 20rem;
   }
   .search {
-    height: 80vh;
+    height: 65vh;
     display: flex;
     flex-direction: column;
     justify-content: center;
