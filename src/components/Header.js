@@ -3,6 +3,7 @@ import { Link, useLocation } from 'react-router-dom';
 import logo from '../images/VectorEPS_ByTailorBrands2.svg'
 import Search from './Search'
 import { useParams } from 'react-router-dom';
+import { Button } from 'reactstrap';
 
 function openNav() {
     document.getElementById("mySidebar").style.width = "250px";
@@ -13,9 +14,13 @@ function closeNav() {
 }
 
 function Header() {
-    const [user] = useState("Bobby");
+    const [user] = useState(null);
     const location = useLocation();
     let { searchParams } = useParams();
+
+    const openSigninModal = () => {
+        console.log("hello")
+    }
 
     return (
         <div className={'header mb-3 ' + (location.pathname === "/" ? "" : "bg-white")} id="header">
@@ -36,8 +41,14 @@ function Header() {
                 </>
 
             }
-            <div className={'header__right ' + (location.pathname === "/" ? "mt-3" : "")} onClick={() => openNav()}>
-                {user ? <img src="https://firebasestorage.googleapis.com/v0/b/wurklo.appspot.com/o/profilePic.webp?alt=media&token=f0f6e321-e5b7-4825-8c34-c90d39ad800d" className="" alt="Profile Pic" /> : <img src="https://www.mtsolar.us/wp-content/uploads/2020/04/avatar-placeholder.png" className="shadow" alt="Profile Pic" />}
+            <div className={'header__right ' + (location.pathname === "/" ? "mt-3" : "")}>
+                {
+                    user
+                        ?
+                        <img src="https://firebasestorage.googleapis.com/v0/b/wurklo.appspot.com/o/profilePic.webp?alt=media&token=f0f6e321-e5b7-4825-8c34-c90d39ad800d" className="" alt="Profile Pic" onClick={() => openNav()} />
+                        :
+                        <Button outline className='header__signinButton shadow-none border-0' onClick={openSigninModal}>Sign in</Button>
+                }
             </div>
             <div id="mySidebar" className="sidebar shadow">
                 <button className="closebtn" onClick={() => closeNav()}>×</button>

@@ -87,6 +87,10 @@ img.navbar-coin {
   color: #727374;
   font-weight: 600;
 }
+.header__signinButton:hover {
+  background-color: transparent;
+  color: #0d6efd;
+}
 
 .sidebar {
   height: 100%;
@@ -317,8 +321,8 @@ img.navbar-coin {
 /* filter search results  */
 .filterSearchResults__searchFilterIcon {
   position: absolute;
-  top: 1.3rem;
-  right: 5rem;
+  top: 1.5rem;
+  right: 7rem;
 }
 .filterSearchResults__searchFilterIcon:hover {
   color: #f1f1f1 !important;
