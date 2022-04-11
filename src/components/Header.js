@@ -14,7 +14,7 @@ function Header() {
     const location = useLocation();
 
     return (
-        <div className='header' id="header">
+        <div className={'header mb-3 ' + (location.pathname === "/" ? "" : "bg-white shadow")} id="header">
             {location.pathname === "/" ?
                 <div></div>
                 :
