@@ -18,13 +18,18 @@ function Profile() {
                 doc.data()
             );
         })
-        window.scrollTo(0,0)
+        window.scrollTo(0, 0)
     }, []);
 
     return (
         <Container className='profile mt-3 text-center text-md-start'>
-            <div className='profile__backButton text-start mb-2' onClick={() => navigate(-1)}>
-                <ArrowBackIcon className='mb-3 fs-1 text-secondary' />
+            <div className='d-flex justify-content-between mb-2 mx-3 mx-sm-2 mx-md-0'>
+                <ArrowBackIcon className='profile__backButton fs-1 text-secondary shadowed' onClick={() => navigate(-1)} />
+                {hire ?
+                    <Button color='primary' outline className='make-round shadow-sm' onClick={() => setHire(false)}>Complete</Button>
+                    :
+                    <Button color='danger' outline className='make-round shadow-sm' onClick={() => setHire(true)}>Hire</Button>
+                }
             </div>
             <Row>
                 <ProfileInfo
@@ -41,11 +46,6 @@ function Profile() {
             <Row className='text-start'>
                 <ChatBox />
             </Row>
-            {hire ?
-                <Button outline className='' onClick={() => setHire(false)}>Complete</Button>
-                :
-                <Button outline className='' onClick={() => setHire(true)}>Hire</Button>
-            }
         </Container>
     )
 }

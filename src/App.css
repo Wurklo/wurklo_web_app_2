@@ -201,7 +201,7 @@ img.navbar-coin {
   width: 2.5rem;
   height: 2.5rem;
 }
-.profile__backButton .MuiSvgIcon-root:hover {
+.profile__backButton:hover {
   color: #f1f1f1 !important;
   transition: 0.3s;
 }
@@ -454,5 +454,10 @@ footer {
   .profileInfo__performanceEval {
     border-radius: 2rem;
     width: 15rem;
+  }
+  .profileInfo__imageContainer > img {
+    width: 6rem;
+    height: 6rem;
+    border-radius: 1rem;
   }
 }

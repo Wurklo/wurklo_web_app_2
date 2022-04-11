@@ -25,8 +25,8 @@ function ProfileInfo({ name, skill, rate, imageUrl, availability, phone, email, 
                     <h5>Character</h5>
                 </div>
                 <div className='profileInfo__imageContainer d-flex justify-content-around'>
-                    <img src="https://firebasestorage.googleapis.com/v0/b/wurklo-web-app.appspot.com/o/wurklo_new_logo_white_blackbg.png?alt=media&token=fdf68760-e902-435e-b71f-c7778f1034a5" className="shadow" alt={name} />
-                    <img src="https://firebasestorage.googleapis.com/v0/b/wurklo-web-app.appspot.com/o/wurklo_new_logo_white_blackbg.png?alt=media&token=fdf68760-e902-435e-b71f-c7778f1034a5" className="shadow" alt={name} />
+                    <img src="https://firebasestorage.googleapis.com/v0/b/wurklo-web-app.appspot.com/o/wurklo_new_logo_white_blackbg.png?alt=media&token=fdf68760-e902-435e-b71f-c7778f1034a5" className="ms-0 ms-md-3 shadow" alt={name} />
+                    <img src="https://firebasestorage.googleapis.com/v0/b/wurklo-web-app.appspot.com/o/wurklo_new_logo_white_blackbg.png?alt=media&token=fdf68760-e902-435e-b71f-c7778f1034a5" className="ms-0 ms-md-3 shadow" alt={name} />
                 </div>
             </Col>
         </>

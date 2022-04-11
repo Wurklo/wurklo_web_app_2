@@ -86,6 +86,7 @@ function CreateWurker() {
     return (
         <>
             <Button
+                color='primary'
                 className='createWurker__button shadow'
                 outline
                 onClick={() => setIsModalOpen(isModalOpen ? false : true)}
