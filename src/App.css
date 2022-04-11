@@ -232,8 +232,8 @@ img.navbar-coin {
 }
 .chatBox__button {
   position: absolute;
-  top: 1rem;
-  right: .75rem;
+  top: 1.2rem;
+  right: 1rem;
   font-size: x-large;
   border-top-right-radius: 2rem;
 }

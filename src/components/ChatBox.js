@@ -1,11 +1,11 @@
 import React, { useEffect, useState } from 'react'
-import { Button, Col, Input } from 'reactstrap'
+import { Button, Col, Form, Input } from 'reactstrap'
 import Message from './Message'
 
 function ChatBox() {
     const [messages, setMessages] = useState([
-        {username: 'Bobby', text: 'Hey Guys!'},
-        {username: 'Nikki', text: 'Hey Ladies!'}
+        // { username: 'Bobby', text: 'Hey Guys!' },
+        // { username: 'Nikki', text: 'Hey Ladies!' }
     ]);
     const [message, setMessage] = useState('');
     const [username, setUsername] = useState('');
@@ -18,22 +18,29 @@ function ChatBox() {
         // setUsername(prompt('Please enter you name'))
     }, [])
 
-    const handleSendMessage = () => {
-        console.log(message)
+    const handleSendMessage = (e) => {
+        e.preventDefault();
+        setMessages([...messages, message]);
+        setMessage('')
     }
 
     return (
         <>
             <Col className='chatBox mt-4'>
-                <Input
-                    className='profile__messageInput mt-3 p-3 shadow'
-                    placeholder='Send a message ...'
-                    value={message}
-                    onChange={e => setMessage(e.target.value)}
-                />
-                <Button color='primary' outline className='chatBox__button' onClick={handleSendMessage}>Send</Button>
+                <Form>
+                    <Input
+                        className='profile__messageInput mt-3 p-3 shadow'
+                        placeholder='Send a message ...'
+                        value={message}
+                        onChange={e => setMessage(e.target.value)}
+                    />
+                    <Button type='submit' color='primary' outline className='chatBox__button' onClick={handleSendMessage}>Send</Button>
+                </Form>
+
                 <div className='profile__messageBox mb-5 rounded-bottom shadow'>
-                    <Message />
+                    {messages?.map(message => (
+                        <p>{message}</p>
+                    ))}
                 </div>
             </Col>
         </>
