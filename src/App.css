@@ -222,6 +222,11 @@ img.navbar-coin {
 .profileInfo__performanceEval {
   border-radius: 2rem;
 }
+.profileInfo__imageContainer > img {
+  width: 8rem;
+  height: 8rem;
+  border-radius: 1rem;
+}
 
 /* Messages */
 .messageCard {

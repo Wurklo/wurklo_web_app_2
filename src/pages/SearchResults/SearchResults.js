@@ -1,12 +1,10 @@
 import React, { useEffect, useState } from 'react'
-import { Button, Col, Container, Row } from 'reactstrap'
+import { Col, Container, Row } from 'reactstrap'
 import Search from '../../components/Search'
 import WurkerCard from '../../components/WurkerCard'
 import { db } from '../../firebase';
-import { useNavigate, useParams } from 'react-router-dom';
+import { useParams } from 'react-router-dom';
 import FilterSearchResults from '../../components/FilterSearchResults';
-import ArrowForwardIcon from '@mui/icons-material/ArrowForward';
-import ArrowBackIcon from '@mui/icons-material/ArrowBack';
 
 function SearchResults() {
     const [wurkers, setWurkers] = useState([]);
