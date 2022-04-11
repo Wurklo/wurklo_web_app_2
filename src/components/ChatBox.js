@@ -4,22 +4,23 @@ import Message from './Message'
 import SendIcon from '@mui/icons-material/Send';
 import { db } from '../firebase';
 import firebase from 'firebase'
+import FlipMove from 'react-flip-move';
 
 function ChatBox() {
     const [messages, setMessages] = useState([]);
     const [message, setMessage] = useState('');
-    const [username, setUsername] = useState('');
+    const [username, setUsername] = useState('Test User');
 
     useEffect(() => {
         db.collection('messages')
-        .orderBy('timestamp', 'desc')
-        .onSnapshot(snapshot => {
-            setMessages(snapshot.docs.map(doc => doc.data()))
-        })
+            .orderBy('timestamp', 'desc')
+            .onSnapshot(snapshot => {
+                setMessages(snapshot.docs.map(doc => ({ id: doc.id, message: doc.data() })))
+            })
     }, [])
 
     useEffect(() => {
-        setUsername(prompt('Please enter you name'))
+        // setUsername(prompt('Please enter you name'))
     }, [])
 
     const handleSendMessage = (e) => {
@@ -46,9 +47,11 @@ function ChatBox() {
                 </Form>
 
                 <div className='profile__messageBox mb-5 rounded-bottom bg-white shadow'>
-                    {messages?.map(message => (
-                        <Message username={username} message={message} />
-                    ))}
+                    <FlipMove>
+                        {messages?.map(({ id, message }) => (
+                            <Message key={id} username={username} message={message} />
+                        ))}
+                    </FlipMove>
                 </div>
             </Col>
         </>
