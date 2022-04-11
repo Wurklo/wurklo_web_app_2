@@ -258,14 +258,17 @@ img.navbar-coin {
   border-bottom-right-radius: 1rem;
   border-top-left-radius: 1rem;
   width: fit-content;
-  width: 40vw;
+  max-width: 40vw;
 }
 .message__isNotUser {
   border-top-right-radius: 1rem;
   border-bottom-left-radius: 1rem;
   border-top-left-radius: 1rem;
   width: fit-content;
-  width: 40vw;
+  max-width: 40vw;
+}
+.message__time {
+  font-size: .7rem;
 }
 
 /* Messages */
@@ -453,14 +456,14 @@ footer {
     border-bottom-right-radius: 1rem;
     border-top-left-radius: 1rem;
     width: fit-content;
-    width: 60vw;
+    max-width: 60vw;
   }
   .message__isNotUser {
     border-top-right-radius: 1rem;
     border-bottom-left-radius: 1rem;
     border-top-left-radius: 1rem;
     width: fit-content;
-    width: 60vw;
+    max-width: 60vw;
   }
 }
 
