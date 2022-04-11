@@ -253,6 +253,20 @@ img.navbar-coin {
   color: #f1f1f1;
   transition: 0.3s;
 }
+.message__isUser {
+  border-top-right-radius: 1rem;
+  border-bottom-right-radius: 1rem;
+  border-top-left-radius: 1rem;
+  width: fit-content;
+  width: 40vw;
+}
+.message__isNotUser {
+  border-top-right-radius: 1rem;
+  border-bottom-left-radius: 1rem;
+  border-top-left-radius: 1rem;
+  width: fit-content;
+  width: 40vw;
+}
 
 /* Messages */
 .messageCard {
@@ -433,6 +447,20 @@ footer {
   .profileInfo__performanceEval {
     border-radius: 2rem;
     width: 22rem;
+  }
+  .message__isUser {
+    border-top-right-radius: 1rem;
+    border-bottom-right-radius: 1rem;
+    border-top-left-radius: 1rem;
+    width: fit-content;
+    width: 60vw;
+  }
+  .message__isNotUser {
+    border-top-right-radius: 1rem;
+    border-bottom-left-radius: 1rem;
+    border-top-left-radius: 1rem;
+    width: fit-content;
+    width: 60vw;
   }
 }
 

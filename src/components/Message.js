@@ -5,7 +5,10 @@ const Message = forwardRef(({ username, message }, ref) => {
   const isUser = username === message.username;
 
   return (
-    <div ref={ref} className={'p-2 text-white mb-2 ' + (isUser ? 'message__isUser bg-primary' : 'message__isNotUser bg-secondary text-black')}>{message.username}: {message.message} {moment(message.timestamp.seconds * 1000).format('MMMM Do YYYY, h:mm:ss a')}</div>
+    <div className={'d-flex ' + (isUser ? 'justify-content-start' : 'justify-content-end')}>
+      <div ref={ref} className={'p-2 text-white m-2 ' + (isUser ? 'message__isUser bg-primary shadow-sm' : 'message__isNotUser bg-secondary shadow-sm')}>{message?.username}: {message?.message} {moment(message?.timestamp?.seconds * 1000).format('MMMM Do YYYY, h:mm:ss a')}</div>
+    </div>
+
   )
 })
 
