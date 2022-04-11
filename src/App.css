@@ -227,6 +227,16 @@ img.navbar-coin {
   height: 8rem;
   border-radius: 1rem;
 }
+.chatBox {
+  position: relative;
+}
+.chatBox__button {
+  position: absolute;
+  top: 1rem;
+  right: .75rem;
+  font-size: x-large;
+  border-top-right-radius: 2rem;
+}
 
 /* Messages */
 .messageCard {
