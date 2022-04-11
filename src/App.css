@@ -38,11 +38,19 @@ a:link {
   width: 12rem;
 }
 .landingPage__logoText {
-  text-shadow: 5px 5px 10px rgba(0, 0, 0, 0.3);
+  /* text-shadow: 5px 5px 10px rgba(0, 0, 0, 0.3); */
   color: #727374;
   /* color: white; */
   font-weight: 600;
   font-size: 6rem !important;
+}
+.landingPage__sloganText {
+  /* text-shadow: 5px 5px 10px rgba(0, 0, 0, 0.3); */
+  color: #727374;
+  /* color: white; */
+  font-weight: 100;
+  font-size: 1.5rem !important;
+  margin-top: -2rem;
 }
 
 /* header */
@@ -50,6 +58,7 @@ a:link {
   display: flex;
   flex-direction: row;
   justify-content: space-between;
+  align-items: center;
 }
 .header__left {
   display: flex;
@@ -74,7 +83,7 @@ img.navbar-coin {
   margin-right: 1rem;
 }
 .header__logoText {
-  text-shadow: 5px 5px 10px rgba(0, 0, 0, 0.3);
+  /* text-shadow: 5px 5px 10px rgba(0, 0, 0, 0.3); */
   color: #727374;
   font-weight: 600;
 }

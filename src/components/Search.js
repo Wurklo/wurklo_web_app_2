@@ -19,7 +19,7 @@ function Search({placeholderValue, placeholderSearchedValue}) {
             <div className='search__inputContainer'>
                 <form>
                     <Input
-                        className='search__input shadow ps-5'
+                        className='search__input shadow-none ps-5'
                         placeholder={placeholderSearchedValue ? placeholderSearchedValue : placeholderValue}
                         value={search}
                         onChange={e => setSearch(e.target.value)}

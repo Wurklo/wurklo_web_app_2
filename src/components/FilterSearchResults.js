@@ -55,7 +55,7 @@ function FilterSearchResults({ setNameFilter, setRateFilter }) {
                         </FormGroup> */}
                         <FormGroup>
                             <Input
-                                className='search__input shadow mt-4'
+                                className='search__input shadow-none mt-4'
                                 id="rateSelect"
                                 name="rate"
                                 type="select"
@@ -80,11 +80,11 @@ function FilterSearchResults({ setNameFilter, setRateFilter }) {
                         outline
                         color='primary'
                         onClick={handleApplyFilter}
-                        className='createWurker__button p-2 px-4 mt-0 shadow'
+                        className='createWurker__button p-2 px-4 mt-0'
                     >
                         Apply Filter
                     </Button>
-                    <Button outline className='createWurker__button p-2 mt-0 shadow' onClick={() => setIsModalOpen(false)}>
+                    <Button outline className='createWurker__button p-2 mt-0' onClick={() => setIsModalOpen(false)}>
                         Cancel
                     </Button>
                 </ModalFooter>

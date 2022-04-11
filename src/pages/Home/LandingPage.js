@@ -8,8 +8,9 @@ function LandingPage() {
     return (
         <div className='search'>
             <div className='text-center'>
-                <img src={logo} className="landingPage__logo shadowed" alt="Wurklo logo" />
+                <img src={logo} className="landingPage__logo" alt="Wurklo logo" />
                 <p className='landingPage__logoText pt-3'>Wurklo</p>
+                <p className='landingPage__sloganText'>Search, Chat, Hire, Pay</p>
             </div>
             <Search placeholderValue="Search wurkers ... ex. full stack developer, react" />
             <div className='mt-4'>

@@ -87,7 +87,7 @@ function CreateWurker() {
         <>
             <Button
                 color='primary'
-                className='createWurker__button bg-white shadow'
+                className='createWurker__button bg-white'
                 outline
                 onClick={() => setIsModalOpen(isModalOpen ? false : true)}
             >
@@ -107,73 +107,73 @@ function CreateWurker() {
                 <ModalBody className=' pt-0'>
                     <Col className="createWurker text-center mt-0 mx-auto">
                         <Input
-                            className='search__input shadow mt-4'
+                            className='search__input shadow-none mt-4'
                             placeholder="Name ..."
                             value={name}
                             onChange={e => setName(e.target.value)}
                         />
                         <Input
-                            className='search__input shadow mt-4'
+                            className='search__input shadow-none mt-4'
                             placeholder="Email ..."
                             value={email}
                             onChange={e => setEmail(e.target.value)}
                         />
                         <Input
-                            className='search__input shadow mt-4'
+                            className='search__input shadow-none mt-4'
                             placeholder="Skill or service ..."
                             value={skill}
                             onChange={e => setSkill(e.target.value)}
                         />
                         <Input
-                            className='search__input shadow mt-4'
+                            className='search__input shadow-none mt-4'
                             placeholder="Rate ..."
                             value={rate}
                             onChange={e => setRate(e.target.value)}
                         />
                         <Input
-                            className='search__input shadow mt-4'
+                            className='search__input shadow-none mt-4'
                             placeholder="Years of experience ..."
                             value={yearsOfExp}
                             onChange={e => setYearsOfExp(e.target.value)}
                         />
                         <Input
-                            className='search__input shadow mt-4'
+                            className='search__input shadow-none mt-4'
                             placeholder="Highest education ..."
                             value={highestEdu}
                             onChange={e => setHighestEdu(e.target.value)}
                         />
                         <Input
-                            className='search__input shadow mt-4'
+                            className='search__input shadow-none mt-4'
                             placeholder="Certifications/Licenses ..."
                             value={certsLicenses}
                             onChange={e => setCertsLicenses(e.target.value)}
                         />
                         <Input
-                            className='search__input shadow mt-4'
+                            className='search__input shadow-none mt-4'
                             placeholder="Availability ex. 24/7, 8-5pm M-F, etc ..."
                             value={availability}
                             onChange={e => setAvailability(e.target.value)}
                         />
                         <Input
-                            className='search__input shadow mt-4'
+                            className='search__input shadow-none mt-4'
                             placeholder="Phone # ex. +1-555-555-5555 ..."
                             value={phone}
                             onChange={e => setPhone(e.target.value)}
                         />
                         <Input
-                            className='search__input shadow mt-4'
+                            className='search__input shadow-none mt-4'
                             placeholder="Portfolio Link ..."
                             value={portfolioLink}
                             onChange={e => setPortfolioLink(e.target.value)}
                         />
                         <Input
-                            className='search__input shadow mt-4'
+                            className='search__input shadow-none mt-4'
                             placeholder="References ..."
                             value={references}
                             onChange={e => setReferences(e.target.value)}
                         />
                         <Input
-                            className='search__input shadow mt-4'
+                            className='search__input shadow-none mt-4'
                             placeholder="Portfolio Link ..."
                             onChange={handleChange}
                             type="file"
@@ -186,11 +186,11 @@ function CreateWurker() {
                         outline
                         color='primary'
                         onClick={handleCreateWurker}
-                        className='createWurker__button p-2 px-4 mt-0 shadow'
+                        className='createWurker__button p-2 px-4 mt-0'
                     >
                         Create Wurker
                     </Button>
-                    <Button outline className='createWurker__button p-2 mt-0 shadow' onClick={() => setIsModalOpen(false)}>
+                    <Button outline className='createWurker__button p-2 mt-0' onClick={() => setIsModalOpen(false)}>
                         Cancel
                     </Button>
                 </ModalFooter>

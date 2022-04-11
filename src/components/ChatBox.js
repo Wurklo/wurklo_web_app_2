@@ -38,7 +38,7 @@ function ChatBox() {
             <Col className='chatBox mt-4'>
                 <Form>
                     <Input
-                        className='profile__messageInput mt-3 p-3 shadow'
+                        className='profile__messageInput mt-3 p-3 shadow-none'
                         placeholder='Send a message ...'
                         value={message}
                         onChange={e => setMessage(e.target.value)}
@@ -46,7 +46,7 @@ function ChatBox() {
                     <Button type='submit' color='primary' outline className='chatBox__button border-0 bg-white' onClick={handleSendMessage} disabled={!message && "disabled"}><SendIcon className='fs-2' /></Button>
                 </Form>
 
-                <div className='profile__messageBox mb-5 rounded-bottom bg-white shadow'>
+                <div className='profile__messageBox mb-5 rounded-bottom bg-white'>
                     <FlipMove>
                         {messages?.map(({ id, message }) => (
                             <Message key={id} username={username} message={message} />
