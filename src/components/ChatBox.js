@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react'
 import { Button, Col, Form, Input } from 'reactstrap'
 import Message from './Message'
+import SendIcon from '@mui/icons-material/Send';
 
 function ChatBox() {
     const [messages, setMessages] = useState([
@@ -34,12 +35,12 @@ function ChatBox() {
                         value={message}
                         onChange={e => setMessage(e.target.value)}
                     />
-                    <Button type='submit' color='primary' outline className='chatBox__button' onClick={handleSendMessage}>Send</Button>
+                    <Button type='submit' color='primary' outline className='chatBox__button border-0 bg-white' onClick={handleSendMessage} disabled={!message && "disabled"}><SendIcon className='fs-2' /></Button>
                 </Form>
 
-                <div className='profile__messageBox mb-5 rounded-bottom shadow'>
+                <div className='profile__messageBox mb-5 rounded-bottom bg-white shadow'>
                     {messages?.map(message => (
-                        <p>{message}</p>
+                        <Message message={message}/>
                     ))}
                 </div>
             </Col>

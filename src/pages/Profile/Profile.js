@@ -26,9 +26,9 @@ function Profile() {
             <div className='d-flex justify-content-between mb-2 mx-3 mx-sm-2 mx-md-0'>
                 <ArrowBackIcon className='profile__backButton fs-1 text-secondary shadowed' onClick={() => navigate(-1)} />
                 {hire ?
-                    <Button color='primary' outline className='make-round shadow-sm' onClick={() => setHire(false)}>Complete</Button>
+                    <Button color='primary' outline className='profile__completeButton make-round bg-white shadow-sm' onClick={() => setHire(false)}>Complete</Button>
                     :
-                    <Button color='danger' outline className='make-round shadow-sm' onClick={() => setHire(true)}>Hire</Button>
+                    <Button color='danger' outline className='profile__hireButton make-round bg-white shadow-sm' onClick={() => setHire(true)}>Hire</Button>
                 }
             </div>
             <Row>

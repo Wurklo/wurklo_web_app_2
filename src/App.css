@@ -7,6 +7,12 @@
   box-sizing: border-box;
 }
 
+body {
+  /* background: rgb(238, 234, 234); */
+  background: rgb(240, 240, 240);
+
+}
+
 a:hover {
   color: #43cce4;
   cursor: pointer !important;
@@ -118,7 +124,7 @@ img.navbar-coin {
 
 /* search wurkers page */
 .search {
-  height: 65vh;
+  height: 70vh;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -188,8 +194,7 @@ img.navbar-coin {
   border: 0;
 }
 .profile__messageBox {
-  max-height: 45rem;
-  min-height: 20rem;
+  height: 20rem;
   border: 1px solid lightgray;
   border: 0;
   margin-top: -3px;
@@ -200,6 +205,12 @@ img.navbar-coin {
   cursor: pointer;
   width: 2.5rem;
   height: 2.5rem;
+}
+.profile__hireButton:hover {
+  background-color: #dc3545 !important;
+}
+.profile__completeButton:hover {
+  background-color: #0d6efd !important;
 }
 .profile__backButton:hover {
   color: #f1f1f1 !important;
@@ -232,10 +243,13 @@ img.navbar-coin {
 }
 .chatBox__button {
   position: absolute;
-  top: 1.2rem;
+  top: 1.3rem;
   right: 1rem;
-  font-size: x-large;
   border-top-right-radius: 2rem;
+}
+.chatBox__button:hover {
+  color: #f1f1f1;
+  transition: 0.3s;
 }
 
 /* Messages */
@@ -267,6 +281,9 @@ img.navbar-coin {
 }
 .createWurker__button {
   border-radius: 2rem;
+}
+.createWurker__button:hover {
+  background-color: #0d6efd !important;
 }
 
 /* filter search results  */
