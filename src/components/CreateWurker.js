@@ -2,6 +2,9 @@ import React, { useState } from 'react';
 import { Button, Col, Input, Modal, ModalBody, ModalFooter, ModalHeader, Progress } from 'reactstrap';
 import { storage, db } from "../firebase";
 import firebase from 'firebase';
+//redux 
+import { useDispatch, useSelector } from 'react-redux';
+import { setUser } from '../redux/slices/user';
 
 function CreateWurker() {
     const [isModalOpen, setIsModalOpen] = useState(false);
@@ -19,6 +22,10 @@ function CreateWurker() {
     const [references, setReferences] = useState('');
     const [imageFile, setImageFile] = useState(null);
     const [progress, setProgress] = useState(0);
+
+    // redux
+    const { user } = useSelector((state) => state.user);
+    const dispatch = useDispatch();
 
     const handleChange = (e) => {
         if (e.target.files[0]) {
@@ -83,13 +90,22 @@ function CreateWurker() {
         )
     };
 
+    const isUserLoggedIn = () => {
+        if (user) {
+            setIsModalOpen(isModalOpen ? false : true) 
+        } else {
+            alert("You must be signed in to create a wurker profile")
+        }
+
+    }
+
     return (
         <>
             <Button
                 color='primary'
                 className='createWurker__button'
                 outline
-                onClick={() => setIsModalOpen(isModalOpen ? false : true)}
+                onClick={isUserLoggedIn}
             >
                 Create Wurker Profile
             </Button>

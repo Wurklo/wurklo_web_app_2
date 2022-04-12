@@ -23,6 +23,7 @@ function Header() {
     let { searchParams } = useParams();
 
     console.log(user)
+    
     const signOut = () => {
         dispatch(setUser(null))
     }

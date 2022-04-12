@@ -24,16 +24,6 @@ function LoginModal() {
             .catch((error) => alert(error.message));
     }
 
-    function getUserAuth() {
-        return (dispatch) => {
-            auth.onAuthStateChanged(async (user) => {
-                if (user) {
-                    dispatch(setUser(user))
-                }
-            })
-        }
-    }
-
     return (
         <>
             <Button color='primary' outline className=' shadow-none make-round'
