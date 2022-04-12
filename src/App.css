@@ -330,6 +330,17 @@ img.navbar-coin {
   cursor: pointer;
 }
 
+/* Login Modal */
+.yahooSignin__button {
+  color: #430297 !important;
+  border: 1px solid #430297;
+}
+.yahooSignin__button:hover {
+  background-color: #430297 !important;
+  color: white !important;
+  border: 1px solid #430297;
+}
+
 /* footer component */
 footer {
   background-image: linear-gradient(to top, #3f4548 85%, #1b5baf 99%);
