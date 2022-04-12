@@ -3,6 +3,7 @@ import { Col } from 'reactstrap'
 
 function ProfileInfo({ name, skill, rate, imageUrl, availability, phone, email, portfolioLink }) {
 
+    console.log(rate)
     return (
         <>
             <Col lg={3} className="profileInfo__image">
@@ -11,11 +12,11 @@ function ProfileInfo({ name, skill, rate, imageUrl, availability, phone, email, 
             <Col md={3} className='profileInfo__info mx-auto m-0 ms-md-3 mt-4 mt-md-0 py-3 p-md-3 bg-white'>
                 <h3>{name?.replace(/\w\S*/g, (w) => (w.replace(/^\w/, (c) => c.toUpperCase())))}</h3>
                 <p>{skill?.replace(/\w\S*/g, (w) => (w.replace(/^\w/, (c) => c.toUpperCase())))}</p>
-                <p>Rate: ${rate}/hr</p>
-                <p>Available {availability?.toUpperCase()}</p>
-                <p>P# {phone}</p>
-                <p>E# {email}</p>
-                <p>Portfolio {portfolioLink}</p>
+                {rate && <p>Rate: ${rate}/hr</p>}
+                {availability && <p>Available {availability?.toUpperCase()}</p>}
+                {phone && <p>P# {phone}</p>}
+                {email && <p>E# {email}</p>}
+                {portfolioLink && <p>Portfolio {portfolioLink}</p>}
             </Col>
             <Col md={5} className="profileInfo__performanceEval mx-auto ms-md-5 mt-4 mt-md-0 p-3 text-center bg-white">
                 <p className='p-0 m-0'>Coming in Version 1.1.0</p>

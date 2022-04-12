@@ -22,8 +22,6 @@ function Header() {
     const location = useLocation();
     let { searchParams } = useParams();
 
-    console.log(user)
-    
     const signOut = () => {
         dispatch(setUser(null))
     }
