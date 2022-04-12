@@ -4,6 +4,7 @@ import logo from '../images/VectorEPS_ByTailorBrands2.svg'
 import Search from './Search'
 import { useParams } from 'react-router-dom';
 import { Button } from 'reactstrap';
+import LoginModal from './LoginModal';
 
 function openNav() {
     document.getElementById("mySidebar").style.width = "250px";
@@ -14,12 +15,12 @@ function closeNav() {
 }
 
 function Header() {
-    const [user] = useState(null);
+    const [user, setUser] = useState(null);
     const location = useLocation();
     let { searchParams } = useParams();
 
-    const openSigninModal = () => {
-        console.log("hello")
+    const signOut = () => {
+        setUser(null)
     }
 
     return (
@@ -47,7 +48,9 @@ function Header() {
                         ?
                         <img src="https://firebasestorage.googleapis.com/v0/b/wurklo.appspot.com/o/profilePic.webp?alt=media&token=f0f6e321-e5b7-4825-8c34-c90d39ad800d" className="" alt="Profile Pic" onClick={() => openNav()} />
                         :
-                        <Button outline className='header__signinButton shadow-none border-0' onClick={openSigninModal}>Sign in</Button>
+                        <>
+                            <LoginModal />
+                        </>
                 }
             </div>
             <div id="mySidebar" className="sidebar shadow">
@@ -55,7 +58,7 @@ function Header() {
                 <Link to="/my-account/">My Account</Link>
                 <Link to="/messages">Messages</Link>
                 <Link to="/contacts">Contacts</Link>
-                {user ? <a href="/">Sign out</a> : <a href="/">Sign in</a>}
+                {user ? <a href="/" onClick={signOut}>Sign out</a> : <a href="/">Sign in</a>}
             </div>
         </div>
     );

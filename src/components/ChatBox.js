@@ -9,11 +9,12 @@ import FlipMove from 'react-flip-move';
 function ChatBox() {
     const [messages, setMessages] = useState([]);
     const [message, setMessage] = useState('');
-    const [username, setUsername] = useState('Test User');
+    const [username, setUsername] = useState('Test User 2');
 
     useEffect(() => {
         db.collection('messages')
             .orderBy('timestamp', 'desc')
+            .limit(10)
             .onSnapshot(snapshot => {
                 setMessages(snapshot.docs.map(doc => ({ id: doc.id, message: doc.data() })))
             })

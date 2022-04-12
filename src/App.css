@@ -87,7 +87,7 @@ img.navbar-coin {
   color: #727374;
   font-weight: 600;
 }
-.header__signinButton:hover {
+.header__joinNowButton:hover {
   background-color: transparent;
   color: #0d6efd;
 }
@@ -321,8 +321,8 @@ img.navbar-coin {
 /* filter search results  */
 .filterSearchResults__searchFilterIcon {
   position: absolute;
-  top: 1.5rem;
-  right: 7rem;
+  top: 1.4rem;
+  right: 12rem;
 }
 .filterSearchResults__searchFilterIcon:hover {
   color: #f1f1f1 !important;
@@ -412,7 +412,7 @@ footer {
     width: 8rem;
   }
   .landingPage__logoText {
-    text-shadow: 5px 5px 10px rgba(0, 0, 0, 0.3);
+    /* text-shadow: 5px 5px 10px rgba(0, 0, 0, 0.3); */
     color: #727374;
     font-weight: 600;
     font-size: 4rem !important;
