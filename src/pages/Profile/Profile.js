@@ -5,12 +5,19 @@ import ProfileInfo from '../../components/ProfileInfo';
 import { useParams, useNavigate } from 'react-router-dom';
 import { db } from '../../firebase';
 import ArrowBackIcon from '@mui/icons-material/ArrowBack';
+//redux 
+import { useDispatch, useSelector } from 'react-redux';
+import { setUser } from '../../redux/slices/user';
 
 function Profile() {
     let { id } = useParams();
     const [wurkerProfile, setWurkerProfile] = useState({});
     const [hire, setHire] = useState(false);
     const navigate = useNavigate();
+
+    // redux
+    const { user } = useSelector((state) => state.user);
+    const dispatch = useDispatch();
 
     useEffect(() => {
         db.collection('wurkers').doc(id).onSnapshot(doc => {
@@ -47,7 +54,7 @@ function Profile() {
                 />
             </Row>
             <Row className='text-start'>
-                <ChatBox />
+                {user ? <ChatBox /> : <p className='profile__chatboxSigninMessage'>Sign in to send message</p>}
             </Row>
         </Container>
     )
