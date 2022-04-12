@@ -322,7 +322,7 @@ img.navbar-coin {
 .filterSearchResults__searchFilterIcon {
   position: absolute;
   top: 1.4rem;
-  right: 12rem;
+  right: 8rem;
 }
 .filterSearchResults__searchFilterIcon:hover {
   color: #f1f1f1 !important;
