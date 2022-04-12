@@ -17,7 +17,7 @@ function LoginModal() {
                 isOpen={isLoginModalOpen}
                 toggle={() => setIsLoginModalOpen(isLoginModalOpen ? false : true)}
             >
-                <ModalHeader className='p-2 ms-2 ms-lg-0 p-lg-3' toggle={() => setIsLoginModalOpen(false)}>
+                <ModalHeader toggle={() => setIsLoginModalOpen(false)}>
                     <h3 className='text-secondary m-0'><strong>Sign in</strong></h3>
                 </ModalHeader>
                 <ModalBody className='d-flex flex-column mx-auto pt-4 text-center'>

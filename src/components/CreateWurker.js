@@ -101,7 +101,7 @@ function CreateWurker() {
                 isOpen={isModalOpen}
                 toggle={() => setIsModalOpen(isModalOpen ? false : true)}
             >
-                <ModalHeader className='p-2 ms-2 ms-lg-0 p-lg-3' toggle={() => setIsModalOpen(false)}>
+                <ModalHeader toggle={() => setIsModalOpen(false)}>
                     <h3 className='text-secondary m-0'><strong>Create Wurker Profile</strong></h3>
                 </ModalHeader>
                 <ModalBody className=' pt-0'>

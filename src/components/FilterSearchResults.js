@@ -28,7 +28,7 @@ function FilterSearchResults({ setNameFilter, setRateFilter }) {
                 isOpen={isModalOpen}
                 toggle={() => setIsModalOpen(isModalOpen ? false : true)}
             >
-                <ModalHeader className='p-2 ms-2 ms-lg-0 p-lg-3' toggle={() => setIsModalOpen(false)}>
+                <ModalHeader toggle={() => setIsModalOpen(false)}>
                     <p className='text-secondary m-0'><strong>Filter Results</strong></p>
                 </ModalHeader>
                 <ModalBody className=' pt-0'>
