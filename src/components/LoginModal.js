@@ -3,9 +3,36 @@ import { Button, Col, Input, Modal, ModalBody, ModalFooter, ModalHeader, Progres
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faGoogle, faApple, faMicrosoft, faYahoo, faGithub } from "@fortawesome/free-brands-svg-icons";
 import logo from '../images/VectorEPS_ByTailorBrands2.svg'
+import { auth, provider } from '../firebase';
 
 function LoginModal() {
     const [isLoginModalOpen, setIsLoginModalOpen] = useState(false);
+    const [user, setUser] = useState();
+
+    function signInAPI() {
+        return (dispatch) => {
+            auth.signInWithPopup(provider)
+            .then((payload) => {
+                setUser(payload);
+            })
+            .catch((error) => alert(error.message));
+        };
+    }
+
+    function getUserAuth() {
+        return (dispatch) => {
+            auth.onAuthStateChanged(async (user) => {
+                if (user) {
+                    dispatch(setUser(user))
+                }
+            })
+        }
+    }
+
+    console.log(user?.user.displayName)
+    console.log(user?.user.email)
+    console.log(user?.user.photoURL)
+    console.log(user?.user.emailVerified)
 
     return (
         <>
@@ -28,6 +55,7 @@ function LoginModal() {
                         outline
                         color='danger'
                         className='googleSignin__button make-round shadow-none p-2 px-4 mt-0'
+                        onClick={signInAPI()}
                     >
                         Sign in with Google
                         <FontAwesomeIcon icon={faGoogle} className="fs-5 ms-2" />

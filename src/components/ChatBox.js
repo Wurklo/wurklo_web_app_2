@@ -9,7 +9,7 @@ import FlipMove from 'react-flip-move';
 function ChatBox() {
     const [messages, setMessages] = useState([]);
     const [message, setMessage] = useState('');
-    const [username, setUsername] = useState('Test User 2');
+    const [username, setUsername] = useState('Test User');
 
     useEffect(() => {
         db.collection('messages')
