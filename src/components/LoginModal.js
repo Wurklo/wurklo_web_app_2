@@ -5,18 +5,23 @@ import { faGoogle, faApple, faMicrosoft, faYahoo, faGithub } from "@fortawesome/
 import logo from '../images/VectorEPS_ByTailorBrands2.svg'
 import { auth, provider } from '../firebase';
 
+// redux shit
+import { useDispatch, useSelector } from 'react-redux';
+import { setUser } from '../redux/slices/user';
+
 function LoginModal() {
     const [isLoginModalOpen, setIsLoginModalOpen] = useState(false);
-    const [user, setUser] = useState();
 
-    function signInAPI() {
-        return (dispatch) => {
-            auth.signInWithPopup(provider)
+    // redux shit
+    const { user } = useSelector((state) => state.user);
+    const dispatch = useDispatch();
+
+    const signInAPI = () => {
+        auth.signInWithPopup(provider)
             .then((payload) => {
-                setUser(payload);
+                dispatch(setUser(payload));
             })
             .catch((error) => alert(error.message));
-        };
     }
 
     function getUserAuth() {
@@ -28,11 +33,6 @@ function LoginModal() {
             })
         }
     }
-
-    console.log(user?.user.displayName)
-    console.log(user?.user.email)
-    console.log(user?.user.photoURL)
-    console.log(user?.user.emailVerified)
 
     return (
         <>
@@ -55,7 +55,7 @@ function LoginModal() {
                         outline
                         color='danger'
                         className='googleSignin__button make-round shadow-none p-2 px-4 mt-0'
-                        onClick={signInAPI()}
+                        onClick={signInAPI}
                     >
                         Sign in with Google
                         <FontAwesomeIcon icon={faGoogle} className="fs-5 ms-2" />

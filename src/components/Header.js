@@ -5,6 +5,8 @@ import Search from './Search'
 import { useParams } from 'react-router-dom';
 import { Button } from 'reactstrap';
 import LoginModal from './LoginModal';
+import { useDispatch, useSelector } from 'react-redux';
+import { setUser } from '../redux/slices/user';
 
 function openNav() {
     document.getElementById("mySidebar").style.width = "250px";
@@ -15,12 +17,14 @@ function closeNav() {
 }
 
 function Header() {
-    const [user, setUser] = useState(null);
+    const { user } = useSelector((state) => state.user);
+    const dispatch = useDispatch();
     const location = useLocation();
     let { searchParams } = useParams();
 
+    console.log(user)
     const signOut = () => {
-        setUser(null)
+        dispatch(setUser(null))
     }
 
     return (
@@ -46,7 +50,9 @@ function Header() {
                 {
                     user
                         ?
-                        <img src="https://firebasestorage.googleapis.com/v0/b/wurklo.appspot.com/o/profilePic.webp?alt=media&token=f0f6e321-e5b7-4825-8c34-c90d39ad800d" className="" alt="Profile Pic" onClick={() => openNav()} />
+                        <>
+                            <img src={user?.user.photoURL} className="" alt="Profile Pic" onClick={() => openNav()} />
+                        </>
                         :
                         <>
                             <LoginModal />
