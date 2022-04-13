@@ -1,12 +1,15 @@
 import React from 'react'
 import { Col } from 'reactstrap'
 
-function ProfileInfo({ name, skill, rate, imageUrl, availability, phone, email, portfolioLink }) {
-    
+function ProfileInfo({ name, skill, rate, imageUrl, availability, phone, email, portfolioLink, profile }) {
+
     return (
         <>
-            <Col lg={3} className="profileInfo__image">
-                <img src={imageUrl} className="" alt={name} />
+            <Col lg={3}>
+                <div className={"profileInfo__image " + (profile ? "" : "profileInfo__imageOpacity")}>
+                    <img src={imageUrl} alt={name} />
+                    {profile ? null : <input type="file" className='profileInfo__imageFilePicker' />}
+                </div>
             </Col>
             <Col md={3} className='profileInfo__info mx-auto m-0 ms-md-3 mt-4 mt-md-0 py-3 p-md-3 bg-white'>
                 <h3>{name?.replace(/\w\S*/g, (w) => (w.replace(/^\w/, (c) => c.toUpperCase())))}</h3>

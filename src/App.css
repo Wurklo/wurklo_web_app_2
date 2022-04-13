@@ -251,6 +251,22 @@ img.navbar-coin {
   overflow: hidden;
   border-radius: 2rem;
 }
+.profileInfo__image {
+  position: relative;
+}
+.profileInfo__imageFilePicker {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 18rem;
+  height: 18rem;
+  cursor: pointer;
+  border-radius: 2rem;
+  opacity: 0;
+}
+.profileInfo__imageOpacity:hover {
+  opacity: 50%;
+}
 .profileInfo__info {
   border-radius: 2rem;
   width: 22rem;

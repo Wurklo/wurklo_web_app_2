@@ -43,6 +43,7 @@ function Profile() {
             </div>
             <Row>
                 <ProfileInfo
+                    profile={true}
                     name={wurkerProfile.name}
                     skill={wurkerProfile.skill}
                     rate={wurkerProfile.rate}
