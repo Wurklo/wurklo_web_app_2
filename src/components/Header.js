@@ -2,11 +2,12 @@ import React, { useState } from 'react';
 import { Link, useLocation } from 'react-router-dom';
 import logo from '../images/VectorEPS_ByTailorBrands2.svg'
 import Search from './Search'
-import { useParams } from 'react-router-dom';
+import { useParams, useNavigate } from 'react-router-dom';
 import { Button } from 'reactstrap';
 import LoginModal from './LoginModal';
 import { useDispatch, useSelector } from 'react-redux';
 import { setUser } from '../redux/slices/user';
+import { auth } from '../firebase';
 
 function openNav() {
     document.getElementById("mySidebar").style.width = "250px";
@@ -20,11 +21,18 @@ function Header() {
     const { user } = useSelector((state) => state.user);
     const dispatch = useDispatch();
     const location = useLocation();
+    const navigate = useNavigate();
     let { searchParams } = useParams();
 
     const signOut = () => {
-        dispatch(setUser(null))
-    }
+        auth.signOut()
+        .then(() => {
+            dispatch(setUser(null))
+        })
+        .catch((error) => {
+            console.log(error.message)
+        });
+    };
 
     return (
         <div className={'header mb-3 ' + (location.pathname === "/" ? "" : "bg-white")} id="header">
@@ -50,7 +58,12 @@ function Header() {
                     user
                         ?
                         <>
-                            <img src={user?.user.photoURL} className="" alt="Profile Pic" onClick={() => openNav()} />
+                        {user?.photoURL 
+                            ?
+                            <img src={user?.photoURL} alt="Profile Pic" onClick={() => openNav()} />
+                            :
+                            <p onClick={() => openNav()}>{user?.displayName?.slice(0,1)}</p>
+                        }
                         </>
                         :
                         <>

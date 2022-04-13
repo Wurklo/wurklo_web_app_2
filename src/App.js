@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import './App.css';
 import Header from './components/Header';
 import LandingPage from './pages/Home/LandingPage';
@@ -8,8 +8,28 @@ import Profile from './pages/Profile/Profile';
 import MyAccount from './pages/MyAccount/MyAccount';
 import Messages from './pages/Messages/Messages';
 import Contacts from './pages/Contacts/Contacts';
+import { auth } from './firebase';
+// redux shit
+import { useDispatch, useSelector } from 'react-redux';
+import { setUser } from './redux/slices/user';
 
 function App() {
+  // redux shit
+  const { user } = useSelector((state) => state.user);
+  const dispatch = useDispatch();
+
+  useEffect(() => {
+    const getUserAuth = () => {
+      auth.onAuthStateChanged(async (user) => {
+        if (user) {
+          dispatch(setUser(user))
+        }
+      })
+    }
+
+    getUserAuth();
+  }, [])
+
   return (
     <div>
       <BrowserRouter>
