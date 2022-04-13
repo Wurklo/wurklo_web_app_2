@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Button, Col, Input, Modal, ModalBody, ModalFooter, ModalHeader, Progress } from 'reactstrap';
+import { Button, Col, Input, Modal, ModalBody, ModalFooter, ModalHeader, Progress, Row } from 'reactstrap';
 import { storage, db } from "../firebase";
 import firebase from 'firebase';
 //redux 
@@ -58,6 +58,7 @@ function CreateWurker() {
                         // post image in db
                         db.collection("wurkers").add({
                             timestamp: firebase.firestore.FieldValue.serverTimestamp(),
+                            authUid: user?.uid,
                             name: name.toLowerCase(),
                             email: email.toLowerCase(),
                             skill: skill.toLowerCase(),
@@ -92,12 +93,13 @@ function CreateWurker() {
 
     const isUserLoggedIn = () => {
         if (user) {
-            setIsModalOpen(isModalOpen ? false : true) 
+            setIsModalOpen(isModalOpen ? false : true)
         } else {
             alert("You must be signed in to create a wurker profile")
         }
 
     }
+    console.log(user?.uid)
 
     return (
         <>
@@ -120,81 +122,116 @@ function CreateWurker() {
                 <ModalHeader toggle={() => setIsModalOpen(false)}>
                     <h3 className='text-secondary m-0'><strong>Create Wurker Profile</strong></h3>
                 </ModalHeader>
-                <ModalBody className=' pt-0'>
-                    <Col className="createWurker text-center mt-0 mx-auto">
-                        <Input
-                            className='search__input shadow-none mt-4'
-                            placeholder="Name ..."
-                            value={name}
-                            onChange={e => setName(e.target.value)}
-                        />
-                        <Input
-                            className='search__input shadow-none mt-4'
-                            placeholder="Email ..."
-                            value={email}
-                            onChange={e => setEmail(e.target.value)}
-                        />
-                        <Input
-                            className='search__input shadow-none mt-4'
-                            placeholder="Skill or service ..."
-                            value={skill}
-                            onChange={e => setSkill(e.target.value)}
-                        />
-                        <Input
-                            className='search__input shadow-none mt-4'
-                            placeholder="Rate ..."
-                            value={rate}
-                            onChange={e => setRate(e.target.value)}
-                        />
-                        <Input
-                            className='search__input shadow-none mt-4'
-                            placeholder="Years of experience ..."
-                            value={yearsOfExp}
-                            onChange={e => setYearsOfExp(e.target.value)}
-                        />
-                        <Input
-                            className='search__input shadow-none mt-4'
-                            placeholder="Highest education ..."
-                            value={highestEdu}
-                            onChange={e => setHighestEdu(e.target.value)}
-                        />
-                        <Input
-                            className='search__input shadow-none mt-4'
-                            placeholder="Certifications/Licenses ..."
-                            value={certsLicenses}
-                            onChange={e => setCertsLicenses(e.target.value)}
-                        />
-                        <Input
-                            className='search__input shadow-none mt-4'
-                            placeholder="Availability ex. 24/7, 8-5pm M-F, etc ..."
-                            value={availability}
-                            onChange={e => setAvailability(e.target.value)}
-                        />
+                <ModalBody className='createWurker pt-0'>
+                    <Row>
+                        <Col md={6} className="text-center mt-0 mx-auto">
+                            <Input
+                                className='search__input shadow-none mt-4'
+                                placeholder="Name ..."
+                                value={name}
+                                onChange={e => setName(e.target.value)}
+                            />
+                        </Col>
+                        <Col>
+                            <Input
+                                className='search__input shadow-none mt-4'
+                                placeholder="Email ..."
+                                value={email}
+                                onChange={e => setEmail(e.target.value)}
+                            />
+                        </Col>
+                    </Row>
+                    <Row>
+                        <Col md={6} className="text-center mt-0 mx-auto">
+                            <Input
+                                className='search__input shadow-none mt-4'
+                                placeholder="Skill or service ..."
+                                value={skill}
+                                onChange={e => setSkill(e.target.value)}
+                            />
+                        </Col>
+                        <Col>
+                            <Input
+                                className='search__input shadow-none mt-4'
+                                placeholder="Rate ..."
+                                value={rate}
+                                onChange={e => setRate(e.target.value)}
+                            />
+                        </Col>
+                    </Row>
+                    <Row>
+                        <Col md={6} className="text-center mt-0 mx-auto">
+                            <Input
+                                className='search__input shadow-none mt-4'
+                                placeholder="Years of experience ..."
+                                value={yearsOfExp}
+                                onChange={e => setYearsOfExp(e.target.value)}
+                            />
+                        </Col>
+                        <Col>
+                            <Input
+                                className='search__input shadow-none mt-4'
+                                placeholder="Highest education ..."
+                                value={highestEdu}
+                                onChange={e => setHighestEdu(e.target.value)}
+                            />
+                        </Col>
+                    </Row>
+                    <Row>
+                        <Col md={6} className="text-center mt-0 mx-auto">
+                            <Input
+                                className='search__input shadow-none mt-4'
+                                placeholder="Certifications/Licenses ..."
+                                value={certsLicenses}
+                                onChange={e => setCertsLicenses(e.target.value)}
+                            />
+                        </Col>
+                        <Col>
+                            <Input
+                                className='search__input shadow-none mt-4'
+                                placeholder="Availability ex. 24/7, 8-5pm M-F, etc ..."
+                                value={availability}
+                                onChange={e => setAvailability(e.target.value)}
+                            />
+                        </Col>
+                    </Row>
+                    <Row>
+                        <Col md={6} className="text-center mt-0 mx-auto">
                         <Input
                             className='search__input shadow-none mt-4'
                             placeholder="Phone # ex. +1-555-555-5555 ..."
                             value={phone}
                             onChange={e => setPhone(e.target.value)}
                         />
+                        </Col>
+                        <Col>
                         <Input
                             className='search__input shadow-none mt-4'
                             placeholder="Portfolio Link ..."
                             value={portfolioLink}
                             onChange={e => setPortfolioLink(e.target.value)}
                         />
+                        </Col>
+                    </Row>
+                    <Row>
+                        <Col md={6} className="text-center mt-0 mx-auto">
                         <Input
+                        type='search'
                             className='search__input shadow-none mt-4'
                             placeholder="References ..."
                             value={references}
                             onChange={e => setReferences(e.target.value)}
                         />
+                        </Col>
+                        <Col>
                         <Input
                             className='search__input shadow-none mt-4'
                             placeholder="Portfolio Link ..."
                             onChange={handleChange}
                             type="file"
                         />
-                    </Col>
+                        </Col>
+                    </Row>
                 </ModalBody>
                 <ModalFooter className='d-inline py-1 text-center'>
                     <Progress value={progress} className='mx-auto mb-0' /><br />

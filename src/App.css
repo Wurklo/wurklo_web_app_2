@@ -330,13 +330,16 @@ img.navbar-coin {
 
 /* create wurker */
 .createWurker {
-  
+  background-color: rgb(240, 240, 240);
 }
 .createWurker__button {
   border-radius: 2rem;
 }
 .createWurker__button:hover {
   background-color: #0d6efd !important;
+}
+.createWurker__nameInput {
+  width: 20rem;
 }
 
 /* filter search results  */

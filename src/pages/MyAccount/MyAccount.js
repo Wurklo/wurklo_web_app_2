@@ -1,7 +1,9 @@
-import React from 'react'
+import React, { useEffect, useState } from 'react'
 import { Col, Container, Row } from 'reactstrap'
 import CreateWurker from '../../components/CreateWurker'
 import ProfileInfo from '../../components/ProfileInfo'
+import { db } from '../../firebase';
+
 //redux 
 import { useDispatch, useSelector } from 'react-redux';
 import { setUser } from '../../redux/slices/user';
@@ -10,9 +12,31 @@ function MyAccount() {
     const { user } = useSelector((state) => state.user);
     const dispatch = useDispatch();
 
+    const [userWurkerProfile, setUserWurkerProfile] = useState();
+
+    useEffect(() => {
+        db
+            .collection('wurkers')
+            .where('authUid', '==', `${user?.uid}`)
+            .get()
+            .then((snapshot) => {
+                setUserWurkerProfile(snapshot.docs.map(doc => ({
+                    id: doc.id,
+                    wurker: doc.data()
+                })));
+            })
+    }, []);
+
+    const updateUserWurkerProfile = () => {
+
+    }
+
     return (
         <Container className='mt-3 text-center text-md-start'>
-            <Row>
+            <h1 className="text-center">My Account</h1>
+            <hr className="text-secondary"/>
+            <Row className="mt-4">
+                <h3 className="mb-4">User Profile</h3>
                 <ProfileInfo
                     name={user?.displayName}
                     skill={user?.skill}
@@ -29,6 +53,26 @@ function MyAccount() {
                     <CreateWurker />
                 </Col>
             </Row>
+            <hr className="text-secondary"/>
+            <Row className="mt-4">
+                <h3 className="mb-4">Wurker Profile</h3>
+                <ProfileInfo
+                    name={userWurkerProfile[0]?.wurker?.name}
+                    skill={userWurkerProfile[0]?.wurker?.skill}
+                    rate={userWurkerProfile[0]?.wurker?.rate}
+                    imageUrl={userWurkerProfile[0]?.wurker?.imageUrl}
+                    availability={userWurkerProfile[0]?.wurker?.availability}
+                    phone={userWurkerProfile[0]?.wurker?.phone}
+                    email={userWurkerProfile[0]?.wurker?.email}
+                    portfolioLink={userWurkerProfile[0]?.wurker?.portfolioLink}
+                />
+            </Row>
+            <Row>
+                <Col md={6} className='mt-4 ms-0 ms-lg-5 mb-4'>
+                    <CreateWurker />
+                </Col>
+            </Row>
+
         </Container>
     )
 }
