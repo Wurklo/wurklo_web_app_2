@@ -3,7 +3,7 @@ import { Button, Col, Input, Modal, ModalBody, ModalFooter, ModalHeader, Progres
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faGoogle, faApple, faMicrosoft, faYahoo, faGithub } from "@fortawesome/free-brands-svg-icons";
 import logo from '../images/VectorEPS_ByTailorBrands2.svg'
-import { auth, provider } from '../firebase';
+import { auth, googleAuthProvider, appleAuthProvider } from '../firebase';
 
 // redux shit
 import { useDispatch, useSelector } from 'react-redux';
@@ -16,10 +16,19 @@ function LoginModal() {
     const { user } = useSelector((state) => state.user);
     const dispatch = useDispatch();
 
-    const signInAPI = () => {
-        auth.signInWithPopup(provider)
+    const signInWithGoogle = () => {
+        auth.signInWithPopup(googleAuthProvider)
             .then((payload) => {
                 dispatch(setUser(payload));
+            })
+            .catch((error) => alert(error.message));
+    }
+
+    const signInWithApple = () => {
+        auth.signInWithPopup(appleAuthProvider)
+            .then((payload) => {
+                dispatch(setUser(payload));
+                console.log(payload)
             })
             .catch((error) => alert(error.message));
     }
@@ -45,7 +54,7 @@ function LoginModal() {
                         outline
                         color='danger'
                         className='googleSignin__button make-round shadow-none p-2 px-4 mt-0'
-                        onClick={signInAPI}
+                        onClick={signInWithGoogle}
                     >
                         Sign in with Google
                         <FontAwesomeIcon icon={faGoogle} className="fs-5 ms-2" />
@@ -54,6 +63,7 @@ function LoginModal() {
                         outline
                         color='secondary'
                         className='appleSignin__button make-round shadow-none p-2 px-4 mt-3'
+                        onClick={signInWithApple}
                     >
                         Sign in with Apple
                         <FontAwesomeIcon icon={faApple} className="fs-5 ms-2" />

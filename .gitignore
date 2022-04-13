@@ -28,3 +28,6 @@ firebase.js
 
 # firebase functions
 functions/index.js
+
+# apple sigin
+AuthKey_55N3T43U83.p8
