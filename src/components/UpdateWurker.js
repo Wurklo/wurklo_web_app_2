@@ -8,21 +8,20 @@ import { useNavigate } from 'react-router-dom';
 import { useDispatch, useSelector } from 'react-redux';
 import { setUser } from '../redux/slices/user';
 
-function CreateWurker() {
+function UpdateWurker({wurker}) {
     const [isModalOpen, setIsModalOpen] = useState(false);
-
-    const [name, setName] = useState('');
-    const [email, setEmail] = useState('');
-    const [skill, setSkill] = useState('');
-    const [rate, setRate] = useState('');
-    const [yearsOfExp, setYearsOfExp] = useState('');
-    const [highestEdu, setHighestEdu] = useState('');
-    const [certsLicenses, setCertsLicenses] = useState('');
-    const [availability, setAvailability] = useState('');
-    const [phone, setPhone] = useState('');
-    const [portfolioLink, setPortfolioLink] = useState('');
-    const [references, setReferences] = useState('');
-    const [imageFile, setImageFile] = useState(null);
+    const [name, setName] = useState(`${wurker?.wurker?.name}`);
+    const [email, setEmail] = useState(`${wurker?.wurker?.email}`);
+    const [skill, setSkill] = useState(`${wurker?.wurker?.skill}`);
+    const [rate, setRate] = useState(`${wurker?.wurker?.rate}`);
+    const [yearsOfExp, setYearsOfExp] = useState(`${wurker?.wurker?.yearsOfExp}`);
+    const [highestEdu, setHighestEdu] = useState(`${wurker?.wurker?.highestEdu}`);
+    const [certsLicenses, setCertsLicenses] = useState(`${wurker?.wurker?.certsLicenses}`);
+    const [availability, setAvailability] = useState(`${wurker?.wurker?.availability}`);
+    const [phone, setPhone] = useState(`${wurker?.wurker?.phone}`);
+    const [portfolioLink, setPortfolioLink] = useState(`${wurker?.wurker?.portfolioLink}`);
+    const [references, setReferences] = useState(`${wurker?.wurker?.references}`);
+    const [imageFile, setImageFile] = useState(`${wurker?.wurker?.imageFile}`);
     const [progress, setProgress] = useState(0);
 
     // redux
@@ -36,7 +35,7 @@ function CreateWurker() {
         }
     };
 
-    const handleCreateWurker = () => {
+    const handleUpdateWurker = () => {
         const uploadTask = storage.ref(`images/${imageFile.name}`).put(imageFile);
         // progress bar function
         uploadTask.on(
@@ -59,9 +58,10 @@ function CreateWurker() {
                     .getDownloadURL()
                     .then(url => {
                         // post image in db
-                        db.collection("wurkers").add({
-                            timestamp: firebase.firestore.FieldValue.serverTimestamp(),
-                            authUid: user?.uid,
+                        db.collection("wurkers")
+                        .doc(wurker?.id)
+                        .update({
+                            lastUpdate: firebase.firestore.FieldValue.serverTimestamp(),
                             name: name.toLowerCase(),
                             email: email.toLowerCase(),
                             skill: skill.toLowerCase(),
@@ -111,7 +111,7 @@ function CreateWurker() {
                 outline
                 onClick={isUserLoggedIn}
             >
-                Create Wurker Profile
+                Update Wurker Profile
             </Button>
             <Modal
                 className='createWurker__modal'
@@ -122,7 +122,7 @@ function CreateWurker() {
                 toggle={() => setIsModalOpen(isModalOpen ? false : true)}
             >
                 <ModalHeader toggle={() => setIsModalOpen(false)}>
-                    <h3 className='text-secondary m-0'><strong>Create Wurker Profile</strong></h3>
+                    <h3 className='text-secondary m-0'><strong>Update Wurker Profile</strong></h3>
                 </ModalHeader>
                 <ModalBody className='createWurker pt-0'>
                     <Row>
@@ -240,10 +240,10 @@ function CreateWurker() {
                     <Button
                         outline
                         color='primary'
-                        onClick={handleCreateWurker}
+                        onClick={handleUpdateWurker}
                         className='createWurker__button p-2 px-4 mt-0'
                     >
-                        Create Wurker
+                        Update Wurker
                     </Button>
                     <Button outline className='createWurker__button p-2 mt-0' onClick={() => setIsModalOpen(false)}>
                         Cancel
@@ -254,4 +254,4 @@ function CreateWurker() {
     )
 }
 
-export default CreateWurker
+export default UpdateWurker
