@@ -2,8 +2,7 @@ import React from 'react'
 import { Col } from 'reactstrap'
 
 function ProfileInfo({ name, skill, rate, imageUrl, availability, phone, email, portfolioLink }) {
-
-    console.log(rate)
+    
     return (
         <>
             <Col lg={3} className="profileInfo__image">

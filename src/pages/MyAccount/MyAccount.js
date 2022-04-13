@@ -14,13 +14,13 @@ function MyAccount() {
         <Container className='mt-3 text-center text-md-start'>
             <Row>
                 <ProfileInfo
-                    name={user?.user.displayName}
+                    name={user?.displayName}
                     skill={user?.skill}
                     rate={user?.rate}
-                    imageUrl={user?.user.photoURL.split('=')[0]}
+                    imageUrl={user?.photoURL.split('=')[0]}
                     availability={user?.availability}
                     phone={user?.phone}
-                    email={user?.user.email}
+                    email={user?.email}
                     portfolioLink={user?.portfolioLink}
                 />
             </Row>
@@ -34,19 +34,3 @@ function MyAccount() {
 }
 
 export default MyAccount
-
-// a preprocesor for capitalization of first word
-// and all words processed
-// const array = [userProfile.name, userProfile.skill]
-
-// const capitalizeAll = (array) => {
-//     let newArray = []
-//     for (let i = 0; i < array.length; i++) {
-//         console.log(array[i])
-//         newArray.push(array[i].replace(/\w\S*/g, (w) => (w.replace(/^\w/, (c) => c.toUpperCase())))) 
-//         console.log(array[i])
-//     }
-//     console.log(newArray);
-// }
-
-// capitalizeAll(array)
