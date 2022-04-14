@@ -31,7 +31,7 @@ function Profile() {
     return (
         <Container className='profile mt-3 text-center text-md-start'>
             <div className='d-flex justify-content-between mb-2 mx-3 mx-sm-2 mx-md-0'>
-                <ArrowBackIcon className='profile__backButton fs-1 text-secondary' onClick={() => navigate(-1)} />
+                <ArrowBackIcon className='profile__backButton fs-1' onClick={() => navigate(-1)} />
                 {hire ?
                     <div>
                         <Button color='danger' outline className='profile__hireButton me-3 make-round bg-white' onClick={() => setHire(false)}>Fire</Button>

@@ -109,6 +109,7 @@ img.navbar-coin {
 .header__joinNowButton:hover {
   background-color: transparent;
   color: #0d6efd;
+  transition: 0.5s;
 }
 .header__joinNowButton {
   background-color: transparent;
@@ -142,6 +143,7 @@ img.navbar-coin {
 }
 .sidebar a:hover, button:hover {
   color: #f1f1f1;
+  transition: 0.5s;
 }
 .sidebar .closebtn {
   position: absolute;
@@ -160,6 +162,7 @@ img.navbar-coin {
 }
 .openbtn:hover {
   background-color: #444;
+  transition: 0.5s;
 }
 
 /* search wurkers page */
@@ -209,6 +212,7 @@ img.navbar-coin {
 .wurkerCard:hover {
   transition: 3ms transform ease-in;
   transform: scale(1.05);
+  transition: 0.5s;
 }
 .wurkerCard > img {
   width: 18rem;
@@ -250,16 +254,19 @@ img.navbar-coin {
   cursor: pointer;
   width: 2.5rem;
   height: 2.5rem;
+  color: #e0e1dd;
 }
 .profile__hireButton:hover {
   background-color: #dc3545 !important;
+  transition: 0.5s;
 }
 .profile__completeButton:hover {
   background-color: #0d6efd !important;
+  transition: 0.5s;
 }
 .profile__backButton:hover {
-  color: #f1f1f1 !important;
-  transition: 0.3s;
+  color: white;
+  transition: 0.5s;
 }
 .profileInfo__image > img {
   width: 18rem;
@@ -283,6 +290,7 @@ img.navbar-coin {
 }
 .profileInfo__imageOpacity:hover {
   opacity: 50%;
+  transition: 0.5s;
 }
 .profileInfo__info {
   border-radius: 2rem;
@@ -347,7 +355,7 @@ img.navbar-coin {
   cursor: pointer;
 }
 .messageCard:hover {
-  transition: 3ms transform ease-in;
+  transition: 5ms transform ease-in;
   transform: scale(1.05);
 }
 .messageCard > img {
@@ -374,8 +382,8 @@ img.navbar-coin {
   background-color: transparent !important;
   color: white;
   border-color: white;
-  transition: 0.6ms;
   cursor: pointer;
+  transition: 0.5s;
 }
 .createWurker__nameInput {
   width: 20rem;
@@ -390,7 +398,7 @@ img.navbar-coin {
 }
 .filterSearchResults__searchFilterIcon:hover {
   color: #ffffff !important;
-  transition: 0.3s;  
+  transition: 0.5s;
   cursor: pointer;
 }
 
@@ -403,6 +411,7 @@ img.navbar-coin {
   background-color: #430297 !important;
   color: white !important;
   border: 1px solid #430297;
+  transition: 0.5s;
 }
 .loginModal__wurkloLogo {
   width: 6rem;
@@ -421,7 +430,7 @@ img.navbar-coin {
   color: white;
   border-color: white;
   background-color: transparent;
-  transition: 0.6ms;
+  transition: 0.5s;
   cursor: pointer;
 }
 
@@ -430,7 +439,7 @@ img.navbar-coin {
   background-color: transparent;
   color: white;
   cursor: pointer;
-  transition: 0.6ms;
+  transition: 0.5s;
 }
 .joinNow__button {
   color: #e0e1dd;
