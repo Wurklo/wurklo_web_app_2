@@ -31,10 +31,10 @@ function MyAccount() {
 
     return (
         <Container className='mt-3 text-center text-md-start'>
-            <h1 className="text-center">My Account</h1>
-            <hr className="" />
+            <h1 className="myAccount__titleText text-center">My Account</h1>
+            <hr className="text-white" />
             <Row className="mt-4">
-                <h3 className="mb-4">User Profile</h3>
+                <h3 className="myAccount__titleText mb-4">User Profile</h3>
                 <ProfileInfo
                     name={user?.displayName}
                     skill={user?.skill}
@@ -53,9 +53,9 @@ function MyAccount() {
             </Row>
             {userWurkerProfile?.[0]?.wurker &&
                 <>
-                    <hr className="" />
+                    <hr className="text-white" />
                     <Row className="mt-4">
-                        <h3 className="mb-4">Wurker Profile</h3>
+                        <h3 className="myAccount__titleText mb-4">Wurker Profile</h3>
                         <ProfileInfo
                             name={userWurkerProfile?.[0]?.wurker?.name}
                             skill={userWurkerProfile?.[0]?.wurker?.skill}

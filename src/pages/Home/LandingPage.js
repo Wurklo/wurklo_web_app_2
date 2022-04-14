@@ -12,7 +12,6 @@ function LandingPage() {
 
     const [userWurkerProfile, setUserWurkerProfile] = useState();
 
-    console.log(user)
     useEffect(() => {
         if (!user) return;
         db

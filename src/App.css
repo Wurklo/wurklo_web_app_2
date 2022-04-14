@@ -425,6 +425,11 @@ img.navbar-coin {
   color: #e0e1dd;
 }
 
+/* my account */
+.myAccount__titleText {
+  color: #e0e1dd;
+}
+
 /* footer component */
 footer {
   background-image: linear-gradient(to top, #3f4548 85%, #1b5baf 99%);
@@ -508,7 +513,6 @@ footer {
   }
   .landingPage__logoText {
     /* text-shadow: 5px 5px 10px rgba(0, 0, 0, 0.3); */
-    color: #727374;
     font-weight: 600;
     font-size: 4rem !important;
   }
@@ -579,6 +583,15 @@ footer {
   .profile__chatboxSigninMessage {
     font-size: 1.5rem;
     height: 10rem;
+  }
+  .landingPage__sloganText {
+    /* text-shadow: 5px 5px 10px rgba(0, 0, 0, 0.3); */
+    color: #e0e1dd;
+    /* color: white; */
+    font-weight: 100;
+    font-size: 1.15rem !important;
+    margin-top: -1.5rem;
+    margin-bottom: 1.2rem;
   }
 }
 
