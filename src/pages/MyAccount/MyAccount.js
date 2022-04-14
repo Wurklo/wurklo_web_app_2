@@ -28,8 +28,6 @@ function MyAccount() {
             })
     }, [user]);
 
-    console.log("running")
-
     return (
         <Container className='mt-3 text-center text-md-start'>
             <h1 className="text-center">My Account</h1>

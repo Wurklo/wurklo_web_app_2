@@ -52,7 +52,6 @@ function LoginModal() {
         auth.signInWithPopup(githubAuthProvider)
             .then((payload) => {
                 dispatch(setUser(payload));
-                console.log(payload)
             })
             .catch((error) => alert(error.message));
     }
