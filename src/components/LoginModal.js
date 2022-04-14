@@ -3,7 +3,7 @@ import { Button, Col, Input, Modal, ModalBody, ModalFooter, ModalHeader, Progres
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faGoogle, faApple, faMicrosoft, faYahoo, faGithub } from "@fortawesome/free-brands-svg-icons";
 import logo from '../images/VectorEPS_ByTailorBrands2.svg'
-import { auth, googleAuthProvider, appleAuthProvider } from '../firebase';
+import { auth, googleAuthProvider, appleAuthProvider, microsoftAuthProvider, yahooAuthProvider, githubAuthProvider } from '../firebase';
 
 // redux shit
 import { useDispatch, useSelector } from 'react-redux';
@@ -26,6 +26,30 @@ function LoginModal() {
 
     const signInWithApple = () => {
         auth.signInWithPopup(appleAuthProvider)
+            .then((payload) => {
+                dispatch(setUser(payload));
+            })
+            .catch((error) => alert(error.message));
+    }
+
+    const signInWithMicrosoft = () => {
+        auth.signInWithPopup(microsoftAuthProvider)
+            .then((payload) => {
+                dispatch(setUser(payload));
+            })
+            .catch((error) => alert(error.message));
+    }
+
+    const signInWithYahoo = () => {
+        auth.signInWithPopup(yahooAuthProvider)
+            .then((payload) => {
+                dispatch(setUser(payload));
+            })
+            .catch((error) => alert(error.message));
+    }
+
+    const signInWithGithub = () => {
+        auth.signInWithPopup(githubAuthProvider)
             .then((payload) => {
                 dispatch(setUser(payload));
                 console.log(payload)
@@ -72,6 +96,7 @@ function LoginModal() {
                         outline
                         color='primary'
                         className='microsoftSignin__button make-round shadow-none p-2 px-4 mt-3'
+                        onClick={signInWithMicrosoft}
                     >
                         Sign in with Microsoft
                         <FontAwesomeIcon icon={faMicrosoft} className="fs-5 ms-2" />
@@ -80,6 +105,7 @@ function LoginModal() {
                         outline
                         color='danger'
                         className='yahooSignin__button make-round shadow-none p-2 px-4 mt-3'
+                        onClick={signInWithYahoo}
                     >
                         Sign in with Yahoo
                         <FontAwesomeIcon icon={faYahoo} className="fs-5 ms-2" />
@@ -88,6 +114,7 @@ function LoginModal() {
                         outline
                         color='dark'
                         className='githubSignin__button make-round shadow-none p-2 px-4 my-3'
+                        onClick={signInWithGithub}
                     >
                         Sign in with Github
                         <FontAwesomeIcon icon={faGithub} className="fs-5 ms-2" />
