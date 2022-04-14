@@ -57,7 +57,7 @@ function SearchResults() {
     }
 
     window.onscroll = function (ev) {
-        if ((window.innerHeight + window.scrollY) >= document.body.scrollHeight) {
+        if ((window.innerHeight + window.pageYOffset) >= document.body.offsetHeight) {
             // you're at the bottom of the page
             getNextPage();
         }

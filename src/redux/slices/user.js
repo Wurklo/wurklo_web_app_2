@@ -45,7 +45,7 @@ export const userSlice = createSlice({
                 state.status = 'loading';
             })
             .addCase(createUser.fulfilled, (state, action) => {
-                state.user = action.payload
+                state.user = [...action.payload]
             })
             .addCase(createUser, (state) => {
                 state.status = "failed";

@@ -1,10 +1,5 @@
 @import url('https://fonts.googleapis.com/css?family=ABeeZee:400,700');
 
-.credit__background {
-  font-size: xx-small;
-  position: absolute;
-  bottom: 0;
-}
 * {
   margin: 0;
   padding: 0;
@@ -15,7 +10,10 @@
 body {
   /* background: rgb(238, 234, 234); */
   /* background: rgb(240, 240, 240); */
-  background-image: url("./images/bgbgbg.webp");
+  /* background-image: url("./images/bgbgbg.webp"); */
+  height: 100vh;
+  background-image: linear-gradient(to bottom right, #3f4548 30%, #1b5baf 80%);
+  background-attachment: fixed;
 }
 
 a:hover {
@@ -44,14 +42,14 @@ a:link {
 }
 .landingPage__logoText {
   /* text-shadow: 5px 5px 10px rgba(0, 0, 0, 0.3); */
-  color: #727374;
+  color: #e0e1dd;
   /* color: white; */
   font-weight: 600;
   font-size: 6rem !important;
 }
 .landingPage__sloganText {
   /* text-shadow: 5px 5px 10px rgba(0, 0, 0, 0.3); */
-  color: #727374;
+  color: #e0e1dd;
   /* color: white; */
   font-weight: 100;
   font-size: 1.5rem !important;
@@ -79,14 +77,14 @@ a:link {
   width: 3rem;
   height: 3rem;
   border-radius: 10rem;
-  border: 2px solid #6c757d;
+  border: 2px solid #e0e1dd;
   cursor: pointer;
 }
 .header__right > p {
   width: 3rem;
   height: 3rem;
   border-radius: 10rem;
-  border: 2px solid #6c757d;
+  border: 2px solid #e0e1dd;
   cursor: pointer;
   display: flex;
   justify-content: center;
@@ -108,6 +106,10 @@ img.navbar-coin {
 .header__joinNowButton:hover {
   background-color: transparent;
   color: #0d6efd;
+}
+.header__joinNowButton {
+  background-color: transparent;
+  color: #e0e1dd;
 }
 
 .sidebar {

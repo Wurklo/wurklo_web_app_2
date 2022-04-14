@@ -12,6 +12,7 @@ function LandingPage() {
 
     const [userWurkerProfile, setUserWurkerProfile] = useState();
 
+    console.log(user)
     useEffect(() => {
         if (!user) return;
         db
@@ -38,7 +39,6 @@ function LandingPage() {
                     <CreateWurker />
                 }
             </div>
-            <a className='credit__background' href='https://www.freepik.com/photos/white-studio' target="_blank" rel="noreferrer" >White studio photo created by benzoix - www.freepik.com</a>
         </div>
     );
 };

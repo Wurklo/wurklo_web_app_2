@@ -7,6 +7,7 @@ import { useNavigate } from 'react-router-dom';
 //redux 
 import { useDispatch, useSelector } from 'react-redux';
 import { setUser } from '../redux/slices/user';
+import JoinNowModal from './JoinNowModal';
 
 function CreateWurker() {
     const [isModalOpen, setIsModalOpen] = useState(false);
@@ -104,7 +105,7 @@ function CreateWurker() {
         if (user) {
             setIsModalOpen(isModalOpen ? false : true)
         } else {
-            alert("You must be signed in to create a wurker profile")
+            alert("Sing in to create a wurker")
         }
 
     }
