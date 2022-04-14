@@ -7,68 +7,68 @@ import { auth, googleAuthProvider, appleAuthProvider, microsoftAuthProvider, yah
 
 // redux shit
 import { useDispatch, useSelector } from 'react-redux';
-import { setUser } from '../redux/slices/user';
+import { createUser } from '../redux/slices/user';
 
-function LoginModal() {
-    const [isLoginModalOpen, setIsLoginModalOpen] = useState(false);
+function JoinNowModal() {
+    const [isJoinNowOpen, setIsJoinNowOpen] = useState(false);
 
     // redux shit
     // const { user } = useSelector((state) => state.user);
     const dispatch = useDispatch();
 
-    const signInWithGoogle = () => {
+    const joinNowWithGoogle = () => {
         auth.signInWithPopup(googleAuthProvider)
             .then((payload) => {
-                dispatch(setUser(payload));
+                dispatch(createUser(payload));
             })
             .catch((error) => alert(error.message));
     }
 
-    const signInWithApple = () => {
+    const joinNowWithApple = () => {
         auth.signInWithPopup(appleAuthProvider)
             .then((payload) => {
-                dispatch(setUser(payload));
+                dispatch(createUser(payload));
             })
             .catch((error) => alert(error.message));
     }
 
-    const signInWithMicrosoft = () => {
+    const joinNowWithMicrosoft = () => {
         auth.signInWithPopup(microsoftAuthProvider)
             .then((payload) => {
-                dispatch(setUser(payload));
+                dispatch(createUser(payload));
             })
             .catch((error) => alert(error.message));
     }
 
-    const signInWithYahoo = () => {
+    const joinNowWithYahoo = () => {
         auth.signInWithPopup(yahooAuthProvider)
             .then((payload) => {
-                dispatch(setUser(payload));
+                dispatch(createUser(payload));
             })
             .catch((error) => alert(error.message));
     }
 
-    const signInWithGithub = () => {
+    const joinNowWithGithub = () => {
         auth.signInWithPopup(githubAuthProvider)
             .then((payload) => {
-                dispatch(setUser(payload));
+                dispatch(createUser(payload));
             })
             .catch((error) => alert(error.message));
     }
 
     return (
         <>
-            <Button color='primary' outline className=' shadow-none make-round'
-                onClick={() => setIsLoginModalOpen(isLoginModalOpen ? false : true)}
-            >Sign in</Button>
+            <Button color='secondary' outline className='joinNow__button me-3 border-0 shadow-none make-round'
+                onClick={() => setIsJoinNowOpen(isJoinNowOpen ? false : true)}
+            >Join Now</Button>
             <Modal
                 className='createWurker__modal'
                 size="sm"
-                isOpen={isLoginModalOpen}
-                toggle={() => setIsLoginModalOpen(isLoginModalOpen ? false : true)}
+                isOpen={isJoinNowOpen}
+                toggle={() => setIsJoinNowOpen(isJoinNowOpen ? false : true)}
             >
-                <ModalHeader toggle={() => setIsLoginModalOpen(false)}>
-                    <h3 className='text-secondary m-0'><strong>Sign in</strong></h3>
+                <ModalHeader toggle={() => setIsJoinNowOpen(false)}>
+                    <h3 className='text-secondary m-0'><strong>Join Now</strong></h3>
                 </ModalHeader>
                 <ModalBody className='d-flex flex-column mx-auto pt-4 text-center'>
                     <img src={logo} className="loginModal__wurkloLogo mx-auto" alt="Wurklo logo" />
@@ -77,45 +77,45 @@ function LoginModal() {
                         outline
                         color='danger'
                         className='googleSignin__button make-round shadow-none p-2 px-4 mt-0'
-                        onClick={signInWithGoogle}
+                        onClick={joinNowWithGoogle}
                     >
-                        Sign in with Google
+                        Join Now with Google
                         <FontAwesomeIcon icon={faGoogle} className="fs-5 ms-2" />
                     </Button>
                     <Button
                         outline
                         color='secondary'
                         className='appleSignin__button make-round shadow-none p-2 px-4 mt-3'
-                        onClick={signInWithApple}
+                        onClick={joinNowWithApple}
                     >
-                        Sign in with Apple
+                        Join Now with Apple
                         <FontAwesomeIcon icon={faApple} className="fs-5 ms-2" />
                     </Button>
                     <Button
                         outline
                         color='primary'
                         className='microsoftSignin__button make-round shadow-none p-2 px-4 mt-3'
-                        onClick={signInWithMicrosoft}
+                        onClick={joinNowWithMicrosoft}
                     >
-                        Sign in with Microsoft
+                        Join Now with Microsoft
                         <FontAwesomeIcon icon={faMicrosoft} className="fs-5 ms-2" />
                     </Button>
                     <Button
                         outline
                         color='danger'
                         className='yahooSignin__button make-round shadow-none p-2 px-4 mt-3'
-                        onClick={signInWithYahoo}
+                        onClick={joinNowWithYahoo}
                     >
-                        Sign in with Yahoo
+                        Join Now with Yahoo
                         <FontAwesomeIcon icon={faYahoo} className="fs-5 ms-2" />
                     </Button>
                     <Button
                         outline
                         color='dark'
                         className='githubSignin__button make-round shadow-none p-2 px-4 my-3'
-                        onClick={signInWithGithub}
+                        onClick={joinNowWithGithub}
                     >
-                        Sign in with Github
+                        Join Now with Github
                         <FontAwesomeIcon icon={faGithub} className="fs-5 ms-2" />
                     </Button>
                 </ModalBody>
@@ -124,4 +124,4 @@ function LoginModal() {
     )
 }
 
-export default LoginModal
+export default JoinNowModal

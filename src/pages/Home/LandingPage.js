@@ -30,12 +30,15 @@ function LandingPage() {
             <div className='text-center'>
                 <img src={logo} className="landingPage__logo" alt="Wurklo logo" />
                 <p className='landingPage__logoText pt-3'>Wurklo</p>
-                <p className='landingPage__sloganText'>Search, Chat, Hire, Pay</p>
+                <p className='landingPage__sloganText'>Search Wurkers, Chat, Hire, Pay</p>
             </div>
             <Search placeholderValue="Search wurkers ... ex. full stack developer, react" />
-{!userWurkerProfile?.[0]?.wurker &&  <div className='mt-4'>
-                <CreateWurker />
-            </div>}
+            <div className='mt-4'>
+                {!userWurkerProfile?.[0]?.wurker &&
+                    <CreateWurker />
+                }
+            </div>
+            <a className='credit__background' href='https://www.freepik.com/photos/white-studio' target="_blank" rel="noreferrer" >White studio photo created by benzoix - www.freepik.com</a>
         </div>
     );
 };

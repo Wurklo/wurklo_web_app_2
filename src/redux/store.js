@@ -1,7 +1,6 @@
 
 import { configureStore } from '@reduxjs/toolkit';
 import logger from 'redux-logger';
-import thunk from 'redux-thunk';
 
 // slices or reducers
 import greeting from './slices/greeting';

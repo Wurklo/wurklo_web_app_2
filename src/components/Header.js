@@ -8,6 +8,7 @@ import LoginModal from './LoginModal';
 import { useDispatch, useSelector } from 'react-redux';
 import { setUser } from '../redux/slices/user';
 import { auth } from '../firebase';
+import JoinNowModal from './JoinNowModal';
 
 function openNav() {
     document.getElementById("mySidebar").style.width = "250px";
@@ -67,6 +68,7 @@ function Header() {
                         </>
                         :
                         <>
+                            <JoinNowModal />
                             <LoginModal />
                         </>
                 }

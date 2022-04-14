@@ -8,6 +8,7 @@ import { db } from '../../firebase';
 //redux 
 import { useDispatch, useSelector } from 'react-redux';
 import { setUser } from '../../redux/slices/user';
+import UpdateUser from '../../components/UpdateUser'
 
 function MyAccount() {
     const { user } = useSelector((state) => state.user);
@@ -31,7 +32,7 @@ function MyAccount() {
     return (
         <Container className='mt-3 text-center text-md-start'>
             <h1 className="text-center">My Account</h1>
-            <hr className="text-secondary" />
+            <hr className="" />
             <Row className="mt-4">
                 <h3 className="mb-4">User Profile</h3>
                 <ProfileInfo
@@ -47,12 +48,12 @@ function MyAccount() {
             </Row>
             <Row>
                 <Col md={6} className='mt-4 ms-0 ms-lg-5 mb-4'>
-                    <CreateWurker />
+                    <UpdateUser />
                 </Col>
             </Row>
             {userWurkerProfile?.[0]?.wurker &&
                 <>
-                    <hr className="text-secondary" />
+                    <hr className="" />
                     <Row className="mt-4">
                         <h3 className="mb-4">Wurker Profile</h3>
                         <ProfileInfo

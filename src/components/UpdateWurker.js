@@ -36,7 +36,7 @@ function UpdateWurker({wurker}) {
     };
 
     const handleUpdateWurker = () => {
-        const uploadTask = storage.ref(`images/${imageFile.name}`).put(imageFile);
+        const uploadTask = storage.ref(`wurker-images/${user.uid}`).put(imageFile);
         // progress bar function
         uploadTask.on(
             "state-changed",
@@ -53,8 +53,8 @@ function UpdateWurker({wurker}) {
             // storing in db
             () => {
                 storage
-                    .ref("images")
-                    .child(imageFile.name)
+                    .ref("wurker-images")
+                    .child(user.uid)
                     .getDownloadURL()
                     .then(url => {
                         // post image in db

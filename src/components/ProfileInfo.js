@@ -6,9 +6,12 @@ function ProfileInfo({ name, skill, rate, imageUrl, availability, phone, email, 
     return (
         <>
             <Col lg={3}>
-                <div className={"profileInfo__image " + (profile ? "" : "profileInfo__imageOpacity")}>
+                {/* the below code goes with the input over the image below */}
+                {/* <div className={"profileInfo__image " + (profile ? "" : "profileInfo__imageOpacity")}> */}
+                <div className={"profileInfo__image"}>
                     <img src={imageUrl} alt={name} />
-                    {profile ? null : <input type="file" className='profileInfo__imageFilePicker' />}
+                    {/* the below input is spread over the image, will make this work later */}
+                    {/* {profile ? null : <input type="file" className='profileInfo__imageFilePicker' />} */}
                 </div>
             </Col>
             <Col md={3} className='profileInfo__info mx-auto m-0 ms-md-3 mt-4 mt-md-0 py-3 p-md-3 bg-white'>

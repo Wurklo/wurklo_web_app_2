@@ -37,7 +37,7 @@ function CreateWurker() {
     };
 
     const handleCreateWurker = () => {
-        const uploadTask = storage.ref(`images/${imageFile.name}`).put(imageFile);
+        const uploadTask = storage.ref(`wurker-images/${user.uid}`).put(imageFile);
         // progress bar function
         uploadTask.on(
             "state-changed",
@@ -54,27 +54,33 @@ function CreateWurker() {
             // storing in db
             () => {
                 storage
-                    .ref("images")
-                    .child(imageFile.name)
+                    .ref("wurker-images")
+                    .child(user.uid)
                     .getDownloadURL()
                     .then(url => {
                         // post image in db
-                        db.collection("wurkers").add({
-                            timestamp: firebase.firestore.FieldValue.serverTimestamp(),
-                            authUid: user?.uid,
-                            name: name.toLowerCase(),
-                            email: email.toLowerCase(),
-                            skill: skill.toLowerCase(),
-                            rate: rate.toLowerCase(),
-                            yearsOfExp: yearsOfExp.toLowerCase(),
-                            highestEdu: highestEdu.toLowerCase(),
-                            certsLicenses: certsLicenses.toLowerCase(),
-                            availability: availability.toLowerCase(),
-                            phone: phone.toLowerCase(),
-                            portfolioLink: portfolioLink.toLowerCase(),
-                            references: references.toLowerCase(),
-                            imageUrl: url
-                        });
+                        db
+                            .collection("wurkers")
+                            .doc(user?.uid)
+                            .set({
+                                created: firebase.firestore.FieldValue.serverTimestamp(),
+                                authUid: user?.uid,
+                                name: name.toLowerCase(),
+                                email: email.toLowerCase(),
+                                skill: skill.toLowerCase(),
+                                rate: rate.toLowerCase(),
+                                yearsOfExp: yearsOfExp.toLowerCase(),
+                                highestEdu: highestEdu.toLowerCase(),
+                                certsLicenses: certsLicenses.toLowerCase(),
+                                availability: availability.toLowerCase(),
+                                phone: phone.toLowerCase(),
+                                portfolioLink: portfolioLink.toLowerCase(),
+                                references: references.toLowerCase(),
+                                imageUrl: url
+                            },
+                            {
+                                merge: true
+                            });
                         setProgress(0);
                         setName('')
                         setEmail('')
@@ -199,39 +205,39 @@ function CreateWurker() {
                     </Row>
                     <Row>
                         <Col md={6} className="text-center mt-0 mx-auto">
-                        <Input
-                            className='search__input shadow-none mt-4'
-                            placeholder="Phone # ex. +1-555-555-5555 ..."
-                            value={phone}
-                            onChange={e => setPhone(e.target.value)}
-                        />
+                            <Input
+                                className='search__input shadow-none mt-4'
+                                placeholder="Phone # ex. +1-555-555-5555 ..."
+                                value={phone}
+                                onChange={e => setPhone(e.target.value)}
+                            />
                         </Col>
                         <Col>
-                        <Input
-                            className='search__input shadow-none mt-4'
-                            placeholder="Portfolio Link ..."
-                            value={portfolioLink}
-                            onChange={e => setPortfolioLink(e.target.value)}
-                        />
+                            <Input
+                                className='search__input shadow-none mt-4'
+                                placeholder="Portfolio Link ..."
+                                value={portfolioLink}
+                                onChange={e => setPortfolioLink(e.target.value)}
+                            />
                         </Col>
                     </Row>
                     <Row>
                         <Col md={6} className="text-center mt-0 mx-auto">
-                        <Input
-                        type='search'
-                            className='search__input shadow-none mt-4'
-                            placeholder="References ..."
-                            value={references}
-                            onChange={e => setReferences(e.target.value)}
-                        />
+                            <Input
+                                type='search'
+                                className='search__input shadow-none mt-4'
+                                placeholder="References ..."
+                                value={references}
+                                onChange={e => setReferences(e.target.value)}
+                            />
                         </Col>
                         <Col>
-                        <Input
-                            className='search__input shadow-none mt-4'
-                            placeholder="Portfolio Link ..."
-                            onChange={handleChange}
-                            type="file"
-                        />
+                            <Input
+                                className='search__input shadow-none mt-4'
+                                placeholder="Portfolio Link ..."
+                                onChange={handleChange}
+                                type="file"
+                            />
                         </Col>
                     </Row>
                 </ModalBody>

@@ -1,5 +1,10 @@
 @import url('https://fonts.googleapis.com/css?family=ABeeZee:400,700');
 
+.credit__background {
+  font-size: xx-small;
+  position: absolute;
+  bottom: 0;
+}
 * {
   margin: 0;
   padding: 0;
@@ -9,8 +14,8 @@
 
 body {
   /* background: rgb(238, 234, 234); */
-  background: rgb(240, 240, 240);
-
+  /* background: rgb(240, 240, 240); */
+  background-image: url("./images/bgbgbg.webp");
 }
 
 a:hover {
@@ -388,6 +393,12 @@ img.navbar-coin {
   font-size: 3rem;
   font-weight: 600;
   color: #727374;
+}
+
+/* join now modal */
+.joinNow__button:hover {
+  background-color: rgb(255, 255, 255);
+  color: #0d6efd;
 }
 
 /* footer component */
