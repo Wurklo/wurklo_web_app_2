@@ -4,7 +4,7 @@ import '../../App.css';
 import CreateWurker from '../../components/CreateWurker';
 import Search from '../../components/Search';
 import { db } from '../../firebase';
-import logo from '../../images/VectorEPS_ByTailorBrands2.svg'
+import logo from '../../images/wurklo-logo-e0e1dd.svg'
 
 function LandingPage() {
     const { user } = useSelector((state) => state.user);

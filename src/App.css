@@ -357,9 +357,15 @@ img.navbar-coin {
 }
 .createWurker__button {
   border-radius: 2rem;
+  color: #e0e1dd;
+  border-color: #e0e1dd;
 }
 .createWurker__button:hover {
-  background-color: #0d6efd !important;
+  background-color: transparent !important;
+  color: white;
+  border-color: white;
+  transition: 0.6ms;
+  cursor: pointer;
 }
 .createWurker__nameInput {
   width: 20rem;
@@ -396,11 +402,27 @@ img.navbar-coin {
   font-weight: 600;
   color: #727374;
 }
+.loginModal__button {
+  color: #e0e1dd;
+  border-color: #e0e1dd;
+}
+.loginModal__button:hover {
+  color: white;
+  border-color: white;
+  background-color: transparent;
+  transition: 0.6ms;
+  cursor: pointer;
+}
 
 /* join now modal */
 .joinNow__button:hover {
-  background-color: rgb(255, 255, 255);
-  color: #0d6efd;
+  background-color: transparent;
+  color: white;
+  cursor: pointer;
+  transition: 0.6ms;
+}
+.joinNow__button {
+  color: #e0e1dd;
 }
 
 /* footer component */

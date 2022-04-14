@@ -58,7 +58,7 @@ function LoginModal() {
 
     return (
         <>
-            <Button color='primary' outline className=' shadow-none make-round'
+            <Button outline className='loginModal__button shadow-none make-round'
                 onClick={() => setIsLoginModalOpen(isLoginModalOpen ? false : true)}
             >Sign in</Button>
             <Modal
@@ -70,7 +70,7 @@ function LoginModal() {
                 <ModalHeader toggle={() => setIsLoginModalOpen(false)}>
                     <h3 className='text-secondary m-0'><strong>Sign in</strong></h3>
                 </ModalHeader>
-                <ModalBody className='d-flex flex-column mx-auto pt-4 text-center'>
+                <ModalBody className='loginModal__body d-flex flex-column mx-auto pt-4 text-center'>
                     <img src={logo} className="loginModal__wurkloLogo mx-auto" alt="Wurklo logo" />
                     <p className='loginModal__logoText'>Wurklo</p>
                     <Button
