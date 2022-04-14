@@ -5,7 +5,7 @@ function ProfileInfo({ name, skill, rate, imageUrl, availability, phone, email, 
 
     return (
         <>
-            <Col lg={3}>
+            <Col md={12} lg={3}>
                 {/* the below code goes with the input over the image below */}
                 {/* <div className={"profileInfo__image " + (profile ? "" : "profileInfo__imageOpacity")}> */}
                 <div className={"profileInfo__image"}>
@@ -14,7 +14,7 @@ function ProfileInfo({ name, skill, rate, imageUrl, availability, phone, email, 
                     {/* {profile ? null : <input type="file" className='profileInfo__imageFilePicker' />} */}
                 </div>
             </Col>
-            <Col md={3} className='profileInfo__info mx-auto m-0 ms-md-3 mt-4 mt-md-0 py-3 p-md-3 bg-white'>
+            <Col md={12} lg={5} className='profileInfo__info mx-auto ms-md-3 mt-4 mt-lg-0 py-3 p-md-3 bg-white'>
                 <h3>{name?.replace(/\w\S*/g, (w) => (w.replace(/^\w/, (c) => c.toUpperCase())))}</h3>
                 <p>{skill?.replace(/\w\S*/g, (w) => (w.replace(/^\w/, (c) => c.toUpperCase())))}</p>
                 {rate && <p>Rate: ${rate}/hr</p>}
@@ -23,7 +23,7 @@ function ProfileInfo({ name, skill, rate, imageUrl, availability, phone, email, 
                 {email && <p>E# {email}</p>}
                 {portfolioLink && <p>Portfolio {portfolioLink}</p>}
             </Col>
-            <Col md={5} className="profileInfo__performanceEval mx-auto ms-md-5 mt-4 mt-md-0 p-3 text-center bg-white">
+            <Col md={12} lg={4} className="profileInfo__performanceEval mx-auto ms-0 ms-md-3 ms-lg-5 mt-lg-0 mt-4 p-3 text-center bg-white">
                 <p className='p-0 m-0'>Coming in Version 1.1.0</p>
                 <h2>Performance Evaluation</h2>
                 <div className='d-flex justify-content-around'>
