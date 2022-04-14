@@ -9,7 +9,6 @@ import logo from '../../images/wurklo-logo-e0e1dd.svg'
 function LandingPage() {
     const { user } = useSelector((state) => state.user);
     const dispatch = useDispatch();
-
     const [userWurkerProfile, setUserWurkerProfile] = useState();
 
     useEffect(() => {

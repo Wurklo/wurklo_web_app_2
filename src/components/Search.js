@@ -1,12 +1,13 @@
 import { Input } from 'reactstrap';
 import SearchIcon from '@mui/icons-material/Search';
 import { useState } from 'react';
-import { useNavigate } from "react-router-dom";
+import { useLocation, useNavigate } from "react-router-dom";
 import ArrowForwardRoundedIcon from '@mui/icons-material/ArrowForwardRounded';
 
 function Search({placeholderValue, placeholderSearchedValue}) {
     const [search, setSearch] = useState('');
     const navigate = useNavigate();
+    const location = useLocation();
 
     const handleSearch = (e) => {
         e.preventDefault();
@@ -16,7 +17,7 @@ function Search({placeholderValue, placeholderSearchedValue}) {
 
     return (
         <div className="px-3">
-            <div className='search__inputContainer'>
+            <div className={location.pathname === "/" ? "search__inputContainerHome" : 'search__inputContainer'}>
                 <form>
                     <Input
                         className='search__input shadow-none ps-5'

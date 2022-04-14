@@ -6,11 +6,11 @@ import Search from '../../components/Search'
 function Contacts() {
   return (
     <Container fluid>
-      <Row>
+      {/* <Row>
         <Col className='searchResults__searchInput'>
           <Search placeholderValue="Search contacts ..."/>
         </Col>
-      </Row>
+      </Row> */}
       <Row className='m-5 mb-5'>
         <WurkerCard 
           name="Bobby Keel"

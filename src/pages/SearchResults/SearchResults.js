@@ -9,6 +9,8 @@ import FilterSearchResults from '../../components/FilterSearchResults';
 function SearchResults() {
     const [wurkers, setWurkers] = useState([]);
     const [lastDoc, setLastDoc] = useState();
+    
+    // the below need to be moved after setting searchParams/filters in redux
     const [nameFilter, setNameFilter] = useState('asc');
     const [rateFilter, setRateFilter] = useState('asc');
     let { searchParams } = useParams();
@@ -67,14 +69,14 @@ function SearchResults() {
         <Container fluid>
             <Row>
                 <Col id="top" className='searchResults__searchInput mb-4'>
-                    <Search
+                    {/* <Search
                         placeholderDefault="Search wurkers ... ex. full stack developer, react"
                         placeholderSearchedValue={searchParams}
-                    />
-                    <FilterSearchResults
+                    /> */}
+                    {/* <FilterSearchResults
                         setNameFilter={setNameFilter}
                         setRateFilter={setRateFilter}
-                    />
+                    /> */}
                 </Col>
             </Row>
             <Row className='mx-5'>

@@ -17,7 +17,7 @@ function FilterSearchResults({ setNameFilter, setRateFilter }) {
     return (
         <>
             <FilterListIcon
-                className='filterSearchResults__searchFilterIcon text-secondary'
+                className='filterSearchResults__searchFilterIcon'
                 onClick={() => setIsModalOpen(isModalOpen ? false : true)}
             />
 

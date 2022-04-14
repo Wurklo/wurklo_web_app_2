@@ -63,6 +63,9 @@ a:link {
   justify-content: space-between;
   align-items: center;
 }
+.header__notHome {
+    background-color: #3f4548;
+}
 .header__left {
   display: flex;
   align-items: center;
@@ -100,7 +103,7 @@ img.navbar-coin {
 }
 .header__logoText {
   /* text-shadow: 5px 5px 10px rgba(0, 0, 0, 0.3); */
-  color: #727374;
+  color: #e0e1dd;
   font-weight: 600;
 }
 .header__joinNowButton:hover {
@@ -110,6 +113,9 @@ img.navbar-coin {
 .header__joinNowButton {
   background-color: transparent;
   color: #e0e1dd;
+}
+.header__searchContainer {
+  position: relative;
 }
 
 .sidebar {
@@ -169,6 +175,10 @@ img.navbar-coin {
   padding: .8rem;
 }
 .search__inputContainer {
+  position: relative;
+  width: 35rem;
+}
+.search__inputContainerHome {
   position: relative;
   width: 35rem;
 }
@@ -374,11 +384,12 @@ img.navbar-coin {
 /* filter search results  */
 .filterSearchResults__searchFilterIcon {
   position: absolute;
-  top: 1.4rem;
-  right: 8rem;
+  top: 0.9rem;
+  left: -1.5rem;
+  color: #e0e1dd;
 }
 .filterSearchResults__searchFilterIcon:hover {
-  color: #f1f1f1 !important;
+  color: #ffffff !important;
   transition: 0.3s;  
   cursor: pointer;
 }
@@ -520,6 +531,10 @@ footer {
     position: relative;
     width: 20rem;
   }
+  .search__inputContainerHome {
+    position: relative;
+    width: 20rem;
+  }
   .search {
     height: 65vh;
     display: flex;
@@ -597,21 +612,31 @@ footer {
 }
 
 @media screen and (min-width: 771px) and (max-width: 1200px) {
-  .search__inputContainer {
-    position: relative;
-    width: 33rem;
-  }
 }
 
 @media screen and (min-width: 577px) and (max-width: 770px) {
   .search__inputContainer {
     position: relative;
-    width: 30rem;
+    width: 20rem;
+  }
+}
+
+@media screen and (max-width: 577px) {
+  .search__inputContainer {
+    position: relative;
+    width: 10rem;
+  }
+  .header__logoText {
+    display: none;
   }
 }
 
 @media screen and (max-width: 300px) {
   .search__inputContainer {
+    position: relative;
+    width: 5rem;
+  }
+  .search__inputContainerHome {
     position: relative;
     width: 15rem;
   }
@@ -652,5 +677,8 @@ footer {
   .profile__chatboxSigninMessage {
     font-size: 1.2rem;
     height: 10rem;
+  }
+  .header__logoText {
+    display: none;
   }
 }
