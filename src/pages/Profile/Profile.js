@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react'
-import { Button, Container, Row } from 'reactstrap'
+import { Button, Col, Container, Row } from 'reactstrap'
 import ChatBox from '../../components/ChatBox';
 import ProfileInfo from '../../components/ProfileInfo';
 import { useParams, useNavigate } from 'react-router-dom';
@@ -54,9 +54,12 @@ function Profile() {
                     portfolioLink={wurkerProfile.portfolioLink}
                 />
             </Row>
-            {/* <Row className='text-start'>
-                {user ? <ChatBox wurkerId={id} wurkerUid={wurkerProfile?.authUid} imageUrl={wurkerProfile?.imageUrl} wurkerName={wurkerProfile.name}/> : <p className='profile__chatboxSigninMessage'>Sign in to send message</p>}
-            </Row> */}
+            <Row className='text-center'>
+                <Col>
+                    {user ? <Button outline className='loginModal__button shadow-none make-round mt-4' onClick={() => navigate('/chat')}>Send Message</Button> : <p className='profile__chatboxSigninMessage'>Sign in to send message</p>}
+                </Col>
+                {/* {user ? <ChatBox wurkerId={id} wurkerUid={wurkerProfile?.authUid} imageUrl={wurkerProfile?.imageUrl} wurkerName={wurkerProfile.name}/> : <p className='profile__chatboxSigninMessage'>Sign in to send message</p>} */}
+            </Row>
         </Container>
     )
 }
