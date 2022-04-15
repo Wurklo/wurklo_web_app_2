@@ -1,20 +1,23 @@
 import React, { useEffect, useState } from 'react'
 import { Button, Col, Form, Input } from 'reactstrap'
-import Message from './Message'
+import Message from '../../../components/Message'
 import SendIcon from '@mui/icons-material/Send';
-import { db } from '../firebase';
+import { db } from '../../../firebase';
 import firebase from 'firebase'
 import FlipMove from 'react-flip-move';
 import { useDispatch, useSelector } from 'react-redux';
+import ArrowBackIcon from '@mui/icons-material/ArrowBack';
+import { useParams, useNavigate } from 'react-router-dom';
 
-function ChatBox({wurkerId, wurkerUid, imageUrl, wurkerName}) {
+function Chat() {
     const [messages, setMessages] = useState([]);
     const [message, setMessage] = useState('');
+    const navigate = useNavigate();
 
     // redux
     const { user } = useSelector((state) => state.user);
     const dispatch = useDispatch();
-    
+
     useEffect(() => {
         db
             .collection('chats')
@@ -29,7 +32,7 @@ function ChatBox({wurkerId, wurkerUid, imageUrl, wurkerName}) {
         e.preventDefault();
         db
             .collection('chats')
-            .doc(`${wurkerUid}=${user?.uid}`)
+            .doc(`${user?.uid}`)
             .collection('messages')
             .add({
                 senderUid: user?.uid,
@@ -46,6 +49,9 @@ function ChatBox({wurkerId, wurkerUid, imageUrl, wurkerName}) {
 
     return (
         <>
+            <Col>
+                <ArrowBackIcon className='profile__backButton fs-1' onClick={() => navigate(-1)} />
+            </Col>
             <Col className='chatBox mt-4'>
                 <Form>
                     <Input
@@ -69,4 +75,4 @@ function ChatBox({wurkerId, wurkerUid, imageUrl, wurkerName}) {
     )
 }
 
-export default ChatBox
+export default Chat

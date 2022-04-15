@@ -210,7 +210,6 @@ img.navbar-coin {
   cursor: pointer;
   transition: 3ms transform ease-out;
   transition: 0.5s;
-
 }
 .wurkerCard:hover {
   transition: 3ms transform ease-in;
@@ -356,10 +355,13 @@ img.navbar-coin {
   align-items: center;
   border-radius: 1rem;
   cursor: pointer;
+  transition: 3ms transform ease-out;
+  transition: 0.5s;
 }
 .messageCard:hover {
   transition: 5ms transform ease-in;
   transform: scale(1.05);
+  transition: 0.5s;
 }
 .messageCard > img {
   width: 8rem;

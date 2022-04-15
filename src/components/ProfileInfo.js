@@ -23,7 +23,7 @@ function ProfileInfo({ name, skill, rate, imageUrl, availability, phone, email, 
                 {email && <p>E# {email}</p>}
                 {portfolioLink && <p>Portfolio {portfolioLink}</p>}
             </Col>
-            <Col md={12} lg={4} className="profileInfo__performanceEval mx-auto ms-0 ms-md-3 ms-lg-5 mt-lg-0 mt-4 p-3 text-center bg-white">
+            <Col md={12} lg={4} className="profileInfo__performanceEval mx-auto ms-md-3 ms-lg-5 mt-lg-0 mt-4 p-3 text-center bg-white">
                 <p className='p-0 m-0'>Coming in Version 1.1.0</p>
                 <h2>Performance Evaluation</h2>
                 <div className='d-flex justify-content-around'>

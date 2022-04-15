@@ -27,7 +27,6 @@ function Profile() {
         })
         window.scrollTo(0, 0)
     }, []);
-    console.log(wurkerProfile?.authUid)
 
     return (
         <Container className='profile mt-3 text-center text-md-start'>
@@ -55,9 +54,9 @@ function Profile() {
                     portfolioLink={wurkerProfile.portfolioLink}
                 />
             </Row>
-            <Row className='text-start'>
+            {/* <Row className='text-start'>
                 {user ? <ChatBox wurkerId={id} wurkerUid={wurkerProfile?.authUid} imageUrl={wurkerProfile?.imageUrl} wurkerName={wurkerProfile.name}/> : <p className='profile__chatboxSigninMessage'>Sign in to send message</p>}
-            </Row>
+            </Row> */}
         </Container>
     )
 }

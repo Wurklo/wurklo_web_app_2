@@ -27,9 +27,30 @@ function LoginModal() {
     const signInWithApple = () => {
         auth.signInWithPopup(appleAuthProvider)
             .then((payload) => {
+                const credential = payload.credential;
+                const user = payload.user;
+                const accessToken = credential.accessToken;
+                const idToken = credential.idToken;
+                console.log(
+                    "Credential: ", credential,
+                    "User: ", user,
+                    "Access Token: ", accessToken,
+                    "ID Token: ", idToken,
+                    )
                 dispatch(setUser(payload));
             })
-            .catch((error) => alert(error.message));
+            .catch((error) => {
+                const errorCode = error.code;
+                const errorMessage = error.message;
+                const email = error.emnail;
+                const credential = error.credential;
+                console.log(
+                    "Error Code: ", errorCode, 
+                    "Error Message: ", errorMessage,
+                    "Error Email: ", email,
+                    "Error Credential: ", credential,
+                    )
+            });
     }
 
     const signInWithMicrosoft = () => {
