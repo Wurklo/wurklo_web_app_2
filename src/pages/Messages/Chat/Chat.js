@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react'
-import { Button, Col, Form, Input } from 'reactstrap'
+import { Button, Col, Container, Form, Input, Row } from 'reactstrap'
 import Message from '../../../components/Message'
 import SendIcon from '@mui/icons-material/Send';
 import { db } from '../../../firebase';
@@ -48,30 +48,32 @@ function Chat() {
     }
 
     return (
-        <>
-            <Col>
-                <ArrowBackIcon className='profile__backButton fs-1' onClick={() => navigate(-1)} />
-            </Col>
-            <Col className='chatBox mt-4'>
-                <Form>
-                    <Input
-                        className='profile__messageInput mt-3 p-3 shadow-none'
-                        placeholder='Send a message ...'
-                        value={message}
-                        onChange={e => setMessage(e.target.value)}
-                    />
-                    <Button type='submit' color='primary' outline className='chatBox__button border-0 bg-white' onClick={handleSendMessage} disabled={!message && "disabled"}><SendIcon className='fs-2' /></Button>
-                </Form>
+        <Container >
+            <Row>
+                <Col>
+                    <ArrowBackIcon className='profile__backButton fs-1' onClick={() => navigate(-1)} />
+                </Col>
+                <div className='chatBox mt-2'>
+                    <Form>
+                        <Input
+                            className='profile__messageInput mt-3 p-3 shadow-none'
+                            placeholder='Send a message ...'
+                            value={message}
+                            onChange={e => setMessage(e.target.value)}
+                        />
+                        <Button type='submit' divor='primary' outline className='chatBox__button border-0 bg-white' onClick={handleSendMessage} disabled={!message && "disabled"}><SendIcon className='fs-2' /></Button>
+                    </Form>
 
-                <div className='profile__messageBox mb-5 rounded-bottom bg-white'>
-                    <FlipMove>
-                        {messages?.map(({ id, message }) => (
-                            <Message key={id} message={message} />
-                        ))}
-                    </FlipMove>
+                    <div className='profile__messageBox mb-5 rounded-bottom bg-white'>
+                        <FlipMove>
+                            {messages?.map(({ id, message }) => (
+                                <Message key={id} message={message} />
+                            ))}
+                        </FlipMove>
+                    </div>
                 </div>
-            </Col>
-        </>
+            </Row>
+        </Container>
     )
 }
 
