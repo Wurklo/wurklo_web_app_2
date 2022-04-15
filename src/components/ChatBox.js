@@ -5,16 +5,24 @@ import SendIcon from '@mui/icons-material/Send';
 import { db } from '../firebase';
 import firebase from 'firebase'
 import FlipMove from 'react-flip-move';
+import { useDispatch, useSelector } from 'react-redux';
 
-function ChatBox() {
+function ChatBox({wurkerId, wurkerUid, imageUrl, wurkerName}) {
     const [messages, setMessages] = useState([]);
     const [message, setMessage] = useState('');
-    const [username, setUsername] = useState('Test User');
 
+    // redux
+    const { user } = useSelector((state) => state.user);
+    const dispatch = useDispatch();
+
+    console.log(messages)
     useEffect(() => {
-        db.collection('messages')
+        console.log(user?.uid)
+        db
+            .collection('messages')
+            .where('chatParticipants', 'array-contains-any', [`${user?.uid}`])
             .orderBy('timestamp', 'desc')
-            .limit(10)
+            .limit(30)
             .onSnapshot(snapshot => {
                 setMessages(snapshot.docs.map(doc => ({ id: doc.id, message: doc.data() })))
             })
@@ -26,11 +34,17 @@ function ChatBox() {
 
     const handleSendMessage = (e) => {
         e.preventDefault();
-        db.collection('messages').add({
-            message: message,
-            username: username,
-            timestamp: firebase.firestore.FieldValue.serverTimestamp()
-        })
+        db
+            .collection('messages')
+            .add({
+                chatParticipants: [user?.uid, wurkerUid],
+                senderUid: user?.uid,
+                wurkerId: wurkerId,
+                message: message,
+                senderName: user?.displayName,
+                recieverName: wurkerName,
+                timestamp: firebase.firestore.FieldValue.serverTimestamp()
+            })
         setMessage('')
     }
 
@@ -50,7 +64,7 @@ function ChatBox() {
                 <div className='profile__messageBox mb-5 rounded-bottom bg-white'>
                     <FlipMove>
                         {messages?.map(({ id, message }) => (
-                            <Message key={id} username={username} message={message} />
+                            <Message key={id} message={message} />
                         ))}
                     </FlipMove>
                 </div>

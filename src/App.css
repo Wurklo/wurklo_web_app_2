@@ -208,6 +208,9 @@ img.navbar-coin {
   position: relative;
   border-radius: 1rem;
   cursor: pointer;
+  transition: 3ms transform ease-out;
+  transition: 0.5s;
+
 }
 .wurkerCard:hover {
   transition: 3ms transform ease-in;

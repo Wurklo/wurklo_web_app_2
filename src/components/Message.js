@@ -1,7 +1,7 @@
 import moment from 'moment';
 import React, { forwardRef } from 'react'
 
-const Message = forwardRef(({ username, message }, ref) => {
+const Message = forwardRef(({ username, message, imageUrl }, ref) => {
   const isUser = username === message.username;
 
   return (
