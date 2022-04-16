@@ -5,6 +5,9 @@ import ProfileInfo from '../../components/ProfileInfo';
 import { useParams, useNavigate } from 'react-router-dom';
 import { db } from '../../firebase';
 import ArrowBackIcon from '@mui/icons-material/ArrowBack';
+import generateId from '../../lib/generateId';
+import firebase from 'firebase'
+
 //redux 
 import { useDispatch, useSelector } from 'react-redux';
 import { setUser } from '../../redux/slices/user';
@@ -12,6 +15,7 @@ import { setUser } from '../../redux/slices/user';
 function Profile() {
     let { id } = useParams();
     const [wurkerProfile, setWurkerProfile] = useState({});
+    const [loggedInProfile, setLoggedInUser] = useState();
     const [hire, setHire] = useState(false);
     const navigate = useNavigate();
 
@@ -25,8 +29,30 @@ function Profile() {
                 doc.data()
             );
         })
+        db.collection('users').doc(user?.uid).onSnapshot(doc => {
+            setLoggedInUser(doc.data())
+        })
         window.scrollTo(0, 0)
-    }, []);
+    }, [user]);
+
+    console.log("Wurker: ", wurkerProfile)
+    console.log("Logged in user: ", loggedInProfile)
+
+    console.log('generatedId: ', generateId(loggedInProfile?.authUid, wurkerProfile?.authUid))
+    const createChat = () => {
+        db
+            .collection('chats')
+            .doc(generateId(loggedInProfile?.authUid, wurkerProfile?.authUid))
+            .set({
+                users: {
+                    [loggedInProfile?.authUid]: loggedInProfile,
+                    [wurkerProfile?.authUid]: wurkerProfile,
+                    usersInChat: [loggedInProfile?.authUid, wurkerProfile?.authUid],
+                    timestamp: firebase.firestore.FieldValue.serverTimestamp()
+                }
+            })
+        navigate('/chat')
+    }
 
     return (
         <Container className='profile mt-3 text-center text-md-start'>
@@ -56,7 +82,7 @@ function Profile() {
             </Row>
             <Row className='text-center'>
                 <Col>
-                    {user ? <Button outline className='loginModal__button shadow-none make-round mt-4' onClick={() => navigate('/chat')}>Send Message</Button> : <p className='profile__chatboxSigninMessage'>Sign in to send message</p>}
+                    {user ? <Button outline className='loginModal__button shadow-none make-round mt-4' onClick={createChat}>Send Message</Button> : <p className='profile__chatboxSigninMessage'>Sign in to send message</p>}
                 </Col>
                 {/* {user ? <ChatBox wurkerId={id} wurkerUid={wurkerProfile?.authUid} imageUrl={wurkerProfile?.imageUrl} wurkerName={wurkerProfile.name}/> : <p className='profile__chatboxSigninMessage'>Sign in to send message</p>} */}
             </Row>
