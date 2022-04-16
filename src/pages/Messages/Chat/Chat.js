@@ -53,11 +53,6 @@ function Chat() {
         setMessage('')
     }
 
-    // console.log("chatDetails: ", location?.state.chatDetails)
-    // console.log("Matched User Info: ", matchedUserInfo)
-    // console.log("Chat ID: ", location?.state.chatDetails?.users[user?.uid]?.photoURL)
-
-    console.log(matchedUserInfo)
     return (
         <Container >
             <Row>
