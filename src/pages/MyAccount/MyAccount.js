@@ -57,7 +57,7 @@ function MyAccount() {
                     <Row className="mt-4">
                         <h3 className="myAccount__titleText mb-4">Wurker Profile</h3>
                         <ProfileInfo
-                            name={userWurkerProfile?.[0]?.wurker?.name}
+                            name={userWurkerProfile?.[0]?.wurker?.displayName}
                             skill={userWurkerProfile?.[0]?.wurker?.skill}
                             rate={userWurkerProfile?.[0]?.wurker?.rate}
                             imageUrl={userWurkerProfile?.[0]?.wurker?.photoURL}

@@ -143,11 +143,11 @@ function UpdateUser() {
                         outline
                         color='primary'
                         onClick={handleUpdateUser}
-                        className='createWurker__button p-2 px-4 mt-0'
+                        className='make-round p-2 px-4 mt-0'
                     >
                         Update User
                     </Button>
-                    <Button outline className='createWurker__button p-2 mt-0' onClick={() => setIsModalOpen(false)}>
+                    <Button outline className='make-round p-2 mt-0' onClick={() => setIsModalOpen(false)}>
                         Cancel
                     </Button>
                 </ModalFooter>

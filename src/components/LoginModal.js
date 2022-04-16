@@ -7,7 +7,7 @@ import { auth, googleAuthProvider, appleAuthProvider, microsoftAuthProvider, yah
 
 // redux shit
 import { useDispatch, useSelector } from 'react-redux';
-import { setUser } from '../redux/slices/user';
+import { setUser, setUserOrCreateAndSet } from '../redux/slices/user';
 
 function LoginModal() {
     const [isLoginModalOpen, setIsLoginModalOpen] = useState(false);
@@ -19,7 +19,8 @@ function LoginModal() {
     const signInWithGoogle = () => {
         auth.signInWithPopup(googleAuthProvider)
             .then((payload) => {
-                dispatch(setUser(payload));
+                // console.log(payload)
+                dispatch(setUserOrCreateAndSet(payload))
             })
             .catch((error) => alert(error.message));
     }
@@ -36,8 +37,8 @@ function LoginModal() {
                     "User: ", user,
                     "Access Token: ", accessToken,
                     "ID Token: ", idToken,
-                    )
-                dispatch(setUser(payload));
+                )
+                dispatch(setUserOrCreateAndSet(payload))
             })
             .catch((error) => {
                 const errorCode = error.code;
@@ -45,18 +46,18 @@ function LoginModal() {
                 const email = error.emnail;
                 const credential = error.credential;
                 console.log(
-                    "Error Code: ", errorCode, 
+                    "Error Code: ", errorCode,
                     "Error Message: ", errorMessage,
                     "Error Email: ", email,
                     "Error Credential: ", credential,
-                    )
+                )
             });
     }
 
     const signInWithMicrosoft = () => {
         auth.signInWithPopup(microsoftAuthProvider)
             .then((payload) => {
-                dispatch(setUser(payload));
+                dispatch(setUserOrCreateAndSet(payload))
             })
             .catch((error) => alert(error.message));
     }
@@ -64,7 +65,8 @@ function LoginModal() {
     const signInWithYahoo = () => {
         auth.signInWithPopup(yahooAuthProvider)
             .then((payload) => {
-                dispatch(setUser(payload));
+                // console.log(payload)
+                dispatch(setUserOrCreateAndSet(payload))
             })
             .catch((error) => alert(error.message));
     }
@@ -72,7 +74,8 @@ function LoginModal() {
     const signInWithGithub = () => {
         auth.signInWithPopup(githubAuthProvider)
             .then((payload) => {
-                dispatch(setUser(payload));
+                // console.log(payload)
+                dispatch(setUserOrCreateAndSet(payload))
             })
             .catch((error) => alert(error.message));
     }

@@ -27,6 +27,46 @@ export const createUser = createAsyncThunk(
         }
     }
 )
+
+// set user on login but check if user exist in users
+// if user not in usersDB, create user and setUser state
+// create user profile from authenticated user signup
+export const setUserOrCreateAndSet = createAsyncThunk(
+    "user/setUserOrCreateAndSet",
+    async ({ user }) => {
+        try {
+            // check if user exist in db users
+            db
+                .collection("users")
+                .doc(user.uid)
+                .get()
+                .then((snapshot) => {
+                    if (snapshot.exists) {
+                        setUser(user)
+                    } else {
+                        // post new user profile in db
+                        db
+                            .collection("users")
+                            .doc(user.uid)
+                            .set({
+                                created: firebase.firestore.FieldValue.serverTimestamp(),
+                                authUid: user.uid,
+                                displayName: user.displayName.toLowerCase(),
+                                email: user.email.toLowerCase(),
+                                photoURL: user.photoURL
+                            },
+                                {
+                                    merge: true
+                                }
+                            )
+                    }
+                })
+        } catch (err) {
+            console.log("Create user profile failed due to: ", err)
+        }
+    }
+)
+
 // change the state based on the called function
 export const userSlice = createSlice({
     name: 'user',
@@ -49,6 +89,9 @@ export const userSlice = createSlice({
             })
             .addCase(createUser, (state) => {
                 state.status = "failed";
+            })
+            .addCase(setUserOrCreateAndSet.fulfilled, (state, action) => {
+                console.log("extra reducer user: ", action.payload)
             })
     }
 })

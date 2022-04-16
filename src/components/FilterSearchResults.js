@@ -80,11 +80,11 @@ function FilterSearchResults({ setNameFilter, setRateFilter }) {
                         outline
                         color='primary'
                         onClick={handleApplyFilter}
-                        className='createWurker__button p-2 px-4 mt-0'
+                        className='make-round p-2 px-4 mt-0'
                     >
                         Apply Filter
                     </Button>
-                    <Button outline className='createWurker__button p-2 mt-0' onClick={() => setIsModalOpen(false)}>
+                    <Button outline className='make-round p-2 mt-0' onClick={() => setIsModalOpen(false)}>
                         Cancel
                     </Button>
                 </ModalFooter>

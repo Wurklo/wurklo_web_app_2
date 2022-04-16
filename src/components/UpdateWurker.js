@@ -10,7 +10,7 @@ import { setUser } from '../redux/slices/user';
 
 function UpdateWurker({wurker}) {
     const [isModalOpen, setIsModalOpen] = useState(false);
-    const [name, setName] = useState(`${wurker?.wurker?.name}`);
+    const [name, setName] = useState(`${wurker?.wurker?.displayName}`);
     const [email, setEmail] = useState(`${wurker?.wurker?.email}`);
     const [skill, setSkill] = useState(`${wurker?.wurker?.skill}`);
     const [rate, setRate] = useState(`${wurker?.wurker?.rate}`);
@@ -35,6 +35,7 @@ function UpdateWurker({wurker}) {
         }
     };
 
+    console.log(name)
     const handleUpdateWurker = () => {
         const uploadTask = storage.ref(`wurker-images/${user.uid}`).put(imageFile);
         // progress bar function
@@ -241,11 +242,11 @@ function UpdateWurker({wurker}) {
                         outline
                         color='primary'
                         onClick={handleUpdateWurker}
-                        className='createWurker__button p-2 px-4 mt-0'
+                        className='make-round p-2 px-4 mt-0'
                     >
                         Update Wurker
                     </Button>
-                    <Button outline className='createWurker__button p-2 mt-0' onClick={() => setIsModalOpen(false)}>
+                    <Button outline className='make-round p-2 mt-0' onClick={() => setIsModalOpen(false)}>
                         Cancel
                     </Button>
                 </ModalFooter>
