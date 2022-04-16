@@ -378,6 +378,10 @@ img.navbar-coin {
 .messageCard__info {
   width: 80%;
 }
+.message__senderImage {
+  width: 3rem;
+  height: 3rem;
+}
 
 /* create wurker */
 .createWurker {
