@@ -77,7 +77,7 @@ function CreateWurker() {
                                 phone: phone.toLowerCase(),
                                 portfolioLink: portfolioLink.toLowerCase(),
                                 references: references.toLowerCase(),
-                                imageUrl: url
+                                photoURL: url
                             },
                             {
                                 merge: true

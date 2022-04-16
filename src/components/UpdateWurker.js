@@ -73,7 +73,7 @@ function UpdateWurker({wurker}) {
                             phone: phone.toLowerCase(),
                             portfolioLink: portfolioLink.toLowerCase(),
                             references: references.toLowerCase(),
-                            imageUrl: url
+                            photoURL: url
                         });
                         setProgress(0);
                         setName('')

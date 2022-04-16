@@ -22,7 +22,7 @@ function MessageCard({chatDetails}) {
 
     return (
         <Col xs={12} md={5} className='messageCard p-0 my-2 mx-md-auto bg-white' onClick={() => navigate('/chat', {state: {chatDetails}})}>
-            <img src={matchedUserInfo?.imageUrl} className="me-3" alt="Profile Pic" />
+            <img src={matchedUserInfo?.photoURL} className="me-3" alt="Profile Pic" />
             <div className='messageCard__info me-2 pt-1'>
                 <h3>{matchedUserInfo?.name?.replace(/\w\S*/g, (w) => (w.replace(/^\w/, (c) => c.toUpperCase())))}</h3>
                 <p>Hey there</p>
