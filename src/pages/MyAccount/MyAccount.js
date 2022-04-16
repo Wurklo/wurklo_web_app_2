@@ -60,7 +60,7 @@ function MyAccount() {
                             name={userWurkerProfile?.[0]?.wurker?.name}
                             skill={userWurkerProfile?.[0]?.wurker?.skill}
                             rate={userWurkerProfile?.[0]?.wurker?.rate}
-                            imageUrl={userWurkerProfile?.[0]?.wurker?.imageUrl}
+                            imageUrl={userWurkerProfile?.[0]?.wurker?.photoURL}
                             availability={userWurkerProfile?.[0]?.wurker?.availability}
                             phone={userWurkerProfile?.[0]?.wurker?.phone}
                             email={userWurkerProfile?.[0]?.wurker?.email}

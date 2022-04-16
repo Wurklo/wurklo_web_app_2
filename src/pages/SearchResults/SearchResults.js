@@ -67,27 +67,27 @@ function SearchResults() {
 
     return (
         <Container fluid>
-            <Row>
+            {/* <Row>
                 <Col id="top" className='searchResults__searchInput mb-4'>
-                    {/* <Search
+                    <Search
                         placeholderDefault="Search wurkers ... ex. full stack developer, react"
                         placeholderSearchedValue={searchParams}
-                    /> */}
-                    {/* <FilterSearchResults
+                    />
+                    <FilterSearchResults
                         setNameFilter={setNameFilter}
                         setRateFilter={setRateFilter}
-                    /> */}
+                    />
                 </Col>
-            </Row>
-            <Row className='mx-5'>
+            </Row> */}
+            <Row className='mx-5 mt-4'>
                 {
                     wurkers.map(({ id, wurker }) => (
                         <WurkerCard
                             key={id}
                             id={id}
-                            name={wurker?.name}
+                            name={wurker?.displayName}
                             skill={wurker?.skill}
-                            imageUrl={wurker?.imageUrl}
+                            imageUrl={wurker?.photoURL}
                         />
                     ))
                 }

@@ -63,7 +63,7 @@ function Profile() {
                     <Button color='danger' outline className='profile__hireButton make-round bg-white' onClick={() => setHire(true)}>Hire</Button>
                 }
             </div>
-            <Row>
+            <Row className='mt-3'>
                 <ProfileInfo
                     profile={true}
                     name={wurkerProfile.name}
