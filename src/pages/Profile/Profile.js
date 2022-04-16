@@ -66,7 +66,7 @@ function Profile() {
             <Row className='mt-3'>
                 <ProfileInfo
                     profile={true}
-                    name={wurkerProfile.name}
+                    name={wurkerProfile.displayName}
                     skill={wurkerProfile.skill}
                     rate={wurkerProfile.rate}
                     imageUrl={wurkerProfile.photoURL}
