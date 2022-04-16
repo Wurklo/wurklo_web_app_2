@@ -66,7 +66,7 @@ function CreateWurker() {
                             .set({
                                 created: firebase.firestore.FieldValue.serverTimestamp(),
                                 authUid: user?.uid,
-                                name: name.toLowerCase(),
+                                displayName: name.toLowerCase(),
                                 email: email.toLowerCase(),
                                 skill: skill.toLowerCase(),
                                 rate: rate.toLowerCase(),

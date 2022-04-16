@@ -8,10 +8,13 @@ import FlipMove from 'react-flip-move';
 import { useDispatch, useSelector } from 'react-redux';
 import ArrowBackIcon from '@mui/icons-material/ArrowBack';
 import { useParams, useNavigate, useLocation } from 'react-router-dom';
+import getMatchedUserInfo from '../../../lib/getMatchedUserInfo';
 
 function Chat() {
     const [messages, setMessages] = useState([]);
     const [message, setMessage] = useState('');
+    const [matchedUserInfo, setMatchedUserInfo] = useState();
+
     const navigate = useNavigate();
     const location = useLocation();
 
@@ -19,41 +22,48 @@ function Chat() {
     const { user } = useSelector((state) => state.user);
     const dispatch = useDispatch();
 
-    // useEffect(() => {
-    //     db
-    //         .collection('chats')
-    //         .where('messages', 'array-contains', [`${user?.uid}`])
-    //         .orderBy('timestamp', 'desc')
-    //         .onSnapshot(snapshot => {
-    //             setMessages(snapshot.docs.map(doc => ({ id: doc.id, message: doc.data() })))
-    //         })
-    // }, [])
+    useEffect(() => {
+        setMatchedUserInfo(getMatchedUserInfo(location?.state.chatDetails?.users, user?.uid))
+    }, [])
+
+    useEffect(() => {
+        db
+            .collection('chats')
+            .doc(`${location?.state.chatDetails?.id}`)
+            .collection('messages')
+            .orderBy('timestamp', 'desc')
+            .onSnapshot(snapshot => {
+                setMessages(snapshot.docs.map(doc => ({ id: doc.id, message: doc.data() })))
+            })
+    }, [location?.state.chatDetails, db])
 
     const handleSendMessage = (e) => {
         e.preventDefault();
         db
             .collection('chats')
-            .doc(`${user?.uid}`)
+            .doc(`${location?.state.chatDetails?.id}`)
             .collection('messages')
             .add({
                 senderUid: user?.uid,
                 message: message,
                 senderName: user?.displayName,
-                photoURL: user?.photoURL,
+                photoURL: location?.state.chatDetails?.users[user?.uid]?.photoURL,
                 timestamp: firebase.firestore.FieldValue.serverTimestamp()
-            })
-            .then((docRef) => {
-                console.log("docRef", docRef.id)
             })
         setMessage('')
     }
 
     console.log("chatDetails: ", location?.state.chatDetails)
+    console.log("Matched User Info: ", matchedUserInfo)
+    console.log("Chat ID: ", location?.state.chatDetails?.users[user?.uid]?.photoURL)
+
+
     return (
         <Container >
             <Row>
-                <Col>
+                <Col className='d-flex justify-content-between'>
                     <ArrowBackIcon className='profile__backButton fs-1' onClick={() => navigate(-1)} />
+                    <h3 className='wurklo__textColor mt-1'>{matchedUserInfo?.displayName?.replace(/\w\S*/g, (w) => (w.replace(/^\w/, (c) => c.toUpperCase())))}</h3>
                 </Col>
                 <div className='chatBox mt-2'>
                     <Form>

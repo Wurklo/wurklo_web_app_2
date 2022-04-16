@@ -35,6 +35,11 @@ a:link {
 .make-round {
   border-radius: 2rem !important;
 }
+.wurklo__textColor {
+  color: #e0e1dd;
+
+}
+
 /* note: styles target reactstrap elements */
 /* Landing page */
 .landingPage__logo {

@@ -35,10 +35,6 @@ function Profile() {
         window.scrollTo(0, 0)
     }, [user]);
 
-    // console.log("Wurker: ", wurkerProfile)
-    // console.log("Logged in user: ", loggedInProfile)
-
-    // console.log('generatedId: ', generateId(loggedInProfile?.authUid, wurkerProfile?.authUid))
     const createChat = () => {
         db
             .collection('chats')
@@ -51,7 +47,7 @@ function Profile() {
                 usersInChat: [loggedInProfile?.authUid, wurkerProfile?.authUid],
                 timestamp: firebase.firestore.FieldValue.serverTimestamp()
             })
-        navigate('/chat')
+        navigate('/messages')
     }
 
     return (
@@ -73,7 +69,7 @@ function Profile() {
                     name={wurkerProfile.name}
                     skill={wurkerProfile.skill}
                     rate={wurkerProfile.rate}
-                    imageUrl={wurkerProfile.imageUrl}
+                    imageUrl={wurkerProfile.photoURL}
                     availability={wurkerProfile.availability}
                     phone={wurkerProfile.phone}
                     email={wurkerProfile.email}

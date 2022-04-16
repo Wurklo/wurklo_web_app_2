@@ -62,7 +62,7 @@ function UpdateWurker({wurker}) {
                         .doc(wurker?.id)
                         .update({
                             lastUpdate: firebase.firestore.FieldValue.serverTimestamp(),
-                            name: name.toLowerCase(),
+                            displayName: name.toLowerCase(),
                             email: email.toLowerCase(),
                             skill: skill.toLowerCase(),
                             rate: rate.toLowerCase(),
