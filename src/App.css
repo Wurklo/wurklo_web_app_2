@@ -381,6 +381,7 @@ img.navbar-coin {
 .message__senderImage {
   width: 3rem;
   height: 3rem;
+  border-radius: 10rem;
 }
 
 /* create wurker */

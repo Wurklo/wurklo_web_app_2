@@ -62,8 +62,11 @@ function Chat() {
         <Container >
             <Row>
                 <Col className='d-flex justify-content-between'>
-                    <ArrowBackIcon className='profile__backButton fs-1' onClick={() => navigate(-1)} />
-                    <h3 className='wurklo__textColor mt-1'>{matchedUserInfo?.displayName?.replace(/\w\S*/g, (w) => (w.replace(/^\w/, (c) => c.toUpperCase())))}</h3>
+                    <ArrowBackIcon className='profile__backButton fs-1 mt-2' onClick={() => navigate(-1)} />
+                    <div className='d-flex'>
+                        <h3 className='wurklo__textColor mt-2'>{matchedUserInfo?.displayName?.replace(/\w\S*/g, (w) => (w.replace(/^\w/, (c) => c.toUpperCase())))}</h3>
+                        <img className='message__senderImage ms-3' src={matchedUserInfo?.photoURL} />
+                    </div>
                 </Col>
                 <div className='chatBox mt-2'>
                     <Form>
