@@ -1,32 +1,33 @@
-import React, { useEffect, useState } from 'react'
-import { Button, Col, Container, Form, Input, Row } from 'reactstrap'
-import Message from '../../../components/Message'
+import React, { useEffect, useState } from 'react';
+import { Button, Col, Container, Form, Input, Row } from 'reactstrap';
+import Message from '../../../components/Message';
 import SendIcon from '@mui/icons-material/Send';
 import { db } from '../../../firebase';
-import firebase from 'firebase'
+import firebase from 'firebase';
 import FlipMove from 'react-flip-move';
 import { useDispatch, useSelector } from 'react-redux';
 import ArrowBackIcon from '@mui/icons-material/ArrowBack';
-import { useParams, useNavigate } from 'react-router-dom';
+import { useParams, useNavigate, useLocation } from 'react-router-dom';
 
 function Chat() {
     const [messages, setMessages] = useState([]);
     const [message, setMessage] = useState('');
     const navigate = useNavigate();
+    const location = useLocation();
 
     // redux
     const { user } = useSelector((state) => state.user);
     const dispatch = useDispatch();
 
-    useEffect(() => {
-        db
-            .collection('chats')
-            .where('messages', 'array-contains', [`${user?.uid}`])
-            .orderBy('timestamp', 'desc')
-            .onSnapshot(snapshot => {
-                setMessages(snapshot.docs.map(doc => ({ id: doc.id, message: doc.data() })))
-            })
-    }, [])
+    // useEffect(() => {
+    //     db
+    //         .collection('chats')
+    //         .where('messages', 'array-contains', [`${user?.uid}`])
+    //         .orderBy('timestamp', 'desc')
+    //         .onSnapshot(snapshot => {
+    //             setMessages(snapshot.docs.map(doc => ({ id: doc.id, message: doc.data() })))
+    //         })
+    // }, [])
 
     const handleSendMessage = (e) => {
         e.preventDefault();
@@ -47,6 +48,7 @@ function Chat() {
         setMessage('')
     }
 
+    console.log("chatDetails: ", location?.state.chatDetails)
     return (
         <Container >
             <Row>

@@ -1,9 +1,9 @@
-import { ChatSharp } from '@mui/icons-material'
-import React, { useEffect, useState } from 'react'
-import { useDispatch, useSelector } from 'react-redux'
-import { Container, Row } from 'reactstrap'
-import MessageCard from '../../components/MessageCard'
-import { db } from '../../firebase'
+import { ChatSharp } from '@mui/icons-material';
+import React, { useEffect, useState } from 'react';
+import { useDispatch, useSelector } from 'react-redux';
+import { Container, Row } from 'reactstrap';
+import MessageCard from '../../components/MessageCard';
+import { db } from '../../firebase';
 
 function Messages() {
     const [chats, setChats] = useState()
@@ -11,7 +11,6 @@ function Messages() {
     const { user } = useSelector((state) => state.user);
     const dispatch = useDispatch();
 
-    console.log(user?.uid)
     // fetch chats from firestore
     useEffect(() => {
         db
@@ -23,7 +22,8 @@ function Messages() {
                 setChats(snapshot.docs.map(doc => ({ id: doc.id, ...doc.data() })))
             })
     }, [user])
-    console.log(chats)
+
+
 
     return (
         <Container >
