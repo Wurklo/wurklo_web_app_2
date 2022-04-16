@@ -47,9 +47,9 @@ function Profile() {
                 users: {
                     [loggedInProfile?.authUid]: loggedInProfile,
                     [wurkerProfile?.authUid]: wurkerProfile,
-                    usersInChat: [loggedInProfile?.authUid, wurkerProfile?.authUid],
-                    timestamp: firebase.firestore.FieldValue.serverTimestamp()
-                }
+                },
+                usersInChat: [loggedInProfile?.authUid, wurkerProfile?.authUid],
+                timestamp: firebase.firestore.FieldValue.serverTimestamp()
             })
         navigate('/chat')
     }
@@ -82,7 +82,7 @@ function Profile() {
             </Row>
             <Row className='text-center'>
                 <Col>
-                    {user ? <Button outline className='loginModal__button shadow-none make-round mt-4' onClick={createChat}>Send Message</Button> : <p className='profile__chatboxSigninMessage'>Sign in to send message</p>}
+                    {user ? <Button outline className='loginModal__button shadow-none make-round my-4' onClick={createChat}>Send Message</Button> : <p className='profile__chatboxSigninMessage'>Sign in to send message</p>}
                 </Col>
                 {/* {user ? <ChatBox wurkerId={id} wurkerUid={wurkerProfile?.authUid} imageUrl={wurkerProfile?.imageUrl} wurkerName={wurkerProfile.name}/> : <p className='profile__chatboxSigninMessage'>Sign in to send message</p>} */}
             </Row>
