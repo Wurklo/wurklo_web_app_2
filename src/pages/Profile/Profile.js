@@ -35,10 +35,10 @@ function Profile() {
         window.scrollTo(0, 0)
     }, [user]);
 
-    console.log("Wurker: ", wurkerProfile)
-    console.log("Logged in user: ", loggedInProfile)
+    // console.log("Wurker: ", wurkerProfile)
+    // console.log("Logged in user: ", loggedInProfile)
 
-    console.log('generatedId: ', generateId(loggedInProfile?.authUid, wurkerProfile?.authUid))
+    // console.log('generatedId: ', generateId(loggedInProfile?.authUid, wurkerProfile?.authUid))
     const createChat = () => {
         db
             .collection('chats')
