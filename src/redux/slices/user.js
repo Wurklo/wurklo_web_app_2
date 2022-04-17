@@ -62,7 +62,53 @@ export const setUserOrCreateAndSet = createAsyncThunk(
                     }
                 })
         } catch (err) {
-            console.log("Create user profile failed due to: ", err)
+            console.log("Create user profile if not exist failed due to: ", err)
+        }
+    }
+)
+
+// create user profile from authenticated user signup
+export const saveContact = createAsyncThunk(
+    "user/saveContact",
+    async ({user, id}) => {
+        // console.log("user", user.uid, id)
+        try {
+            // post new user profile in db
+            db
+                .collection("users")
+                .doc(user.uid)
+                .update({
+                    contacts: firebase.firestore.FieldValue.arrayUnion(id)
+                },
+                    {
+                        merge: true
+                    }
+                )
+        } catch (err) {
+            console.log("Save contact failed due to: ", err)
+        }
+    }
+)
+
+// create user profile from authenticated user signup
+export const removeContact = createAsyncThunk(
+    "user/removeContact",
+    async ({user, id}) => {
+        // console.log("user", user.uid, id)
+        try {
+            // post new user profile in db
+            db
+                .collection("users")
+                .doc(user.uid)
+                .update({
+                    contacts: firebase.firestore.FieldValue.arrayRemove(id)
+                },
+                    {
+                        merge: true
+                    }
+                )
+        } catch (err) {
+            console.log("Remove contact failed due to: ", err)
         }
     }
 )
@@ -92,6 +138,9 @@ export const userSlice = createSlice({
             })
             .addCase(setUserOrCreateAndSet.fulfilled, (state, action) => {
                 console.log("extra reducer user: ", action.payload)
+            })
+            .addCase(saveContact.fulfilled, (state, action) => {
+                console.log("extra")
             })
     }
 })

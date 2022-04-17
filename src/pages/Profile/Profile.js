@@ -7,10 +7,12 @@ import { db } from '../../firebase';
 import ArrowBackIcon from '@mui/icons-material/ArrowBack';
 import generateId from '../../lib/generateId';
 import firebase from 'firebase'
+import StarBorderIcon from '@mui/icons-material/StarBorder';
+import StarIcon from '@mui/icons-material/Star';
 
 //redux 
 import { useDispatch, useSelector } from 'react-redux';
-import { setUser } from '../../redux/slices/user';
+import { setUser, saveContact, removeContact } from '../../redux/slices/user';
 
 function Profile() {
     let { id } = useParams();
@@ -19,6 +21,7 @@ function Profile() {
     const [hire, setHire] = useState(false);
     const navigate = useNavigate();
 
+    const contact = loggedInProfile?.contacts?.find((id) => wurkerProfile?.authUid)
     // redux
     const { user } = useSelector((state) => state.user);
     const dispatch = useDispatch();
@@ -33,6 +36,7 @@ function Profile() {
             setLoggedInUser(doc.data())
         })
         window.scrollTo(0, 0)
+        // dispatch(saveContact(user))
     }, [user]);
 
     const createChat = () => {
@@ -50,10 +54,18 @@ function Profile() {
         navigate('/messages')
     }
 
+    const isContact = () => {
+        if (loggedInProfile?.contacts?.find(id => wurkerProfile?.authUid)) {
+            dispatch(removeContact({user, id}))
+        } else {
+            dispatch(saveContact({user, id}))
+        }
+    }
+
     return (
         <Container className='profile mt-3 text-center text-md-start'>
             <div className='d-flex justify-content-between mb-2 mx-3 mx-sm-2 mx-md-0'>
-                <ArrowBackIcon className='profile__backButton fs-1' onClick={() => navigate(-1)} />
+                <ArrowBackIcon className='profile__backButton fs-1 mt-2 mt-md-0' onClick={() => navigate(-1)} />
                 {hire ?
                     <div>
                         <Button color='danger' outline className='profile__hireButton me-3 make-round bg-white' onClick={() => setHire(false)}>Fire</Button>
@@ -61,6 +73,9 @@ function Profile() {
                     </div>
                     :
                     <Button color='danger' outline className='profile__hireButton make-round bg-white' onClick={() => setHire(true)}>Hire</Button>
+                }
+                {contact ? <StarIcon className='profile__isContact mt-1 mt-md-2' onClick={isContact} /> :
+                    <StarBorderIcon className='profile__notContact mt-1 mt-md-2' onClick={isContact} />
                 }
             </div>
             <Row className='mt-3'>

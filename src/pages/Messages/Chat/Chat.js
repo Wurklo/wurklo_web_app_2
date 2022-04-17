@@ -53,6 +53,14 @@ function Chat() {
         setMessage('')
     }
 
+    // const isContact = () => {
+    //     if (loggedInProfile?.contacts?.find(id => wurkerProfile?.authUid)) {
+    //         dispatch(removeContact({user, id}))
+    //     } else {
+    //         dispatch(saveContact({user, id}))
+    //     }
+    // }
+
     return (
         <Container >
             <Row>

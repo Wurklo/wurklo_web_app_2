@@ -351,6 +351,22 @@ img.navbar-coin {
   font-size: 2rem;
   height: 10rem;
 }
+.profile__notContact {
+  color: #e0e1dd;
+  font-size: 2rem !important;
+}
+.profile__notContact:hover {
+  color: white;
+  cursor: pointer;
+}
+.profile__isContact {
+  color: #6db6ff;
+  font-size: 2rem !important;
+}
+.profile__isContact:hover {
+  color: #80c0ff;
+  cursor: pointer;
+}
 
 /* Messages */
 .messageCard {

@@ -12,9 +12,9 @@ const Message = forwardRef(({ message }, ref) => {
   const photoURL = message?.photoURL;
   return (
     <div className={'d-flex ' + (isUser ? 'justify-content-start' : 'justify-content-end')}>
-      <div ref={ref} className={'p-2 text-white m-2 ' + (isUser ? 'message__isUser bg-primary shadow-sm' : 'message__isNotUser bg-secondary shadow-sm')}>{message?.senderName}: {message?.message}
+      <div ref={ref} className={'p-2 text-white m-2 ' + (isUser ? 'message__isUser bg-primary shadow-sm' : 'message__isNotUser bg-secondary shadow-sm')}>{message?.message}
         <div className='message__time'>
-          {moment(message?.timestamp?.seconds * 1000).format('MMMM Do YYYY, h:mm:ss a')}
+          {moment(message?.timestamp?.seconds * 1000).format('MMMM Do YYYY, h:mm a')}
         </div>
       </div>
       {isUser ? null :

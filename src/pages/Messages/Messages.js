@@ -30,6 +30,7 @@ function Messages() {
                 {
                     chats?.map((chat) => (
                         <MessageCard
+                            key={chat.id}
                             chatDetails={chat}
                         />
                     ))

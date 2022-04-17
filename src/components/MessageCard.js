@@ -28,7 +28,6 @@ function MessageCard({ chatDetails }) {
             .orderBy('timestamp', 'desc')
             .limit(1)
             .onSnapshot((snapshot) => {
-                console.log(snapshot)
                 setLastMessage(snapshot.docs[0]?.data()?.message);
             })
 
