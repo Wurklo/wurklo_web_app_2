@@ -227,7 +227,7 @@ function UpdateWurker({wurker}) {
                     </Row>
                     <Row>
                         <Col md={12} className="text-center mt-0 mx-auto">
-                            <Input
+                            <Input valid
                                 className='search__input shadow-none mt-4'
                                 placeholder="Tags ... ex. developer, react, ..."
                                 value={tags}
