@@ -24,6 +24,7 @@ function CreateWurker() {
     const [portfolioLink, setPortfolioLink] = useState('');
     const [references, setReferences] = useState('');
     const [imageFile, setImageFile] = useState(null);
+    const [tags, setTags] = useState(null);
     const [progress, setProgress] = useState(0);
 
     // redux
@@ -77,7 +78,8 @@ function CreateWurker() {
                                 phone: phone.toLowerCase(),
                                 portfolioLink: portfolioLink.toLowerCase(),
                                 references: references.toLowerCase(),
-                                photoURL: url
+                                photoURL: url,
+                                tags: tags
                             },
                             {
                                 merge: true
@@ -207,6 +209,7 @@ function CreateWurker() {
                     <Row>
                         <Col md={6} className="text-center mt-0 mx-auto">
                             <Input
+                                type='phone'
                                 className='search__input shadow-none mt-4'
                                 placeholder="Phone # ex. +1-555-555-5555 ..."
                                 value={phone}
@@ -225,7 +228,6 @@ function CreateWurker() {
                     <Row>
                         <Col md={6} className="text-center mt-0 mx-auto">
                             <Input
-                                type='search'
                                 className='search__input shadow-none mt-4'
                                 placeholder="References ..."
                                 value={references}
@@ -238,6 +240,16 @@ function CreateWurker() {
                                 placeholder="Portfolio Link ..."
                                 onChange={handleChange}
                                 type="file"
+                            />
+                        </Col>
+                    </Row>
+                    <Row>
+                        <Col md={12} className="text-center mt-0 mx-auto">
+                            <Input
+                                className='search__input shadow-none mt-4'
+                                placeholder="Tags ... ex. developer, react, ..."
+                                value={tags}
+                                onChange={e => setTags(e.target.value)}
                             />
                         </Col>
                     </Row>

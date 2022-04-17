@@ -22,6 +22,7 @@ function UpdateWurker({wurker}) {
     const [portfolioLink, setPortfolioLink] = useState(`${wurker?.wurker?.portfolioLink}`);
     const [references, setReferences] = useState(`${wurker?.wurker?.references}`);
     const [imageFile, setImageFile] = useState(`${wurker?.wurker?.imageFile}`);
+    const [tags, setTags] = useState(`${wurker?.wurker?.tags}`);
     const [progress, setProgress] = useState(0);
 
     // redux
@@ -35,7 +36,6 @@ function UpdateWurker({wurker}) {
         }
     };
 
-    console.log(name)
     const handleUpdateWurker = () => {
         const uploadTask = storage.ref(`wurker-images/${user.uid}`).put(imageFile);
         // progress bar function
@@ -74,20 +74,10 @@ function UpdateWurker({wurker}) {
                             phone: phone.toLowerCase(),
                             portfolioLink: portfolioLink.toLowerCase(),
                             references: references.toLowerCase(),
-                            photoURL: url
+                            photoURL: url,
+                            tags: tags
                         });
                         setProgress(0);
-                        setName('')
-                        setEmail('')
-                        setSkill('')
-                        setRate('')
-                        setYearsOfExp('')
-                        setHighestEdu('')
-                        setCertsLicenses('')
-                        setAvailability('')
-                        setPhone('')
-                        setPortfolioLink('')
-                        setReferences('')
                         setImageFile(null)
                         setIsModalOpen(false)
                     })
@@ -233,6 +223,16 @@ function UpdateWurker({wurker}) {
                             onChange={handleChange}
                             type="file"
                         />
+                        </Col>
+                    </Row>
+                    <Row>
+                        <Col md={12} className="text-center mt-0 mx-auto">
+                            <Input
+                                className='search__input shadow-none mt-4'
+                                placeholder="Tags ... ex. developer, react, ..."
+                                value={tags}
+                                onChange={e => setTags(e.target.value)}
+                            />
                         </Col>
                     </Row>
                 </ModalBody>
