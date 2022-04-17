@@ -18,7 +18,6 @@ function Messages() {
             .where('usersInChat', 'array-contains', `${user?.uid}`)
             .orderBy('timestamp', 'desc')
             .onSnapshot((snapshot) => {
-                console.log(snapshot)
                 setChats(snapshot.docs.map(doc => ({ id: doc.id, ...doc.data() })))
             })
     }, [user])
