@@ -116,6 +116,7 @@ function UpdateWurker({wurker}) {
                     <h3 className='text-secondary m-0'><strong>Update Wurker Profile</strong></h3>
                 </ModalHeader>
                 <ModalBody className='createWurker pt-0'>
+                <p className='text-center text-danger mt-2 mb-0'>This information will be public to everyone. Leave blank any fields you want to remain private.</p>
                     <Row>
                         <Col md={6} className="text-center mt-0 mx-auto">
                             <Input
@@ -227,7 +228,7 @@ function UpdateWurker({wurker}) {
                     </Row>
                     <Row>
                         <Col md={12} className="text-center mt-0 mx-auto">
-                            <Input valid
+                            <Input
                                 className='search__input shadow-none mt-4'
                                 placeholder="Tags ... ex. developer, react, ..."
                                 value={tags}

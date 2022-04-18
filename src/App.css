@@ -358,6 +358,7 @@ img.navbar-coin {
 .profile__notContact:hover {
   color: white;
   cursor: pointer;
+  transition: 0.5s;
 }
 .profile__isContact {
   color: #6db6ff;
@@ -366,6 +367,7 @@ img.navbar-coin {
 .profile__isContact:hover {
   color: #80c0ff;
   cursor: pointer;
+  transition: 0.5s;
 }
 
 /* Messages */

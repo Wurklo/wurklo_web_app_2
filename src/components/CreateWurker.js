@@ -81,9 +81,9 @@ function CreateWurker() {
                                 photoURL: url,
                                 tags: tags
                             },
-                            {
-                                merge: true
-                            });
+                                {
+                                    merge: true
+                                });
                         setProgress(0);
                         setName('')
                         setEmail('')
@@ -134,6 +134,7 @@ function CreateWurker() {
                     <h3 className='text-secondary m-0'><strong>Create Wurker Profile</strong></h3>
                 </ModalHeader>
                 <ModalBody className='createWurker pt-0'>
+                    <p className='text-danger'>This information will be public to everyone. Leave blank any fields you want to remain private.</p>
                     <Row>
                         <Col md={6} className="text-center mt-0 mx-auto">
                             <Input

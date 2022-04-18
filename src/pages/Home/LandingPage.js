@@ -1,10 +1,12 @@
 import { useEffect, useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
+import { Button } from 'reactstrap';
 import '../../App.css';
 import CreateWurker from '../../components/CreateWurker';
 import Search from '../../components/Search';
 import { db } from '../../firebase';
-import logo from '../../images/wurklo-logo-e0e1dd.svg'
+import logo from '../../images/wurklo-logo-e0e1dd.svg';
+import axios from '../../axios';
 
 function LandingPage() {
     const { user } = useSelector((state) => state.user);
@@ -24,6 +26,11 @@ function LandingPage() {
             })
     }, [user]);
 
+    const sayHello = async () => {
+        const response = await axios.post();
+        console.log('Response: ', response)
+    }
+
     return (
         <div className='search'>
             <div className='text-center'>
@@ -36,6 +43,7 @@ function LandingPage() {
                 {!userWurkerProfile?.[0]?.wurker &&
                     <CreateWurker />
                 }
+                <Button onClick={sayHello}>Hello</Button>
             </div>
         </div>
     );
