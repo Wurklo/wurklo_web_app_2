@@ -46,10 +46,10 @@ function Header() {
                             <p className='header__logoText pt-3 fs-3'>Wurklo</p>
                         </div>
                     </a>
-                    <div className='header__searchContainer'>
+                    <div className='header__searchContainer me-0 me-md-5 pe-md-5'>
+                        <FilterSearchResults />
                         <Search />
                     </div>
-
                 </>
 
             }

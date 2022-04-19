@@ -60,7 +60,7 @@ function UpdateWurker({wurker}) {
                     .then(url => {
                         // post image in db
                         db.collection("wurkers")
-                        .doc(wurker?.id)
+                        .doc(wurker.id)
                         .update({
                             lastUpdate: firebase.firestore.FieldValue.serverTimestamp(),
                             displayName: name.toLowerCase(),

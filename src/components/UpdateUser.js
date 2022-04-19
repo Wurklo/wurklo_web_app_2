@@ -50,7 +50,7 @@ function UpdateUser() {
                         // post image in db
                         db
                             .collection("users")
-                            .doc(user?.uid)
+                            .doc(user.uid)
                             .set({
                                 lastUpdated: firebase.firestore.FieldValue.serverTimestamp(),
                                 displayName: name.toLowerCase(),

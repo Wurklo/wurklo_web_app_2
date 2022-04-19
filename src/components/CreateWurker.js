@@ -63,10 +63,10 @@ function CreateWurker() {
                         // post image in db
                         db
                             .collection("wurkers")
-                            .doc(user?.uid)
+                            .doc(user.uid)
                             .set({
                                 created: firebase.firestore.FieldValue.serverTimestamp(),
-                                authUid: user?.uid,
+                                authUid: user.uid,
                                 displayName: name.toLowerCase(),
                                 email: email.toLowerCase(),
                                 skill: skill.toLowerCase(),
@@ -261,11 +261,11 @@ function CreateWurker() {
                         outline
                         color='primary'
                         onClick={handleCreateWurker}
-                        className='createWurker__button p-2 px-4 mt-0'
+                        className='make-round p-2 px-4 mt-0'
                     >
                         Create Wurker
                     </Button>
-                    <Button outline className='createWurker__button p-2 mt-0' onClick={() => setIsModalOpen(false)}>
+                    <Button outline className='make-round p-2 mt-0' onClick={() => setIsModalOpen(false)}>
                         Cancel
                     </Button>
                 </ModalFooter>

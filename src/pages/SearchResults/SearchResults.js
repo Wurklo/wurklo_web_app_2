@@ -9,8 +9,10 @@ import Typesense from 'typesense';
 
 function SearchResults() {
     const [wurkers, setWurkers] = useState([]);
+    // const [wurkers, setWurkers] = useState([]);
+
     // the below need to be moved after setting searchParams/filters in redux
-    let { searchParams } = useParams();
+    const { searchParams } = useParams();
 
     // Create a Typesense Client using the search-only API key
     const client = new Typesense.Client({
@@ -22,14 +24,14 @@ function SearchResults() {
         'apiKey': 'N1QsozxFYgafvNigVIzjeLQ3ZNTVGzGZ',
         'connectionTimeoutSeconds': 2
     });
-
+    const pageNum = 1;
     // Search for notes with matching text
     const searchParameters = {
         'q': searchParams,
         'query_by': 'tags,skill,displayName',
         'sort_by': 'rate:asc',
         'per_page': '20',
-        'page': '1'
+        'page': `${pageNum}`
     };
 
     useEffect(() => {
@@ -38,13 +40,19 @@ function SearchResults() {
             .search(searchParameters)
             .then((searchResults) => {
                 setWurkers(searchResults.hits)
-                // console.log(searchResults.hits)
+                console.log(searchResults)
             })
     }, [searchParams])
 
     // console.log(wurkers[0]?.document)
     return (
         <Container fluid>
+            <Row>
+                <Col>
+                    <p className='wurklo__textColor text-center mb-0'>1 2 3 4 5 6 7 8 9 ... 35</p>
+                    <p className='wurklo__textColor text-center mb-0'>pages for {`${searchParams}`} </p>
+                </Col>
+            </Row>
             <Row className='mx-5 mt-4'>
                 {
                     wurkers.map(({document}) => (
