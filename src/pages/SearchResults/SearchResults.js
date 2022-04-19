@@ -9,11 +9,7 @@ import Typesense from 'typesense';
 
 function SearchResults() {
     const [wurkers, setWurkers] = useState([]);
-    const [lastDoc, setLastDoc] = useState();
-    const [query, setQuery] = useState('');
     // the below need to be moved after setting searchParams/filters in redux
-    const [nameFilter, setNameFilter] = useState('asc');
-    const [rateFilter, setRateFilter] = useState('asc');
     let { searchParams } = useParams();
 
     // Create a Typesense Client using the search-only API key
@@ -30,7 +26,9 @@ function SearchResults() {
     // Search for notes with matching text
     const searchParameters = {
         'q': searchParams,
-        'query_by': 'tags'
+        'query_by': 'tags,skill,displayName',
+        'sort_by': 'rate:asc',
+        'per_page': '30'
     };
 
     useEffect(() => {

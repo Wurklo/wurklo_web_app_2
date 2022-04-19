@@ -23,10 +23,6 @@ function Header() {
     const { user } = useSelector((state) => state.user);
     const dispatch = useDispatch();
     const location = useLocation();
-    const navigate = useNavigate();
-    const [nameFilter, setNameFilter] = useState('asc');
-    const [rateFilter, setRateFilter] = useState('asc');
-    let { searchParams } = useParams();
 
     const signOut = () => {
         auth.signOut()
@@ -51,14 +47,7 @@ function Header() {
                         </div>
                     </a>
                     <div className='header__searchContainer'>
-                        <Search
-                            placeholderDefault="Search wurkers ... ex. full stack developer, react"
-                            placeholderSearchedValue={searchParams}
-                        />
-                        <FilterSearchResults
-                            setNameFilter={setNameFilter}
-                            setRateFilter={setRateFilter}
-                        />
+                        <Search />
                     </div>
 
                 </>

@@ -12,8 +12,7 @@ function Search({ placeholderValue, placeholderSearchedValue }) {
 
     const handleSearch = async (e) => {
         e.preventDefault();
-        navigate(`/search-results/${search ? search : "full stack developer"}`)
-        setSearch('')
+        navigate(`/search-results/${search ? search : "react"}`)
     }
 
     return (
@@ -22,7 +21,7 @@ function Search({ placeholderValue, placeholderSearchedValue }) {
                 <form>
                     <Input
                         className='search__input shadow-none ps-5'
-                        placeholder={placeholderSearchedValue ? placeholderSearchedValue : placeholderValue}
+                        placeholder="Search wurkers ... ex. full stack developer, react"
                         value={search}
                         onChange={e => setSearch(e.target.value)}
                     />

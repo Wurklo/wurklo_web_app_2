@@ -33,7 +33,7 @@ function LandingPage() {
                 <p className='landingPage__logoText pt-3'>Wurklo</p>
                 <p className='landingPage__sloganText'>Search Wurkers, Chat, Hire, Pay</p>
             </div>
-            <Search placeholderValue="Search wurkers ... ex. full stack developer, react" />
+            <Search />
             <div className='mt-4'>
                 {!userWurkerProfile?.[0]?.wurker &&
                     <CreateWurker />
