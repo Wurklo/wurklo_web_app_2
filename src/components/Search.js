@@ -4,12 +4,13 @@ import { useState } from 'react';
 import { useLocation, useNavigate } from "react-router-dom";
 import ArrowForwardRoundedIcon from '@mui/icons-material/ArrowForwardRounded';
 
-function Search({placeholderValue, placeholderSearchedValue}) {
+function Search({ placeholderValue, placeholderSearchedValue }) {
     const [search, setSearch] = useState('');
     const navigate = useNavigate();
     const location = useLocation();
 
-    const handleSearch = (e) => {
+
+    const handleSearch = async (e) => {
         e.preventDefault();
         navigate(`/search-results/${search ? search : "full stack developer"}`)
         setSearch('')

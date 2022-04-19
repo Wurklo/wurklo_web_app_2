@@ -13,10 +13,8 @@
     "node": "16"
   },
   "main": "index.js",
-  "type": "module",
   "dependencies": {
     "@babel/runtime": "^7.17.9",
-    "dotenv": "^16.0.0",
     "firebase-admin": "^10.0.2",
     "firebase-functions": "^3.18.0",
     "typesense": "^1.2.2"

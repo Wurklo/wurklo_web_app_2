@@ -26,11 +26,6 @@ function LandingPage() {
             })
     }, [user]);
 
-    const sayHello = async () => {
-        const response = await axios.post();
-        console.log('Response: ', response)
-    }
-
     return (
         <div className='search'>
             <div className='text-center'>
@@ -43,7 +38,6 @@ function LandingPage() {
                 {!userWurkerProfile?.[0]?.wurker &&
                     <CreateWurker />
                 }
-                <Button onClick={sayHello}>Hello</Button>
             </div>
         </div>
     );

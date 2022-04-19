@@ -36,7 +36,7 @@ function UpdateWurker({wurker}) {
         }
     };
 
-    const handleUpdateWurker = () => {
+    const handleUpdateWurker = async () => {
         const uploadTask = storage.ref(`wurker-images/${user.uid}`).put(imageFile);
         // progress bar function
         uploadTask.on(
