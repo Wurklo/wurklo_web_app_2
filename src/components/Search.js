@@ -12,7 +12,7 @@ function Search({ placeholderValue, placeholderSearchedValue }) {
 
     const handleSearch = async (e) => {
         e.preventDefault();
-        navigate(`/search-results/${search ? search : "react"}`)
+        navigate(`/search-results/${search ? search : "full stack developer"}`)
     }
 
     return (

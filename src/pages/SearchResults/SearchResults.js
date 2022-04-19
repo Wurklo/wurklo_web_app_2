@@ -28,7 +28,8 @@ function SearchResults() {
         'q': searchParams,
         'query_by': 'tags,skill,displayName',
         'sort_by': 'rate:asc',
-        'per_page': '30'
+        'per_page': '20',
+        'page': '1'
     };
 
     useEffect(() => {
