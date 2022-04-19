@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react'
-import { Col, Container, Row } from 'reactstrap'
+import { Button, Col, Container, Row } from 'reactstrap'
 import Search from '../../components/Search'
 import WurkerCard from '../../components/WurkerCard'
 import { db } from '../../firebase';
@@ -9,7 +9,10 @@ import Typesense from 'typesense';
 
 function SearchResults() {
     const [wurkers, setWurkers] = useState([]);
-    // const [wurkers, setWurkers] = useState([]);
+    const [pages, setPages] = useState();
+    const [numFound, setNumFound] = useState();
+    const [currPage, setCurrPage] = useState(1);
+    const [perPage, setPerPage] = useState(20);
 
     // the below need to be moved after setting searchParams/filters in redux
     const { searchParams } = useParams();
@@ -24,14 +27,14 @@ function SearchResults() {
         'apiKey': 'N1QsozxFYgafvNigVIzjeLQ3ZNTVGzGZ',
         'connectionTimeoutSeconds': 2
     });
-    const pageNum = 1;
+
     // Search for notes with matching text
     const searchParameters = {
         'q': searchParams,
         'query_by': 'tags,skill,displayName',
         'sort_by': 'rate:asc',
-        'per_page': '20',
-        'page': `${pageNum}`
+        'per_page': `${perPage}`,
+        'page': `${currPage}`
     };
 
     useEffect(() => {
@@ -40,16 +43,19 @@ function SearchResults() {
             .search(searchParameters)
             .then((searchResults) => {
                 setWurkers(searchResults.hits)
-                console.log(searchResults)
+                console.log(searchResults.found)
+                setNumFound(searchResults.found);
             })
     }, [searchParams])
+
 
     // console.log(wurkers[0]?.document)
     return (
         <Container fluid>
             <Row>
-                <Col>
-                    <p className='wurklo__textColor text-center mb-0'>1 2 3 4 5 6 7 8 9 ... 35</p>
+                <Col className='text-center'>
+                    {}
+                    <Button outline className='wurklo__textColor my-0 p-1 shadow-none'>1</Button>
                     <p className='wurklo__textColor text-center mb-0'>pages for {`${searchParams}`} </p>
                 </Col>
             </Row>
