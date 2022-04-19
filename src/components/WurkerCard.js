@@ -8,8 +8,8 @@ function WurkerCard({ id, wurker }) {
     const openProfile = () => {
         navigate(`/profile/${id}`)
     }
-    console.log(id)
-    console.log(wurker)
+    // console.log(id)
+    // console.log(wurker)
     return (
         <Col className='mb-4 d-flex justify-content-center'>
             <div className='wurkerCard' onClick={openProfile}>

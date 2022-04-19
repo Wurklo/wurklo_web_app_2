@@ -39,11 +39,11 @@ function SearchResults() {
             .search(searchParameters)
             .then((searchResults) => {
                 setWurkers(searchResults.hits)
-                console.log(searchResults.hits)
+                // console.log(searchResults.hits)
             })
     }, [searchParams])
 
-    console.log(wurkers[0]?.document)
+    // console.log(wurkers[0]?.document)
     return (
         <Container fluid>
             <Row className='mx-5 mt-4'>
