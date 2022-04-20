@@ -9,7 +9,7 @@ import Typesense from 'typesense';
 
 function SearchResults() {
     const [wurkers, setWurkers] = useState([]);
-    const [pages, setPages] = useState();
+    const [pages, setPages] = useState(1);
     const [numFound, setNumFound] = useState();
     const [currPage, setCurrPage] = useState(1);
     const [perPage, setPerPage] = useState(20);
@@ -43,19 +43,25 @@ function SearchResults() {
             .search(searchParameters)
             .then((searchResults) => {
                 setWurkers(searchResults.hits)
-                console.log(searchResults.found)
+                console.log(searchResults)
                 setNumFound(searchResults.found);
+                setPages(Math.ceil(searchResults.found/searchResults?.request_params?.per_page))
             })
-    }, [searchParams])
+    }, [searchParams, currPage])
 
 
-    // console.log(wurkers[0]?.document)
+    console.log("currpage", currPage)
+    // console.log(wurkers)
     return (
         <Container fluid>
             <Row>
                 <Col className='text-center'>
-                    {}
-                    <Button outline className='wurklo__textColor my-0 p-1 shadow-none'>1</Button>
+                    {Array(pages + 1).fill(pages, 1).map((_, i) => {
+                        if ((i > 9) && (i < pages - 1)) {
+                            return
+                        }
+                        return <Button key={i} outline className='wurklo__textColor mt-0 p-1 m-1 shadow-none' onClick={() => setCurrPage(i)}>{i}</Button>
+                    })}
                     <p className='wurklo__textColor text-center mb-0'>pages for {`${searchParams}`} </p>
                 </Col>
             </Row>

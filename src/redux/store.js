@@ -1,6 +1,5 @@
 
 import { configureStore } from '@reduxjs/toolkit';
-import logger from 'redux-logger';
 
 // slices or reducers
 import greeting from './slices/greeting';
@@ -11,5 +10,7 @@ export const store = configureStore({
         greeting: greeting,
         user: user,
     },
-    middleware: (getDefaultMiddleware) => getDefaultMiddleware(),
+    middleware: (getDefaultMiddleware) => getDefaultMiddleware({
+        serializableCheck: false,
+    }),
 });
